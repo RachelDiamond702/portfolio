@@ -1,0 +1,46 @@
+{
+    "projects": [
+      {
+        "name": "Modeling Legos",
+        "subdomain": "modeling_legos",
+        "category": "3d_modeling",
+        "abstract": "Building lego models in real life and replicating them in 3D modeling software.",
+        "description": "In this project, I built 3 seperate models out of the same 8 unique style bricks. I then used 3d modeling software to replelcate each lego piece. Next I used the same software to put the legos I modeled together to recreate the models I made in real life. I chose to make a helicopter, a tape measure, and a boat!",
+        "mainimage": "Helicopter_Main.png",
+        "images": [
+          "Helicopter_Main.png",
+          "Boat (15).png",
+          "Tape Measure.png"
+        ]
+      },
+      {
+        "name": "2x2 Bench",
+        "subdomain": "2x2_bench",
+        "category": ["3d_modeling", "handcrafted"],
+        "abstract": "Building a bench with only 2x2 lumber and deck screws that can support two adults standing on it.",
+        "description": "For this project I was only allowed to use 2x2 pine lumber and deck screws, nothing else. The goal was for it to be able to support the weight of two adults standing on it. I worked with a partner named Chloe Cook and we designed the bench together. The initial design was modifided after being put together as we saw it need more support. In the end it was successful.",
+        "mainimage": "bench.jpg",
+        "images": [
+          "bench.jpg",
+          "benchmodel.png",
+          "benchmodel2.png"
+        ]
+      },
+      {
+        "name": "Laser Cut Slotted Penguin",
+        "subdomain": "laser_cut_slotted_penguin",
+        "category": ["3d_modeling", "laser_cut"],
+        "abstract": "3d modeling a penguin that was subdivided into slotted pieces to make a figurine that could stand on its own without glue.",
+        "description":"The first step of the project was to 3d model a penguin. From there I subdivided the penguin horizontally and vertically to get two dimensional shapes that I cut slots into so the pieces could connect. I then used this model to lser cut acrylic sheets into the pieces for the model. The penguin is able to stand on its own but I did have to glue the wings on due to poor design.",
+        "mainimage": "penguin2.jpg",
+        "images": [
+          "penguin2.jpg",
+          "penguin.jpg",
+          "penguinmodel1.png",
+          "penguinmodel2.png",
+          "penguinmodel3.png",
+          "penguinmodel4.png"
+        ]
+      }
+    ]
+  }
