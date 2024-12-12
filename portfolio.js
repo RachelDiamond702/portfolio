@@ -149,15 +149,16 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCarousel();
         } else {
             // This ensures images appear on the index page, without carousel logic.
+            // On the portfolio page, we only want the main image, not all images
             const imageContainer = document.getElementById("project-images");
-            project.images.forEach(image => {
+            if (project.images && project.images.length > 0) {
+                const mainImage = project.images[0]; // Only show the first image
                 const img = document.createElement("img");
-                img.src = `images/${image}`;
+                img.src = `images/${mainImage}`;
                 img.alt = `${project.name} image`;
                 img.classList.add("project-image");  // Add a separate class for non-carousel images
                 imageContainer.appendChild(img);
-            });
+            }
         }
     }
 });
-
