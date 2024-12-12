@@ -25,29 +25,36 @@
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border: none;
-  padding: 15px 25px;
-  font-size: 24px;
+  padding: 1vw 2vw;
+  font-size: 2vw;
   cursor: pointer;
   z-index: 10;
 }
 
 #prev-button {
-  left: 10px;
+  left: 2vw;
 }
 
 #next-button {
-  right: 10p
+  right: 2vw;
 }
-
 
 /*Navbar*/
 #navbar {
   background-color: #333;
-  padding: 10px 20px;
+  padding: 2vh 2vw;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+body {
+  padding-top: 10vh;
+}
+
+#projects {
+  margin-top: 10vh;
 }
 
 #navbar ul {
@@ -82,7 +89,7 @@
 }
 
 #about-container img {
-  max-width: 250px;
+  max-width: 400px;
   height: auto;
 }
 
@@ -94,7 +101,7 @@
 }
 
 #about-container p {
-  font-size: 4vw;
+  font-size: 2vw;
   line-height: 1.6;
 }
 
