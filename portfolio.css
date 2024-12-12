@@ -1,9 +1,4 @@
 /*Carousel*/
-#carousel-images .carousel-image {
-  width: 100%;
-  object-fit: contain;
-}
-
 #carousel-container {
   position: relative;
   display: flex;
@@ -11,6 +6,11 @@
   justify-content: center;
   width: 100vw;
   overflow: hidden;
+}
+
+#carousel-images .carousel-image {
+  height: auto;
+  object-fit: contain;
 }
 
 .carousel-btn {
@@ -99,9 +99,11 @@ body {
 }
 
 /*Projects List*/
-
-.main-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+#projects .project img {
+    width: 50vw;
+    height: 50vw;
+    object-fit: contain;
+    max-width: 30vw;
+    max-height: 30vw;
+    border-radius: 1vw;
 }
