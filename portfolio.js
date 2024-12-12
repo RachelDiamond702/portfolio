@@ -74,7 +74,6 @@ function getProjectBySubdomain(subdomain) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
     // Retrieve the project data from localStorage
     const project = JSON.parse(localStorage.getItem('currentProject'));
 
@@ -85,15 +84,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update the project description
         document.getElementById("project-description").innerText = project.description;
 
-        const projectImagesContainer = document.getElementById("project-images");
-        if (projectImagesContainer) {
-        projectImagesContainer.appendChild(carouselContainer);}   
-        else {}
+        // Create the project-images container dynamically if not already present
+        let projectImagesContainer = document.getElementById("project-images");
+        
+        // If project-images div does not exist, create and append it
+        if (!projectImagesContainer) {
+            projectImagesContainer = document.createElement("div");
+            projectImagesContainer.id = "project-images";
+            document.body.appendChild(projectImagesContainer); // Append it to the body or a specific section
+        }
 
-        // Create the carousel container
+        // Create the carousel container inside the project-images div
         const carouselContainer = document.createElement("div");
         carouselContainer.id = "carousel-container";
-        document.getElementById("project-images").appendChild(carouselContainer);
+        projectImagesContainer.appendChild(carouselContainer);
 
         // Add buttons for the carousel
         const prevButton = document.createElement("button");
