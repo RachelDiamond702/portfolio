@@ -1,4 +1,4 @@
-// Fetch the JSON data containing project details
+// Fetch the JSON data containing project details 
 fetch('portfolio.json')
   .then(response => response.json())
   .then(projects => {
@@ -28,7 +28,20 @@ function parsedata(data) {
             </div>
         </div>
     </a>`;
-    
+
+    // Ensure all images for the project are shown on the index page
+    const projectImages = data.projects[i].images;
+    if (projectImages && projectImages.length > 0) {
+      projectImages.forEach(image => {
+        // Dynamically add images for the project to the main portfolio page
+        const imageContainer = document.getElementById("projects");
+        const imgElement = document.createElement("img");
+        imgElement.src = `images/${image}`;
+        imgElement.alt = `${data.projects[i].name} image`;
+        imgElement.classList.add("project-image");
+        imageContainer.appendChild(imgElement);
+      });
+    }
   }
 
   // Store projects in localStorage
@@ -161,3 +174,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
