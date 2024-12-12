@@ -73,8 +73,14 @@ function getProjectBySubdomain(subdomain) {
   return projects ? projects.find(project => project.subdomain === subdomain) : null;  
 }
 
-// Event listener for project-detail page
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Ensure this logic only runs on project-detail.html
+    if (!window.location.pathname.includes("project-detail.html")) {
+        console.log("Not on project-detail.html, skipping carousel setup.");
+        return;
+    }
+
+    console.log("On project-detail.html, running project details logic.");
 
     // Retrieve the project data from localStorage
     const project = JSON.parse(localStorage.getItem('currentProject'));
