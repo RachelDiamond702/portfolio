@@ -84,6 +84,7 @@
 #about-container img {
   max-width: 30vw;
   height: auto;
+  align-self: flex-start;
 }
 
 #about-container p {
@@ -91,4 +92,17 @@
   text-align: left;
   line-height: 1.5;
   font-size: 3vw;
+  margin-top: 0;
+  align-self: flex-start;
 }
+
+/*Projects List*/
+#projects .project img {
+  width: 50vw;
+  height: auto;
+  max-width: 30vw;
+  max-height: 20vw;
+  object-fit: cover;
+}
+
+
