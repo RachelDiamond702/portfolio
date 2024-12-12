@@ -92,6 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update the project description
         document.getElementById("project-description").innerText = project.description;
 
+        const projectImagesContainer = document.getElementById("project-images");
+if (projectImagesContainer) {
+    projectImagesContainer.appendChild(carouselContainer);
+} else {
+    console.error('Element with ID "project-images" not found');
+}
+
         // Create the carousel container
         const carouselContainer = document.createElement("div");
         carouselContainer.id = "carousel-container";
