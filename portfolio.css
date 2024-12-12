@@ -1,10 +1,7 @@
 /*Carousel*/
 #carousel-container {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -12,23 +9,20 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: black;
   color: white;
   border: none;
-  padding: 2vw 4vw;
-  font-size: 4vw;
+  padding: 10px;
   cursor: pointer;
-  z-index: 10;
 }
 
 #prev-button {
-  left: 2vw;
+  left: 10px;
 }
 
 #next-button {
-  right: 2vw;
+  right: 10px;
 }
-
 
 /*Navbar*/
 #navbar {
@@ -117,13 +111,15 @@ body {
 }
 
 .project img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 50vw;
+  height: 50vw;
+  object-fit: contain;
 }
 
 #projects a {
   text-decoration: none;
 }
 
-
+#projects a:visited {
+  color: inherit;
+}
