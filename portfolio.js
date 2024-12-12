@@ -12,7 +12,7 @@ fetch('portfolio.json')
 // Loop through each project and display it on the main page
 function parsedata(data) {
   for (let i = 0; i < data.projects.length; i++) {
-    const projimg = data.projects[i].mainimage;
+    const projimg = data.projects[i].mainimage; // Use the main image for the portfolio page
     const categories = Array.isArray(data.projects[i].category) ? data.projects[i].category : [data.projects[i].category];
 
     // Add each project to the page
@@ -28,20 +28,6 @@ function parsedata(data) {
             </div>
         </div>
     </a>`;
-
-    // Ensure all images for the project are shown on the index page
-    const projectImages = data.projects[i].images;
-    if (projectImages && projectImages.length > 0) {
-      projectImages.forEach(image => {
-        // Dynamically add images for the project to the main portfolio page
-        const imageContainer = document.getElementById("projects");
-        const imgElement = document.createElement("img");
-        imgElement.src = `images/${image}`;
-        imgElement.alt = `${data.projects[i].name} image`;
-        imgElement.classList.add("project-image");
-        imageContainer.appendChild(imgElement);
-      });
-    }
   }
 
   // Store projects in localStorage
