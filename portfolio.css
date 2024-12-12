@@ -8,12 +8,6 @@
   overflow: hidden;
 }
 
-#carousel-images .carousel-image {
-  width: 80vw; /* Set the width to 80% of the viewport */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure the full image is visible without cropping */
-}
-
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -100,10 +94,16 @@ body {
 }
 
 /*Projects List*/
+
 #projects {
   display: flex;
   flex-wrap: wrap;
   gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #37477d;
+  color: white;
 }
 
 .project {
@@ -122,5 +122,8 @@ body {
   object-fit: cover;
 }
 
+#projects a {
+  text-decoration: none;
+}
 
 
