@@ -2,15 +2,15 @@
 #carousel-container {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   overflow: hidden;
 }
 
-#carousel-images {
-  display: flex;
-  width: 100%;
+#carousel-images .carousel-image {
+  width: 60vw;
+  height: auto;
 }
 
 #carousel-images .carousel-image {
