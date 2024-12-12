@@ -1,3 +1,9 @@
+.projimg img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 #carousel-container {
   position: relative;
   display: flex;
