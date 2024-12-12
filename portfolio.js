@@ -68,6 +68,7 @@ function saveProjectToLocalStorage(subdomain) {
 // Get project data by subdomain
 function getProjectBySubdomain(subdomain) {
   const projects = JSON.parse(localStorage.getItem('projectsData'));
+
   // Find the correct project from stored data
   return projects ? projects.find(project => project.subdomain === subdomain) : null;
 }
@@ -149,14 +150,13 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCarousel();
         } else {
             const imageContainer = document.getElementById("project-images");
-            if (project.images && project.images.length > 0) {
-                const mainImage = project.mainimage;
-                const img = document.createElement("img");
-                img.src = `images/${mainImage}`;
-                img.alt = `${project.name} main image`;
-                img.classList.add("project-image");
-                imageContainer.appendChild(img);
-            }
+            const mainImage = project.mainimage;
+            const img = document.createElement("img");
+            img.src = `images/${mainImage}`;
+            img.alt = `${project.name} main image`;
+            img.classList.add("project-image");
+            imageContainer.appendChild(img);
         }
     }
 });
+
