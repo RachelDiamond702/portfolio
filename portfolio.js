@@ -1,5 +1,5 @@
 // Fetch the JSON data containing project details
-fetch('/portfolio.json')
+fetch('portfolio.json')
   .then(response => response.json())
   .then(projects => {
     console.log(projects);
@@ -17,6 +17,7 @@ function parsedata(data) {
 
     // Add each project to the page
     document.getElementById("projects").innerHTML += `
+    <a href="project-detail.html" onclick="saveProjectToLocalStorage('${data.projects[i].subdomain}')">
         <div class="row project ${categories.join(' ')}" id="${data.projects[i].subdomain}">
             <div class="description">
                 <h2>${data.projects[i].name}</h2>
