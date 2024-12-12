@@ -42,7 +42,8 @@
 /*Navbar*/
 #navbar {
   background-color: #333;
-  padding: 0;
+  padding: top 0.5vw;
+  padding: bottom 0.5vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,19 +86,23 @@ body {
 
 #about-container {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 20px;
   padding-bottom: 20px;
+  margin-top: 0;
 }
 
 #about-container img {
   width: 75vw;
-  height: auto;
+  height: 100%;
   border-radius: 8px;
 }
 
 #about-container p {
   font-size: 0.8vw;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 /*Projects List*/
@@ -116,9 +121,8 @@ body {
 
 #projects .projimg img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: contain;
 }
 
 #projects .projimg {
@@ -135,4 +139,8 @@ body {
 #projects a:focus,
 #projects a:active {
   color: inherit;
+}
+
+#projects a:hover {
+  color: #7f8ec0;
 }
