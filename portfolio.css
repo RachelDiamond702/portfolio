@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Ensure container takes full width */
-  overflow: hidden; /* Prevent overflowing images */
+  width: 100%;
+  overflow: hidden;
 }
 
 #carousel-images {
@@ -29,6 +29,11 @@
   cursor: pointer;
   z-index: 10;
 }
+
+body:not(.project-detail-page) #carousel-container {
+  display: none;
+}
+
 
 #prev-button {
   left: 10px;
