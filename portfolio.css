@@ -107,14 +107,42 @@
   border-radius: 8px;
 }
 
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.project {
+  margin: 1vh;
+  width: 30vw;
+}
+
+.description {
+  padding: 2vh;
+}
+
 #projects .projimg {
   width: 80vw;
   height: 40vw;
   overflow: hidden;
 }
 
-  #projects .projimg {
+#projects .projimg {
     width: 90vw;
     height: 45vw;
   }
 
+#projects a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+#projects a:focus,
+#projects a:active {
+    color: inherit;
+  }
+
+  
