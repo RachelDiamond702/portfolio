@@ -1,4 +1,4 @@
-// Fetch the JSON data containing project details 
+// Fetch the JSON data containing project details
 fetch('portfolio.json')
   .then(response => response.json())
   .then(projects => {
@@ -24,10 +24,11 @@ function parsedata(data) {
                 <p>${data.projects[i].abstract}</p>
             </div>
             <div class="projimg">
-                <img src="images/${projimg}" alt="${data.projects[i].name} main image">
+                <img src="images/${projimg}" alt="${data.projects[i].name}">
             </div>
         </div>
     </a>`;
+    
   }
 
   // Store projects in localStorage
@@ -68,9 +69,9 @@ function saveProjectToLocalStorage(subdomain) {
 // Get project data by subdomain
 function getProjectBySubdomain(subdomain) {
   const projects = JSON.parse(localStorage.getItem('projectsData'));
-
+  
   // Find the correct project from stored data
-  return projects ? projects.find(project => project.subdomain === subdomain) : null;
+  return projects ? projects.find(project => project.subdomain === subdomain) : null;  
 }
 
 // Event listener for project-detail page
@@ -149,14 +150,13 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCarousel();
         } else {
             const imageContainer = document.getElementById("project-images");
-            const mainImage = project.mainimage;
-            const img = document.createElement("img");
-            img.src = `images/${mainImage}`;
-            img.alt = `${project.name} main image`;
-            img.classList.add("project-image");
-            imageContainer.appendChild(img);
+            project.images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = `images/${image}`;
+                img.alt = `${project.name} image`;
+                img.classList.add("project-image");
+                imageContainer.appendChild(img);
+            });
         }
     }
 });
-
-
