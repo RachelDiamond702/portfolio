@@ -40,7 +40,6 @@
 }
 
 /* Nav Bar */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -87,7 +86,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding-bottom: 0;
+  padding: 0;
   margin-top: 0;
   border: 2px solid #333;
   border-radius: 8px;
@@ -170,10 +169,11 @@ body {
 }
 
 #projects a:hover {
-  color: #333;
+  color: #7f8ec0;
 }
 
 #projects a:focus,
 #projects a:active {
   color: inherit;
 }
+
