@@ -17,8 +17,6 @@ function parsedata(data) {
 
     // Add each project to the page
     document.getElementById("projects").innerHTML += `
-    <!-- Added an onclick event to save the project to localStorage -->
-    <a href="project-detail.html" onclick="saveProjectToLocalStorage('${data.projects[i].subdomain}')">
         <div class="row project ${categories.join(' ')}" id="${data.projects[i].subdomain}">
             <div class="description">
                 <h2>${data.projects[i].name}</h2>
@@ -26,7 +24,7 @@ function parsedata(data) {
                 <p>${data.projects[i].abstract}</p>
             </div>
             <div class="projimg">
-                <img src="/images/${projimg}" alt="${data.projects[i].name}">
+                <img src="images/${projimg}" alt="${data.projects[i].name}">
             </div>
         </div>
     </a>`;
