@@ -2,15 +2,15 @@
 #carousel-container {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   overflow: hidden;
 }
 
-#carousel-images .carousel-image {
-  width: 60vw;
-  height: auto;
+#carousel-images {
+  display: flex;
+  width: 100%;
 }
 
 #carousel-images .carousel-image {
@@ -36,7 +36,7 @@
 }
 
 #next-button {
-  right: 10px;
+  right: 10p
 }
 
 
@@ -77,14 +77,13 @@
 #about-container {
   display: flex;
   align-items: flex-start;
-  margin-top: 20px;
   gap: 20px;
+  padding-bottom: 20px;
 }
 
 #about-container img {
   max-width: 250px;
   height: auto;
-  border-radius: 8px;
 }
 
 #about-container h2 {
@@ -93,4 +92,29 @@
   line-height: 1.5;
   font-size: 1.2rem;
 }
+
+#about-container p {
+  font-size: 4vw;
+  line-height: 1.6;
+}
+
+/*Projects List*/
+
+#projects .projimg img {
+  width: 80vw;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#projects .projimg {
+  width: 80vw;
+  height: 40vw;
+  overflow: hidden;
+}
+
+  #projects .projimg {
+    width: 90vw;
+    height: 45vw;
+  }
 
