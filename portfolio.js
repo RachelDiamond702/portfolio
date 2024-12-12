@@ -68,91 +68,99 @@ function saveProjectToLocalStorage(subdomain) {
 // Get project data by subdomain
 function getProjectBySubdomain(subdomain) {
   const projects = JSON.parse(localStorage.getItem('projectsData'));
-  
+
   // Find the correct project from stored data
   return projects ? projects.find(project => project.subdomain === subdomain) : null;  
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Retrieve the project data from localStorage
-    const project = JSON.parse(localStorage.getItem('currentProject'));
+    // Ensure the code runs only on the project details page
+    if (window.location.pathname.includes("project-detail.html")) {
+        // Retrieve the project data from localStorage
+        const project = JSON.parse(localStorage.getItem('currentProject'));
 
-    if (project) {
-        // Update the project name
-        document.getElementById("project-name").innerText = project.name;
-        
-        // Update the project description
-        document.getElementById("project-description").innerText = project.description;
+        if (project) {
+            // Update the project name
+            document.getElementById("project-name").innerText = project.name;
 
-        // Create the project-images container
-        let projectImagesContainer = document.getElementById("project-images");
-        
-        if (!projectImagesContainer) {
-            projectImagesContainer = document.createElement("div");
-            projectImagesContainer.id = "project-images";
-            document.body.appendChild(projectImagesContainer);
-        }
+            // Update the project description
+            document.getElementById("project-description").innerText = project.description;
 
-        // Create the carousel container
-        const carouselContainer = document.createElement("div");
-        carouselContainer.id = "carousel-container";
-        projectImagesContainer.appendChild(carouselContainer);
+            // Create the project-images container
+            let projectImagesContainer = document.getElementById("project-images");
 
-        // Add buttons for the carousel
-        const prevButton = document.createElement("button");
-        prevButton.id = "prev-button";
-        prevButton.classList.add("carousel-btn");
-        prevButton.innerText = "<";
-        carouselContainer.appendChild(prevButton);
-
-        const imageContainer = document.createElement("div");
-        imageContainer.id = "carousel-images";
-        carouselContainer.appendChild(imageContainer);
-
-        const nextButton = document.createElement("button");
-        nextButton.id = "next-button";
-        nextButton.classList.add("carousel-btn");
-        nextButton.innerText = ">";
-        carouselContainer.appendChild(nextButton);
-
-        // Display all the images for the project in the carousel
-        const images = project.images;
-        images.forEach((image, index) => {
-            const img = document.createElement("img");
-            img.src = `images/${image}`;
-            img.alt = `${project.name} Image ${index + 1}`;
-            img.classList.add("carousel-image");
-            imageContainer.appendChild(img);
-        });
-
-        // Carousel function to update image position
-        let currentImageIndex = 0;
-        const carouselImages = document.querySelectorAll("#carousel-images .carousel-image");
-
-        function updateCarousel() {
-            const offset = -currentImageIndex * 100;
-            imageContainer.style.transform = `translateX(${offset}%)`;
-        }
-
-        // Event listeners for next and previous buttons
-        prevButton.addEventListener("click", function() {
-            if (currentImageIndex > 0) {
-                currentImageIndex--;
-            } else {
-                currentImageIndex = carouselImages.length - 1;
+            if (!projectImagesContainer) {
+                projectImagesContainer = document.createElement("div");
+                projectImagesContainer.id = "project-images";
+                document.body.appendChild(projectImagesContainer);
             }
-            updateCarousel();
-        });
 
-        nextButton.addEventListener("click", function() {
-            if (currentImageIndex < carouselImages.length - 1) {
-                currentImageIndex++;
-            } else {
-                currentImageIndex = 0;
+            // Create the carousel container
+            const carouselContainer = document.createElement("div");
+            carouselContainer.id = "carousel-container";
+            projectImagesContainer.appendChild(carouselContainer);
+
+            // Add buttons for the carousel
+            const prevButton = document.createElement("button");
+            prevButton.id = "prev-button";
+            prevButton.classList.add("carousel-btn");
+            prevButton.innerText = "<";
+            carouselContainer.appendChild(prevButton);
+
+            const imageContainer = document.createElement("div");
+            imageContainer.id = "carousel-images";
+            carouselContainer.appendChild(imageContainer);
+
+            const nextButton = document.createElement("button");
+            nextButton.id = "next-button";
+            nextButton.classList.add("carousel-btn");
+            nextButton.innerText = ">";
+            carouselContainer.appendChild(nextButton);
+
+            // Display all the images for the project in the carousel
+            const images = project.images;
+            images.forEach((image, index) => {
+                const img = document.createElement("img");
+                img.src = `images/${image}`;
+                img.alt = `${project.name} Image ${index + 1}`;
+                img.classList.add("carousel-image");
+                imageContainer.appendChild(img);
+            });
+
+            // Carousel function to update image position
+            let currentImageIndex = 0;
+            const carouselImages = document.querySelectorAll("#carousel-images .carousel-image");
+
+            function updateCarousel() {
+                const offset = -currentImageIndex * 100;
+                imageContainer.style.transform = `translateX(${offset}%)`;
             }
-            updateCarousel();
-        });
 
-        updateCarousel();
+            // Event listeners for next and previous buttons
+            prevButton.addEventListener("click", function() {
+                if (currentImageIndex > 0) {
+                    currentImageIndex--;
+                } else {
+                    currentImageIndex = carouselImages.length - 1;
+                }
+                updateCarousel();
+            });
+
+            nextButton.addEventListener("click", function() {
+                if (currentImageIndex < carouselImages.length - 1) {
+                    currentImageIndex++;
+                } else {
+                    currentImageIndex = 0;
+                }
+                updateCarousel();
+            });
+
+            updateCarousel();
+        }
+    } else {
+        const projectImagesContainer = document.getElementById("project-images");
+        if (projectImagesContainer) {
+            projectImagesContainer.remove();
+        }
     }
 });
