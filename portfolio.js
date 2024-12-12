@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Update the project description
         document.getElementById("project-description").innerText = project.description;
         
-        // Create the carousel container dynamically
+        // Create the carousel container
         const carouselContainer = document.createElement("div");
         carouselContainer.id = "carousel-container";
         document.getElementById("project-images").appendChild(carouselContainer);
@@ -118,14 +118,12 @@ document.addEventListener("DOMContentLoaded", function() {
             imageContainer.appendChild(img);
         });
 
-        // Initialize carousel functionality
+        // Carosuel function
         let currentImageIndex = 0;
         const carouselImages = document.querySelectorAll("#carousel-images .carousel-image");
 
-        // Function to update the displayed image based on the index
         function updateCarousel() {
-            // Calculate the offset to move the image container
-            const offset = -currentImageIndex * 100; // Each image takes up 100% width
+            const offset = -currentImageIndex * 100;
             imageContainer.style.transform = `translateX(${offset}%)`;
         }
 
@@ -134,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (currentImageIndex > 0) {
                 currentImageIndex--;
             } else {
-                currentImageIndex = carouselImages.length - 1; // Loop back to last image
+                currentImageIndex = carouselImages.length - 1;
             }
             updateCarousel();
         });
@@ -143,12 +141,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (currentImageIndex < carouselImages.length - 1) {
                 currentImageIndex++;
             } else {
-                currentImageIndex = 0; // Loop back to first image
+                currentImageIndex = 0;
             }
             updateCarousel();
         });
 
-        // Initialize carousel display
         updateCarousel();
     }
 });
