@@ -78,7 +78,7 @@ body {
 }
 
 #navbar a:hover {
-  color: #7f8ec0;
+  color: #156326;
 }
 
 /* About Me */
@@ -169,10 +169,11 @@ body {
 }
 
 #projects a:hover {
-  color: #7f8ec0;
+  color: #156326;
 }
 
 #projects a:focus,
+
 #projects a:active {
   color: inherit;
 }
