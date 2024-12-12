@@ -72,6 +72,13 @@
   color: #f0a500;
 }
 
+body {
+  margin: 0;
+  padding-top: 8vw;
+}
+
+
+
 /*About Me*/
 
 #about-container {
@@ -98,11 +105,12 @@
 
 /*Projects List*/
 #projects .project img {
-  width: 50vw;
-  height: auto;
-  max-width: 30vw;
-  max-height: 20vw;
-  object-fit: cover;
+    width: 50vw;
+    height: 50vw;
+    object-fit: contain;
+    max-width: 30vw;
+    max-height: 30vw;
+    border-radius: 1vw;
 }
 
 
