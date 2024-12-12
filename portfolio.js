@@ -75,10 +75,6 @@ function getProjectBySubdomain(subdomain) {
 
 // Event listener for project-detail page
 document.addEventListener("DOMContentLoaded", function() {
-    // Exit if not on project-detail.html
-    if (!window.location.pathname.includes("project-detail.html")) {
-        return;
-    }
 
     // Retrieve the project data from localStorage
     const project = JSON.parse(localStorage.getItem('currentProject'));
