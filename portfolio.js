@@ -84,17 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update the project description
         document.getElementById("project-description").innerText = project.description;
 
-        // Create the project-images container dynamically if not already present
+        // Create the project-images container
         let projectImagesContainer = document.getElementById("project-images");
         
-        // If project-images div does not exist, create and append it
         if (!projectImagesContainer) {
             projectImagesContainer = document.createElement("div");
             projectImagesContainer.id = "project-images";
             document.body.appendChild(projectImagesContainer); // Append it to the body or a specific section
         }
 
-        // Create the carousel container inside the project-images div
+        // Create the carousel container
         const carouselContainer = document.createElement("div");
         carouselContainer.id = "carousel-container";
         projectImagesContainer.appendChild(carouselContainer);
