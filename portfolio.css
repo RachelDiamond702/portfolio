@@ -1,7 +1,6 @@
-.projimg img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.project {
+  border: 1px solid red;
+  background-color: lightgray;
 }
 
 #carousel-container {
