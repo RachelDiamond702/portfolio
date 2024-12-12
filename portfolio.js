@@ -84,13 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update the project description
         document.getElementById("project-description").innerText = project.description;
 
+        console.log(projectNameElement); // Check if it's null
+        console.log(projectDescriptionElement); // Check if it's null
+
         // Create the project-images container
         let projectImagesContainer = document.getElementById("project-images");
         
         if (!projectImagesContainer) {
             projectImagesContainer = document.createElement("div");
             projectImagesContainer.id = "project-images";
-            document.body.appendChild(projectImagesContainer); // Append it to the body or a specific section
+            document.body.appendChild(projectImagesContainer);
         }
 
         // Create the carousel container
