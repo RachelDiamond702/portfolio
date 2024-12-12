@@ -12,7 +12,7 @@ fetch('portfolio.json')
 // Loop through each project and display it on the main page
 function parsedata(data) {
   for (let i = 0; i < data.projects.length; i++) {
-    const projimg = data.projects[i].mainimage; // Use the main image for the portfolio page
+    const projimg = data.projects[i].mainimage;
     const categories = Array.isArray(data.projects[i].category) ? data.projects[i].category : [data.projects[i].category];
 
     // Add each project to the page
@@ -24,21 +24,21 @@ function parsedata(data) {
                 <p>${data.projects[i].abstract}</p>
             </div>
             <div class="projimg">
-                <img src="images/${projimg}" alt="${data.projects[i].name}">
+                <img src="images/${projimg}" alt="${data.projects[i].name} main image">
             </div>
         </div>
     </a>`;
   }
 
   // Store projects in localStorage
-  localStorage.setItem('projectsData', JSON.stringify(data.projects));  // **New change to store all projects in localStorage**
+  localStorage.setItem('projectsData', JSON.stringify(data.projects));
 }
 
 // Event listener for category filter buttons
 document.querySelectorAll("#buttons button").forEach(button => {
   button.addEventListener("click", e => {
     const category = e.target.value;
-    sortProjects(category); // Filter projects based on category
+    sortProjects(category);
   });
 });
 
@@ -61,15 +61,15 @@ function sortProjects(category) {
 
 // Function to store project details
 function saveProjectToLocalStorage(subdomain) {
-  const project = getProjectBySubdomain(subdomain);  // Fetch the project data by subdomain
-  localStorage.setItem('currentProject', JSON.stringify(project));  // Store the project in localStorage
+  const project = getProjectBySubdomain(subdomain);
+  localStorage.setItem('currentProject', JSON.stringify(project));
 }
 
 // Get project data by subdomain
 function getProjectBySubdomain(subdomain) {
   const projects = JSON.parse(localStorage.getItem('projectsData'));
-  
-  return projects ? projects.find(project => project.subdomain === subdomain) : null;  // Find the correct project from stored data
+  // Find the correct project from stored data
+  return projects ? projects.find(project => project.subdomain === subdomain) : null;
 }
 
 // Event listener for project-detail page
@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded", function() {
             carouselContainer.id = "carousel-container";
             document.getElementById("project-images").appendChild(carouselContainer);
 
-            // Add left and right buttons for the carousel
+            // Add buttons for the carousel
             const prevButton = document.createElement("button");
             prevButton.id = "prev-button";
             prevButton.classList.add("carousel-btn");
-            prevButton.innerText = "←";
+            prevButton.innerText = "<";
             carouselContainer.appendChild(prevButton);
 
             const imageContainer = document.createElement("div");
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const nextButton = document.createElement("button");
             nextButton.id = "next-button";
             nextButton.classList.add("carousel-btn");
-            nextButton.innerText = "→";
+            nextButton.innerText = ">";
             carouselContainer.appendChild(nextButton);
 
             // Display all the images for the project in the carousel
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 imageContainer.appendChild(img);
             });
 
-            // Carousel function
+            // Carousel function to update image position
             let currentImageIndex = 0;
             const carouselImages = document.querySelectorAll("#carousel-images .carousel-image");
 
@@ -148,15 +148,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
             updateCarousel();
         } else {
-            // This ensures images appear on the index page, without carousel logic.
-            // On the portfolio page, we only want the main image, not all images
             const imageContainer = document.getElementById("project-images");
             if (project.images && project.images.length > 0) {
-                const mainImage = project.images[0]; // Only show the first image
+                const mainImage = project.mainimage;
                 const img = document.createElement("img");
                 img.src = `images/${mainImage}`;
-                img.alt = `${project.name} image`;
-                img.classList.add("project-image");  // Add a separate class for non-carousel images
+                img.alt = `${project.name} main image`;
+                img.classList.add("project-image");
                 imageContainer.appendChild(img);
             }
         }
