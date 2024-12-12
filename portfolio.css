@@ -8,14 +8,10 @@
   overflow: hidden;
 }
 
-#carousel-images {
-  display: flex;
-  width: 100%;
-}
-
 #carousel-images .carousel-image {
-  min-width: 100vw;
-  height: auto;
+  width: 80vw; /* Set the width to 80% of the viewport */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the full image is visible without cropping */
 }
 
 .carousel-btn {
