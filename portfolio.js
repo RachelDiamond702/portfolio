@@ -74,13 +74,6 @@ function getProjectBySubdomain(subdomain) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure this logic only runs on project-detail.html
-    if (!window.location.pathname.includes("project-detail.html")) {
-        console.log("Not on project-detail.html, skipping carousel setup.");
-        return;
-    }
-
-    console.log("On project-detail.html, running project details logic.");
 
     // Retrieve the project data from localStorage
     const project = JSON.parse(localStorage.getItem('currentProject'));
@@ -93,11 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("project-description").innerText = project.description;
 
         const projectImagesContainer = document.getElementById("project-images");
-if (projectImagesContainer) {
-    projectImagesContainer.appendChild(carouselContainer);
-} else {
-    console.error('Element with ID "project-images" not found');
-}
+    if (projectImagesContainer) {
+    projectImagesContainer.appendChild(carouselContainer);}   
+    else {}
 
         // Create the carousel container
         const carouselContainer = document.createElement("div");
