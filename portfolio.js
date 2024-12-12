@@ -26,7 +26,7 @@ function parsedata(data) {
                 <p>${data.projects[i].abstract}</p>
             </div>
             <div class="projimg">
-                <img src="images/${projimg}" alt="${data.projects[i].name}">
+                <img src="/images/${projimg}" alt="${data.projects[i].name}">
             </div>
         </div>
     </a>`;
