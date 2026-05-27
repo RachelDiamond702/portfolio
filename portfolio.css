@@ -12,7 +12,9 @@ body {
   color: white;
 }
 
-/* STICKY HEADER */
+/* =========================
+   STICKY HEADER
+========================= */
 .top-bar {
   position: sticky;
   top: 0;
@@ -20,26 +22,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
-  padding: 20px 40px;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
 
   background-color: #8AA686;
-  border-bottom: 1px solid #8AA686;
-
   z-index: 1000;
 }
 
-/* TITLE */
+/* =========================
+   TITLE
+========================= */
 .logo {
   font-family: "cofo-glassier", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: white;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: clamp(1rem, 2vw, 2rem);
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links a {
@@ -47,15 +55,12 @@ body {
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
   color: white;
   font-weight: 500;
+
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #1B261E;
-}
-
-/* PAGE SECTIONS */
-section {
-  min-height: 100vh;
-  padding: 100px 40px;
 }
