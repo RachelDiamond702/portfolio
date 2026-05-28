@@ -9,19 +9,21 @@
 }
 
 /* =========================
-   GLOBAL SCALE (BIG)
+   GLOBAL SCALE
 ========================= */
 
 html {
-  font-size: 28px; /* BIG SCALE UP */
+  font-size: 28px;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
+
   background-color: white;
   color: #1B261E;
 
@@ -40,15 +42,13 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  /* pulls content away from edges */
   padding: 3rem 5vw;
 
   background-color: #8AA686;
-
 }
 
 /* =========================
-   LOGO (TITLE)
+   LOGO
 ========================= */
 
 .logo {
@@ -57,6 +57,8 @@ body {
   font-size: 10rem;
 
   color: white;
+
+  line-height: 0.9;
 }
 
 /* =========================
@@ -112,23 +114,29 @@ body {
 }
 
 /* HERO TITLE */
+
 .hero h2 {
   font-family: "cofo-glassier", sans-serif;
 
   font-size: clamp(4rem, 7vw, 8rem);
-  
+
   color: #1B261E;
 
   margin-bottom: 2rem;
+
+  line-height: 1.05;
 }
 
 /* HERO TEXT */
+
 .hero p {
   font-size: 1.5rem;
 
-  color: white;
-  
+  color: #1B261E;
+
   margin-bottom: 2.5rem;
+
+  max-width: 900px;
 }
 
 /* =========================
@@ -161,24 +169,106 @@ body {
 }
 
 /* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  html {
+    font-size: 20px;
+  }
+
+  .logo {
+    font-size: 7rem;
+  }
+
+  .nav-links a {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 5rem 8vw;
+  }
+}
+
+/* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
 
   html {
-    font-size: 20px; /* still large but safe on mobile */
+    font-size: 14px;
   }
+
+  /* HEADER */
 
   .top-bar {
     flex-direction: column;
-    gap: 2rem;
+
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
 
-    padding: 3rem 6vw;
+    padding: 2rem 6vw;
+
+    gap: 1.5rem;
   }
 
+  /* LOGO */
+
+  .logo {
+    font-size: 4.5rem;
+  }
+
+  /* NAV */
+
+  .nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.3rem;
+  }
+
+  /* HERO */
+
   .hero {
-    padding: 5rem 6vw;
+    min-height: auto;
+
+    padding: 5rem 8vw;
+
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* HERO TITLE */
+
+  .hero h2 {
+    font-size: 3.5rem;
+
+    line-height: 1.1;
+  }
+
+  /* HERO TEXT */
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  /* BUTTON */
+
+  .hero-button {
+    font-size: 1.1rem;
   }
 }
