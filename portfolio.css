@@ -16,7 +16,7 @@ html, body {
 }
 
 /* =========================
-   2. FIXED LEFT SIDEBAR
+   2. FIXED LEFT SIDEBAR (NOW DARK GREEN)
 ========================= */
 .sidebar-wrapper {
   position: fixed;
@@ -24,7 +24,7 @@ html, body {
   left: 0;
   width: 240px; 
   height: 100vh;
-  background-color: #8AA686; 
+  background-color: #2C3E30; 
   color: #FFFFFF;
   padding: 4.5rem 2rem; 
   z-index: 10;
@@ -49,18 +49,21 @@ html, body {
   letter-spacing: -0.02rem;
   text-decoration: none; 
   display: block;
-  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .sidebar-nav {
   width: 100%;
 }
 
+/* =========================
+   REFINED SIDEBAR LINKS (BULLET INDEX STYLE + UNDERLINE)
+========================= */
 .nav-links {
   display: flex;
   flex-direction: column;
   list-style: none;
-  gap: 1.2rem; 
+  gap: 1.6rem; 
   padding: 0;
   margin: 0;
 }
@@ -69,22 +72,50 @@ html, body {
   text-decoration: none;
   color: #FFFFFF;            
   font-family: "itc-franklin-gothic-lt-pro", sans-serif; 
-  font-weight: 400;         
-  font-size: 1.15rem; 
-  letter-spacing: 0.03rem; 
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  font-weight: 500;         
+  font-size: 0.85rem; 
+  letter-spacing: 0.12rem; 
+  text-transform: uppercase; 
+  display: inline-flex;
+  align-items: center;
+  position: relative; 
+  padding-bottom: 0.4rem; 
   cursor: pointer;
-  opacity: 0.85; 
+  opacity: 0.8; 
+  transition: opacity 0.2s ease;
 }
 
+/* The Minimalist Bullet Indicator */
+.nav-dot {
+  font-size: 0.9rem;
+  margin-right: 0.7rem;
+  line-height: 1;
+  opacity: 0.4; 
+}
+
+/* Asymmetric Underline */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  height: 1px; 
+  background-color: #FFFFFF;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* Hover States */
 .nav-links a:hover {
   opacity: 1;
-  transform: translateX(4px); 
+}
+
+.nav-links a:hover::after {
+  width: 100%; 
 }
 
 /* =========================
-   3. MAIN CONTENT AREA
+   3. MAIN CONTENT CANVAS
 ========================= */
 .main-content {
   margin-left: 240px; 
@@ -93,7 +124,7 @@ html, body {
 }
 
 /* =========================
-   4. MODULAR OVERLAYS & SLIDE DRAWERS
+   4. INTERACTIVE OVERLAYS & DRAWERS
 ========================= */
 .about-drawer-overlay {
   position: fixed;
@@ -215,18 +246,14 @@ html, body {
   box-shadow: inset 0 0 0 1px #FFFFFF;
 }
 
-/* =========================
-   5. MINIMAL FORM ARCHITECTURE
-========================= */
+/* Form Settings */
 .form-stretch {
   align-items: stretch;
   text-align: left;
 }
-
 .form-stretch h2, .form-stretch p {
   text-align: center;
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -234,7 +261,6 @@ html, body {
   width: 100%;
   margin-top: 1rem;
 }
-
 .form-group input, .form-group textarea {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -247,12 +273,10 @@ html, body {
   border-radius: 0;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
-
 .form-group input::placeholder, .form-group textarea::placeholder {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.8rem;
 }
-
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: #8AA686;
@@ -260,31 +284,91 @@ html, body {
 }
 
 /* =========================
-   6. PROJECT WORK GRID
+   5. WORK GRID LAYOUTS & PAGINATION CONTROLS (SAGE GREEN)
 ========================= */
 .grid-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4.5rem 4rem 6rem 4rem; 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  column-gap: 2.5rem;
-  row-gap: 1.5rem; 
+}
+
+.grid-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(138, 166, 134, 0.2); 
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  grid-column: 1 / -1;                    
   font-family: "cofo-glassier", sans-serif; 
   font-size: 2.4rem;                      
   font-weight: 800;
-  color: #2C3E30;                         
-  text-align: left; 
-  margin-bottom: 1rem;                 
+  color: #8AA686; 
+  line-height: 1;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.page-indicator {
+  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #8AA686; 
+  letter-spacing: 0.05rem;
+}
+
+.pag-btn {
+  background: transparent;
+  border: 1px solid #8AA686; 
+  color: #8AA686; 
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pag-btn:hover {
+  background: #8AA686; 
+  color: #FFFFFF;
+}
+
+.projects-list-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  column-gap: 2.5rem;
+  row-gap: 3.5rem; 
+}
+
+.bottom-pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(138, 166, 134, 0.2); 
 }
 
 .grid-item {
   display: flex;
   flex-direction: column;
+}
+
+/* Global framework link strip */
+.project-card-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .image-wrapper {
@@ -310,33 +394,59 @@ html, body {
   text-align: left; 
 }
 
+/* =========================
+   PROJECT TITLES WITH ANIMATED HOVER UNDERLINE
+========================= */
+.grid-caption h3, 
 .grid-caption h3 a {
-  text-decoration: none;
+  text-decoration: none !important;
   font-family: "itc-franklin-gothic-lt-pro", sans-serif; 
   font-size: 0.95rem; 
   font-weight: 700;    
-  color: #2C3E30;
+  color: #8AA686 !important; 
   margin-bottom: 0.15rem;
   transition: color 0.2s ease;
   display: inline-block;
+  position: relative; 
+  padding-bottom: 0.2rem; 
 }
 
+/* Hidden line baseline framework configuration */
+.grid-caption h3::after,
+.grid-caption h3 a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  height: 1px; 
+  background-color: #2C3E30; 
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* Hover State Changes */
+.project-card-link:hover .grid-caption h3,
 .grid-caption h3 a:hover {
-  color: #8AA686; 
+  color: #2C3E30 !important; 
+}
+
+.project-card-link:hover .grid-caption h3::after,
+.grid-caption h3 a:hover::after {
+  width: 100%; 
 }
 
 .grid-caption p {
   font-family: "itc-franklin-gothic-lt-pro", sans-serif; 
   font-size: 0.85rem; 
-  color: #2C3E30; 
+  color: #1B261E; 
   opacity: 0.7;
 }
 
 /* =========================
-   7. RESPONSIVE
+   6. RESPONSIVE MEDIA QUERIES
 ========================= */
 @media (max-width: 1100px) {
-  .grid-container {
+  .projects-list-inner {
     grid-template-columns: repeat(2, 1fr); 
   }
 }
@@ -363,13 +473,31 @@ html, body {
     justify-content: center;
     gap: 2rem;
   }
+  
+  .nav-links a {
+    padding-bottom: 0.2rem;
+  }
 
   .nav-links a:hover {
-    transform: translateY(-2px); 
+    transform: none; 
   }
 
   .main-content {
     margin-left: 0; 
+  }
+
+  .grid-container {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .grid-header-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .bottom-pagination-wrapper {
+    justify-content: center;
   }
 
   .hero-container {

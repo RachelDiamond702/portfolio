@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel Diamond | Portfolio</title>
+  
+  <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
+  <link rel="stylesheet" href="portfolio.css?v=2.6">
+</head>
+<body>
+
+  <aside class="sidebar-wrapper">
+    <div class="sidebar-top">
+      <a href="index.html" class="logo">Rachel Diamond</a>
+      
+      <nav class="sidebar-nav">
+        <ul class="nav-links">
+          <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer"><span class="nav-dot">&bull;</span>RESUME</a></li>
+          <li><a href="#" id="open-contact"><span class="nav-dot">&bull;</span>CONTACT</a></li>
+          <li><a href="#" id="open-about"><span class="nav-dot">&bull;</span>ABOUT ME</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <div class="about-drawer-overlay" id="drawer-overlay"></div>
+
+    <div class="hero-container drawer-module" id="about-drawer">
+      <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+      
+      <div class="hero-image-side">
+        <div class="profile-frame">
+          <img src="https://via.placeholder.com/400x500" alt="Rachel Diamond Portrait">
+        </div>
+      </div>
+      
+      <div class="hero-text-side">
+        <h2>About Me</h2>
+        <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems. Welcome to my select project archive collection space.</p>
+        <button class="hero-button" id="switch-to-contact">Contact Me</button>
+      </div>
+    </div>
+
+    <div class="hero-container drawer-module" id="contact-drawer">
+      <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+      
+      <div class="hero-text-side form-stretch">
+        <h2>New Inquiries</h2>
+        <p id="contact-instruction">Reach out via the framework below to discuss brand positioning or structural visual design opportunities.</p>
+        
+        <form class="contact-form" id="portfolio-contact-form" action="https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <textarea rows="4" name="message" placeholder="MESSAGE" required></textarea>
+          </div>
+          <button type="submit" class="hero-button" id="submit-btn">Send Message</button>
+        </form>
+        
+        <div id="form-success-msg" style="display: none; text-align: center; padding: 2rem 0; width: 100%;">
+          <h3 style="color: #8AA686; font-family: 'cofo-glassier', sans-serif; font-size: 1.8rem; margin-bottom: 0.5rem;">Thank You</h3>
+          <p style="font-size: 0.95rem; opacity: 0.8; color: #FFFFFF;">Your inquiry has been logged successfully. I will review your message and connect shortly.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="grid-container">
+      <div class="grid-header-wrapper">
+        <h2 class="section-title">Projects</h2>
+        <div class="pagination-controls top-controls">
+          <button class="pag-btn prev-btn" aria-label="Previous Set">&larr;</button>
+          <span class="page-indicator">1 / 2</span>
+          <button class="pag-btn next-btn" aria-label="Next Set">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="projects-list-inner" id="projects-target">
+        <article class="grid-item">
+          <a href="project-one.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+01" alt="Project One">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name One</h3>
+              <p>Brand Direction / Interaction Architecture</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-two.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+02" alt="Project Two">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Two</h3>
+              <p>Visual Strategy / Editorial Layout Craft</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-three.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+03" alt="Project Three">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Three</h3>
+              <p>Digital Product / Typography Framework</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-four.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+04" alt="Project Four">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Four</h3>
+              <p>Identity System / Spatial Layout</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-five.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+05" alt="Project Five">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Five</h3>
+              <p>Motion Curation / Experience Framework</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-six.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+06" alt="Project Six">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Six</h3>
+              <p>Editorial Strategy / Print Design Systems</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-seven.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+07" alt="Project Seven">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Seven</h3>
+              <p>Interface Logic / Interactive Application</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-eight.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+08" alt="Project Eight">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Eight</h3>
+              <p>Creative Direction / Sound Architecture</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-nine.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+09" alt="Project Nine">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Nine</h3>
+              <p>Packaging Layout / Sustainable Textures</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-ten.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+10" alt="Project Ten">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Ten</h3>
+              <p>Digital Craft / Dynamic Component Library</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-eleven.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+11" alt="Project Eleven">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Eleven</h3>
+              <p>Typography Identity / Custom Foundry Specimen</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="grid-item">
+          <a href="project-twelve.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+12" alt="Project Twelve">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Twelve</h3>
+              <p>Brand Guideline / Modern Artistic Assets</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="bottom-pagination-wrapper">
+        <div class="pagination-controls bottom-controls">
+          <button class="pag-btn prev-btn" aria-label="Previous Set">&larr;</button>
+          <span class="page-indicator">1 / 2</span>
+          <button class="pag-btn next-btn" aria-label="Next Set">&rarr;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /* 1. Drawer Navigation Controls */
+    const openAbout = document.getElementById('open-about');
+    const openContact = document.getElementById('open-contact');
+    const switchToContact = document.getElementById('switch-to-contact');
+    const closeBtns = document.querySelectorAll('.standard-close');
+    const overlay = document.getElementById('drawer-overlay');
+    const aboutDrawer = document.getElementById('about-drawer');
+    const contactDrawer = document.getElementById('contact-drawer');
+
+    const closeAllDrawers = () => {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.remove('drawer-active');
+      overlay.classList.remove('overlay-active');
+      document.body.style.overflow = ''; 
+    };
+
+    const activateDrawer = (targetDrawer) => {
+      closeAllDrawers();
+      targetDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden'; 
+    };
+
+    openAbout.addEventListener('click', (e) => { e.preventDefault(); activateDrawer(aboutDrawer); });
+    openContact.addEventListener('click', (e) => { e.preventDefault(); activateDrawer(contactDrawer); });
+    switchToContact.addEventListener('click', () => { activateDrawer(contactDrawer); });
+    closeBtns.forEach(btn => btn.addEventListener('click', closeAllDrawers));
+    overlay.addEventListener('click', closeAllDrawers);
+
+    /* 2. Interactive Pagination Engine */
+    const projectsPerPage = 6;
+    let currentPage = 1;
+    const items = Array.from(document.querySelectorAll('#projects-target .grid-item'));
+    const totalPages = Math.ceil(items.length / projectsPerPage);
+
+    const updatePaginationDisplay = () => {
+      items.forEach((item, index) => {
+        const start = (currentPage - 1) * projectsPerPage;
+        const end = start + projectsPerPage;
+        item.style.display = (index >= start && index < end) ? 'flex' :
