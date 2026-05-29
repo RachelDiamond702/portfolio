@@ -6,7 +6,7 @@
   <title>Rachel Diamond | Portfolio</title>
   
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="portfolio.css?v=2.7">
 </head>
 <body>
 
@@ -48,26 +48,30 @@
       <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
       
       <div class="hero-text-side form-stretch">
-        <h2>Let's Work</h2>
-        <p>Reach out via the framework below to discuss brand positioning or structural visual design opportunities.</p>
+        <h2>New Inquiries</h2>
+        <p id="contact-instruction">Reach out via the framework below to discuss brand positioning or structural visual design opportunities.</p>
         
-        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault();">
+        <form class="contact-form" id="portfolio-contact-form" action="https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec" method="POST">
           <div class="form-group">
-            <input type="text" placeholder="YOUR NAME" required autocomplete="name">
+            <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
           </div>
           <div class="form-group">
-            <input type="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
           </div>
           <div class="form-group">
-            <textarea rows="4" placeholder="PROJECT DETAILS BRIEF" required></textarea>
+            <textarea rows="4" name="message" placeholder="MESSAGE" required></textarea>
           </div>
-          <button type="submit" class="hero-button">Send Message</button>
+          <button type="submit" class="hero-button" id="submit-btn">Send Message</button>
         </form>
+        
+        <div id="form-success-msg" style="display: none; text-align: center; padding: 2rem 0; width: 100%;">
+          <h3 style="color: #8AA686; font-family: 'cofo-glassier', sans-serif; font-size: 1.8rem; margin-bottom: 0.5rem;">Thank You</h3>
+          <p style="font-size: 0.95rem; opacity: 0.8; color: #FFFFFF;">Your inquiry has been logged successfully. I will review your message and connect shortly.</p>
+        </div>
       </div>
     </div>
 
     <section class="grid-container">
-      
       <div class="grid-header-wrapper">
         <h2 class="section-title">Projects</h2>
         <div class="pagination-controls top-controls">
@@ -78,127 +82,149 @@
       </div>
 
       <div class="projects-list-inner" id="projects-target">
-        
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+01" alt="Project One">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-one.html">Project Title Name One</a></h3>
-            <p>Brand Direction / Interaction Architecture</p>
-          </div>
+          <a href="project-one.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+01" alt="Project One">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name One</h3>
+              <p>Brand Direction / Interaction Architecture</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+02" alt="Project Two">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-two.html">Project Title Name Two</a></h3>
-            <p>Visual Strategy / Editorial Layout Craft</p>
-          </div>
+          <a href="project-two.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+02" alt="Project Two">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Two</h3>
+              <p>Visual Strategy / Editorial Layout Craft</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+03" alt="Project Three">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-three.html">Project Title Name Three</a></h3>
-            <p>Digital Product / Typography Framework</p>
-          </div>
+          <a href="project-three.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+03" alt="Project Three">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Three</h3>
+              <p>Digital Product / Typography Framework</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+04" alt="Project Four">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-four.html">Project Title Name Four</a></h3>
-            <p>Identity System / Spatial Layout</p>
-          </div>
+          <a href="project-four.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+04" alt="Project Four">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Four</h3>
+              <p>Identity System / Spatial Layout</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+05" alt="Project Five">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-five.html">Project Title Name Five</a></h3>
-            <p>Motion Curation / Experience Framework</p>
-          </div>
+          <a href="project-five.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+05" alt="Project Five">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Five</h3>
+              <p>Motion Curation / Experience Framework</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+06" alt="Project Six">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-six.html">Project Title Name Six</a></h3>
-            <p>Editorial Strategy / Print Design Systems</p>
-          </div>
+          <a href="project-six.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Project+06" alt="Project Six">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Six</h3>
+              <p>Editorial Strategy / Print Design Systems</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+07" alt="Project Seven">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-seven.html">Project Title Name Seven</a></h3>
-            <p>Interface Logic / Interactive Application</p>
-          </div>
+          <a href="project-seven.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+07" alt="Project Seven">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Seven</h3>
+              <p>Interface Logic / Interactive Application</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+08" alt="Project Eight">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-eight.html">Project Title Name Eight</a></h3>
-            <p>Creative Direction / Sound Architecture</p>
-          </div>
+          <a href="project-eight.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+08" alt="Project Eight">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Eight</h3>
+              <p>Creative Direction / Sound Architecture</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+09" alt="Project Nine">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-nine.html">Project Title Name Nine</a></h3>
-            <p>Packaging Layout / Sustainable Textures</p>
-          </div>
+          <a href="project-nine.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+09" alt="Project Nine">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Nine</h3>
+              <p>Packaging Layout / Sustainable Textures</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+10" alt="Project Ten">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-ten.html">Project Title Name Ten</a></h3>
-            <p>Digital Craft / Dynamic Component Library</p>
-          </div>
+          <a href="project-ten.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+10" alt="Project Ten">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Ten</h3>
+              <p>Digital Craft / Dynamic Component Library</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+11" alt="Project Eleven">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-eleven.html">Project Title Name Eleven</a></h3>
-            <p>Typography Identity / Custom Foundry Specimen</p>
-          </div>
+          <a href="project-eleven.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+11" alt="Project Eleven">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Eleven</h3>
+              <p>Typography Identity / Custom Foundry Specimen</p>
+            </div>
+          </a>
         </article>
 
         <article class="grid-item">
-          <div class="image-wrapper">
-            <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+12" alt="Project Twelve">
-          </div>
-          <div class="grid-caption">
-            <h3><a href="project-twelve.html">Project Title Name Twelve</a></h3>
-            <p>Brand Guideline / Modern Artistic Assets</p>
-          </div>
+          <a href="project-twelve.html" class="project-card-link">
+            <div class="image-wrapper">
+              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Project+12" alt="Project Twelve">
+            </div>
+            <div class="grid-caption">
+              <h3>Project Title Name Twelve</h3>
+              <p>Brand Guideline / Modern Artistic Assets</p>
+            </div>
+          </a>
         </article>
-
       </div>
 
       <div class="bottom-pagination-wrapper">
@@ -208,7 +234,6 @@
           <button class="pag-btn next-btn" aria-label="Next Set">&rarr;</button>
         </div>
       </div>
-
     </section>
   </main>
 
@@ -245,7 +270,6 @@
     /* 2. Interactive Pagination Engine */
     const projectsPerPage = 6;
     let currentPage = 1;
-    
     const items = Array.from(document.querySelectorAll('#projects-target .grid-item'));
     const totalPages = Math.ceil(items.length / projectsPerPage);
 
@@ -253,11 +277,7 @@
       items.forEach((item, index) => {
         const start = (currentPage - 1) * projectsPerPage;
         const end = start + projectsPerPage;
-        if (index >= start && index < end) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
+        item.style.display = (index >= start && index < end) ? 'flex' : 'none';
       });
 
       document.querySelectorAll('.page-indicator').forEach(el => {
@@ -298,7 +318,41 @@
     });
 
     updatePaginationDisplay();
-  </script>
 
+    /* 3. True Silent On-Page Form Processing Engine */
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('form-success-msg');
+    const instructionText = document.getElementById('contact-instruction');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+        
+        const formData = new FormData(contactForm);
+        
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' 
+        })
+        .then(() => {
+          contactForm.style.display = 'none';
+          instructionText.style.display = 'none';
+          successMsg.style.display = 'block';
+        })
+        .catch(err => {
+          console.error('Submission Error:', err);
+          submitBtn.textContent = "Error. Try Again";
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
+        });
+      });
+    }
+  </script>
 </body>
 </html>
