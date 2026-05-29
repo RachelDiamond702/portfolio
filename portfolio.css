@@ -9,11 +9,10 @@
 
 html, body {
   overflow-x: hidden;
-  background-color: #ffffff;
-  color: #1B261E;
-  font-family: "itc-franklin-gothic-lt-pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: white; 
+  color: #1B261E;           
+  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
   
-  /* Creates a comfortable baseline size on modern desktop screens */
   font-size: 18px; 
   line-height: 1.6;
 }
@@ -26,15 +25,14 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 8%; 
-  background-color: #8AA686;
+  background-color: #8AA686; 
 }
 
-/* Rachel Diamond Title */
+/* "Rachel Diamond" Title */
 .logo {
-  font-family: "cofo-glassier", Georgia, serif;
-  color: #ffffff;
+  font-family: "cofo-glassier", sans-serif;
+  color: white;             
   
-  /* Perfectly balanced for real desktop viewports */
   font-size: 3rem; 
   font-weight: 800;
   white-space: nowrap;
@@ -49,14 +47,15 @@ html, body {
 /* Nav Bar Text */
 .nav-links a {
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
+  color: white;             
+  font-weight: 550;         
   font-size: 1.3rem; 
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
+/* Nav Bar Hover (Dark Green) */
 .nav-links a:hover {
-  opacity: 0.85;
+  color: #2C3E30; 
 }
 
 /* =========================
@@ -68,7 +67,7 @@ html, body {
   justify-content: center;
   align-items: center;
   padding: 5rem 10%; 
-  background-color: #DDE6DA;
+  background: #DDE6DA;      
   text-align: center;
 }
 
@@ -78,39 +77,37 @@ html, body {
 }
 
 .hero h2 {
-  font-family: "cofo-glassier", Georgia, serif;
+  font-family: "cofo-glassier", sans-serif;
   font-size: clamp(3.5rem, 6vw, 5.5rem); 
-  font-weight: 800;
   margin-bottom: 2rem;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  line-height: 1.05;  
+  color: #2C3E30
 }
 
 .hero p {
   font-size: clamp(1.2rem, 1.8vw, 1.6rem); 
-  color: #2C3E30;
   max-width: 850px;
-  margin: 0 auto 3.5rem auto; 
+  margin: 0 auto 2.5rem auto; 
+  color: white
 }
 
 /* =========================
-   4. INTERACTIVE BUTTON
+   4. BUTTON
 ========================= */
 .hero-button {
   display: inline-block;
-  padding: 1.2rem 3.5rem; 
-  background-color: #8AA686;
-  color: #ffffff;
-  border-radius: 8px;
+  padding: 1.2rem 3rem;     
+  background: #8AA686;      
+  color: white;             
+  border-radius: 1rem;      
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 700;
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 1.3rem;        
+  transition: background-color 0.2s ease;
 }
 
+/* Button Hover (Dark Green) */
 .hero-button:hover {
-  background-color: #73906F;
-  transform: translateY(-2px);
+  background: #2C3E30; 
 }
 
 /* =========================
@@ -119,7 +116,7 @@ html, body {
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column; 
-    gap: 1.5rem;
+    gap: 2rem;               
     padding: 2.5rem 5%;
   }
 
@@ -128,11 +125,13 @@ html, body {
   }
 
   .nav-links {
-    gap: 1.8rem;
+    flex-direction: column; 
+    align-items: center;
+    gap: 1.5rem;
   }
   
   .nav-links a {
-    font-size: 1.2rem;
+    font-size: 1.3rem;      
   }
 
   .hero {
@@ -141,11 +140,6 @@ html, body {
   }
 
   .hero h2 {
-    font-size: 2.8rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    font-size: 3rem;        
   }
 }
