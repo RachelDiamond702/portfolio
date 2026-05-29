@@ -1,59 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rachel Diamond | Home</title>
-  <link rel="stylesheet" href="portfolio.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel Diamond | Portfolio</title>
+  
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
-
 <body>
 
-  <header class="header-wrapper">
-    <div class="top-bar">
+  <aside class="sidebar-wrapper">
+    <div class="sidebar-top">
       <a href="index.html" class="logo">Rachel Diamond</a>
-      <nav>
+      
+      <nav class="sidebar-nav">
         <ul class="nav-links">
-          <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="open-about">About Me</a></li>
         </ul>
       </nav>
     </div>
-  </header>
+  </aside>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>TEXT HERE</h2>
-      <p>
-        Put filler text caption in this spot right here.
-      </p>
-      <a href="contact.html" class="hero-button">
-        Contact Me
-      </a>
+  <main class="main-content">
+
+    <div class="about-drawer-overlay" id="drawer-overlay"></div>
+
+    <div class="hero-container" id="about-drawer">
+      <button class="close-drawer-btn" id="close-about" aria-label="Close About Section">&times;</button>
+      
+      <div class="hero-image-side">
+        <div class="profile-frame">
+          <img src="https://via.placeholder.com/400x500" alt="Rachel Diamond Portrait">
+        </div>
+      </div>
+      
+      <div class="hero-text-side">
+        <h2>About Me</h2>
+        <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems. Welcome to my select project archive collection space.</p>
+        <a href="contact.html" class="hero-button">Contact Me</a>
+      </div>
     </div>
-  </section>
 
-  <section class="sliding-container">
+    <section class="grid-container">
+      
+      <h2 class="section-title">Projects</h2>
+
+      <article class="grid-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/600x400" alt="Project One Thumbnail">
+        </div>
+        <div class="grid-caption">
+          <h3><a href="project-one.html">Project Title Name One</a></h3>
+          <p>Brand Direction / Interaction Architecture</p>
+        </div>
+      </article>
+
+      <article class="grid-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/600x400" alt="Project Two Thumbnail">
+        </div>
+        <div class="grid-caption">
+          <h3><a href="project-two.html">Project Title Name Two</a></h3>
+          <p>Visual Strategy / Editorial Layout Craft</p>
+        </div>
+      </article>
+
+      <article class="grid-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/600x400" alt="Project Three Thumbnail">
+        </div>
+        <div class="grid-caption">
+          <h3><a href="project-three.html">Project Title Name Three</a></h3>
+          <p>Digital Product / Typography Framework</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    const openBtn = document.getElementById('open-about');
+    const closeBtn = document.getElementById('close-about');
+    const drawer = document.getElementById('about-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+
+    const openDrawer = () => {
+      drawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden'; 
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('drawer-active');
+      overlay.classList.remove('overlay-active');
+      document.body.style.overflow = ''; 
+    };
+
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDrawer();
+    });
     
-    <div class="panel panel-left">
-      <h3>Rectangle One</h3>
-      <p>Your content goes here.</p>
-    </div>
-
-    <div class="panel panel-right">
-      <h3>Rectangle Two</h3>
-      <p>Your content goes here.</p>
-    </div>
-
-    <div class="panel panel-left">
-      <h3>Rectangle Three</h3>
-      <p>Your content goes here.</p>
-    </div>
-
-  </section>
+    closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+  </script>
 
 </body>
 </html>
