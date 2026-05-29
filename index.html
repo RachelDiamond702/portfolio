@@ -16,8 +16,8 @@
       
       <nav class="sidebar-nav">
         <ul class="nav-links">
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><a href="#" id="open-contact">Contact</a></li>
           <li><a href="#" id="open-about">About Me</a></li>
         </ul>
       </nav>
@@ -28,8 +28,8 @@
 
     <div class="about-drawer-overlay" id="drawer-overlay"></div>
 
-    <div class="hero-container" id="about-drawer">
-      <button class="close-drawer-btn" id="close-about" aria-label="Close About Section">&times;</button>
+    <div class="hero-container drawer-module" id="about-drawer">
+      <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
       
       <div class="hero-image-side">
         <div class="profile-frame">
@@ -40,12 +40,33 @@
       <div class="hero-text-side">
         <h2>About Me</h2>
         <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems. Welcome to my select project archive collection space.</p>
-        <a href="contact.html" class="hero-button">Contact Me</a>
+        <button class="hero-button" id="switch-to-contact">Contact Me</button>
+      </div>
+    </div>
+
+    <div class="hero-container drawer-module" id="contact-drawer">
+      <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+      
+      <div class="hero-text-side form-stretch">
+        <h2>Let's Work</h2>
+        <p>Reach out via the framework below to discuss brand positioning or structural visual design opportunities.</p>
+        
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <input type="text" placeholder="YOUR NAME" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <textarea rows="4" placeholder="PROJECT DETAILS BRIEF" required></textarea>
+          </div>
+          <button type="submit" class="hero-button">Send Message</button>
+        </form>
       </div>
     </div>
 
     <section class="grid-container">
-      
       <h2 class="section-title">Projects</h2>
 
       <article class="grid-item">
@@ -77,35 +98,42 @@
           <p>Digital Product / Typography Framework</p>
         </div>
       </article>
-
     </section>
+
   </main>
 
   <script>
-    const openBtn = document.getElementById('open-about');
-    const closeBtn = document.getElementById('close-about');
-    const drawer = document.getElementById('about-drawer');
+    const openAbout = document.getElementById('open-about');
+    const openContact = document.getElementById('open-contact');
+    const switchToContact = document.getElementById('switch-to-contact');
+    const closeBtns = document.querySelectorAll('.standard-close');
     const overlay = document.getElementById('drawer-overlay');
+    
+    const aboutDrawer = document.getElementById('about-drawer');
+    const contactDrawer = document.getElementById('contact-drawer');
 
-    const openDrawer = () => {
-      drawer.classList.add('drawer-active');
-      overlay.classList.add('overlay-active');
-      document.body.style.overflow = 'hidden'; 
-    };
-
-    const closeDrawer = () => {
-      drawer.classList.remove('drawer-active');
+    const closeAllDrawers = () => {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.remove('drawer-active');
       overlay.classList.remove('overlay-active');
       document.body.style.overflow = ''; 
     };
 
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openDrawer();
-    });
+    const activateDrawer = (targetDrawer) => {
+      closeAllDrawers(); // Resets layout tracking
+      targetDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden'; 
+    };
+
+    openAbout.addEventListener('click', (e) => { e.preventDefault(); activateDrawer(aboutDrawer); });
+    openContact.addEventListener('click', (e) => { e.preventDefault(); activateDrawer(contactDrawer); });
     
-    closeBtn.addEventListener('click', closeDrawer);
-    overlay.addEventListener('click', closeDrawer);
+    // Quick link change directly inside the About box text block
+    switchToContact.addEventListener('click', () => { activateDrawer(contactDrawer); });
+
+    closeBtns.forEach(btn => btn.addEventListener('click', closeAllDrawers));
+    overlay.addEventListener('click', closeAllDrawers);
   </script>
 
 </body>
