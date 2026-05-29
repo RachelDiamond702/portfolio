@@ -6,7 +6,7 @@
   <title>Rachel Diamond | Portfolio</title>
   
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
-  <link rel="stylesheet" href="portfolio.css?v=2.7">
+  <link rel="stylesheet" href="portfolio.css?v=2.8">
 </head>
 <body>
 
@@ -329,9 +329,12 @@
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault(); 
         
-        submitBtn.textContent = "Sending...";
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = "0.5";
+        // Give instant button feedback
+        if (submitBtn) {
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = "0.5";
+        }
         
         const formData = new FormData(contactForm);
         
@@ -341,17 +344,26 @@
           mode: 'no-cors' 
         })
         .then(() => {
-          contactForm.style.display = 'none';
-          instructionText.style.display = 'none';
-          successMsg.style.display = 'block';
+          // Native fallback message alert popup confirmation
+          alert("Success! Your message has been sent to Rachel.");
+
+          // Hide form assets and reveal inline success block
+          if (contactForm) contactForm.style.display = 'none';
+          if (instructionText) instructionText.style.display = 'none';
+          if (successMsg) successMsg.style.display = 'block';
         })
         .catch(err => {
           console.error('Submission Error:', err);
-          submitBtn.textContent = "Error. Try Again";
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = "1";
+          alert("Submission error. Please check your internet connection and try again.");
+          if (submitBtn) {
+            submitBtn.textContent = "Error. Try Again";
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = "1";
+          }
         });
       });
+    } else {
+      console.error("Error: Element with id 'portfolio-contact-form' not found.");
     }
   </script>
 </body>
