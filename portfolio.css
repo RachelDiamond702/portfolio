@@ -76,19 +76,21 @@ html, body {
   max-width: 1100px; 
 }
 
+/* HERO TITLE (MADE SMALLER HERE) */
 .hero h2 {
   font-family: "cofo-glassier", sans-serif;
-  font-size: clamp(3.5rem, 6vw, 5.5rem); 
-  margin-bottom: 2rem;
-  line-height: 1.05;  
-  color: #2C3E30
+  
+  /* Reduced from clamp(3.5rem, 6vw, 5.5rem) to a more modest range */
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem); 
+  
+  margin-bottom: 1.5rem;
+  line-height: 1.1;        
 }
 
 .hero p {
-  font-size: clamp(1.2rem, 1.8vw, 1.6rem); 
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem); 
   max-width: 850px;
   margin: 0 auto 2.5rem auto; 
-  color: white
 }
 
 /* =========================
@@ -139,7 +141,8 @@ html, body {
     padding: 4rem 5%;
   }
 
+  /* Keeps it looking sharp and proportional on mobile layouts */
   .hero h2 {
-    font-size: 3rem;        
+    font-size: 2.2rem;        
   }
 }
