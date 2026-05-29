@@ -9,10 +9,9 @@
 
 html, body {
   overflow-x: hidden;
-  background-color: #DDE6DA; /* UPDATED: Changed from white to match your hero background */
-  color: #1B261E;           
+  background-color: #DDE6DA; 
+  color: #1B261E;          
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  
   font-size: 18px; 
   line-height: 1.6;
 }
@@ -26,13 +25,14 @@ html, body {
   align-items: center;
   padding: 2.5rem 8%; 
   background-color: #8AA686; 
+  /* Solid dark green frame line under navigation */
+  border-bottom: 4px solid #2C3E30; 
 }
 
 /* "Rachel Diamond" Title */
 .logo {
   font-family: "cofo-glassier", sans-serif;
   color: white;             
-  
   font-size: 3.5rem; 
   font-weight: 800;
   white-space: nowrap;
@@ -68,20 +68,23 @@ html, body {
   justify-content: center;
   align-items: center;
   padding: 5rem 10%; 
-  background: #DDE6DA;      
+  /* Solid full-width white background */
+  background: white;      
   text-align: center;
+  /* Dark green border line at the bottom of the hero section */
+  border-bottom: 4px solid #2C3E30;
 }
 
 .hero-content {
   width: 100%;
   max-width: 1100px; 
   
-  /* --- Rectangle Styling --- */
-  background-color: white;                 /* White center */
-  border: 4px solid #2C3E30;              /* Dark green border */
-  border-radius: 1.5rem;                   /* Rounded edges */
-  padding: 5rem 4rem;                      /* Spacing inside the rectangle */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Subtle depth shadow */
+  /* Stripped container properties for a seamless white canvas */
+  background-color: transparent; 
+  border: none;                  
+  border-radius: 0;              
+  padding: 0;                    
+  box-shadow: none;              
 }
 
 /* HERO TITLE */
@@ -148,10 +151,8 @@ html, body {
     padding: 4rem 5%;
   }
 
-  /* Adjusted for a tighter fit on small mobile screens */
   .hero-content {
-    padding: 3rem 1.5rem;
-    border-width: 3px; 
+    padding: 0;
   }
 
   .hero h2 {
@@ -166,11 +167,11 @@ html, body {
   display: block;
   width: 100%;
   padding: 5rem 0;
-  background-color: #DDE6DA; /* UPDATED: Container now blends into the page green background */
+  background-color: #DDE6DA; 
   overflow: hidden;
 }
 
-/* Base Panel Rules (Direct matches to your hero design tokens) */
+/* Base Panel Rules */
 .panel {
   display: block;
   background-color: white;
@@ -180,6 +181,7 @@ html, body {
   margin-bottom: 4rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.02);
   position: relative;
+  /* Handles smooth slide and smooth pop zoom on hover */
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -195,22 +197,24 @@ html, body {
   color: #2C3E30;
 }
 
-/* --- Left Sided Panels --- */
+/* --- Left Sided Panels (1 & 3) --- */
 .panel-left {
   float: left;
   clear: both;
   border-left: none;               
   border-radius: 0 1.5rem 1.5rem 0; 
   left: -4rem;                     
-  /* UPDATED: Added extra padding-left (4rem + 4rem) so content is pushed safe from the screen edge when tucked away */
   padding: 4rem 4rem 4rem 8rem; 
 }
 
+/* Left Panel Hover State: Slides out and slightly enlarges */
 .panel-left:hover {
-  left: 0;                         
+  left: 0;
+  transform: scale(1.02);
+  box-shadow: 5px 15px 35px rgba(0,0,0,0.06);
 }
 
-/* --- Right Sided Panels --- */
+/* --- Right Sided Panels (2) --- */
 .panel-right {
   float: right;
   clear: both;
@@ -218,41 +222,11 @@ html, body {
   border-radius: 1.5rem 0 0 1.5rem; 
   right: -4rem;                    
   text-align: right;               
-  /* UPDATED: Added extra padding-right (4rem + 4rem) so content is pushed safe from the screen edge when tucked away */
   padding: 4rem 8rem 4rem 4rem; 
 }
 
+/* Right Panel Hover State: Slides out and slightly enlarges */
 .panel-right:hover {
-  right: 0;                        
-}
-
-/* Clearfix utility to safely reset document layout stream */
-.sliding-container::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media (max-width: 768px) {
-  .sliding-container {
-    background-color: #DDE6DA;
-  }
-  .panel {
-    width: 88%;
-    border-width: 3px;             
-  }
-  .panel h3 {
-    font-size: 1.6rem;
-  }
-  .panel-left { 
-    left: -2rem; 
-    padding: 2.5rem 1.5rem 2.5rem 3.5rem; /* Balanced mobile safely */
-  }
-  .panel-left:hover { left: 0; }
-  
-  .panel-right { 
-    right: -2rem; 
-    padding: 2.5rem 3.5rem 2.5rem 1.5rem; /* Balanced mobile safely */
-  }
-  .panel-right:hover { right: 0; }
-}
+  right: 0;
+  transform: scale(1.02);
+  box-shadow: -5px 15px 35px rgba(0,0,0,0.06);
