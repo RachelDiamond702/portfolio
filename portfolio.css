@@ -9,7 +9,7 @@
 
 html, body {
   overflow-x: hidden;
-  background-color: #DDE6DA; 
+  background-color: #FFFFFF; 
   color: #1B261E;          
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
   font-size: 18px; 
@@ -19,67 +19,83 @@ html, body {
 /* =========================
    2. HEADER & NAVIGATION
 ========================= */
+.header-wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 10; 
+  background-color: #FFFFFF;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 8%; 
-  background-color: #8AA686; 
-  /* Solid dark green frame line under navigation */
-  border-bottom: 4px solid #2C3E30; 
+  padding: 1.2rem 3rem; 
+  background-color: #2C3E30; 
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none; 
 }
 
-/* "Rachel Diamond" Title */
+/* "Rachel Diamond" Title Button */
 .logo {
   font-family: "cofo-glassier", sans-serif;
   color: white;             
-  font-size: 3.5rem; 
+  font-size: 2.4rem; 
   font-weight: 800;
   white-space: nowrap;
+  line-height: 1.1;
+  text-decoration: none; 
+  display: inline-block;
+  cursor: pointer;
+  /* Removed transition and hover rule to completely disable hover changes */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center; 
-  gap: 3rem; 
+  gap: 2.5rem; 
 }
 
-/* Standard Nav Bar Links (Includes Contact) */
+/* Standard Nav Bar Links */
 .nav-links a {
   text-decoration: none;
   color: white;             
   font-weight: 550;         
-  font-size: 1.3rem; 
+  font-size: 1rem; 
   transition: color 0.2s ease;
+  line-height: 1.1;
 }
 
-/* All Links Hover Alike (Dark Green Text, No Border) */
+/* Nav Links Hover State */
 .nav-links a:hover {
-  color: #2C3E30; 
+  color: #8AA686; 
+  text-decoration: underline;
+  text-underline-offset: 6px;       
+  text-decoration-thickness: 2px;  
 }
 
 /* =========================
    3. HERO SECTION
 ========================= */
 .hero {
-  min-height: 85vh;
+  min-height: 75vh; 
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5rem 10%; 
-  /* Solid full-width white background */
   background: white;      
   text-align: center;
-  /* Dark green border line at the bottom of the hero section */
-  border-bottom: 4px solid #2C3E30;
+  position: relative;
+  z-index: 5; 
+  box-shadow: none; 
 }
 
 .hero-content {
   width: 100%;
-  max-width: 1100px; 
-  
-  /* Stripped container properties for a seamless white canvas */
+  max-width: 900px; 
   background-color: transparent; 
   border: none;                  
   border-radius: 0;              
@@ -90,16 +106,16 @@ html, body {
 /* HERO TITLE */
 .hero h2 {
   font-family: "cofo-glassier", sans-serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem); 
-  margin-bottom: 1.5rem;
-  line-height: 1.1;   
+  font-size: clamp(2rem, 3.5vw, 2.8rem); 
+  margin-bottom: 1.2rem;
+  line-height: 1.2;   
   color: #2C3E30; 
 }
 
 .hero p {
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem); 
-  max-width: 850px;
-  margin: 0 auto 2.5rem auto; 
+  font-size: clamp(1rem, 1.2vw, 1.1rem); 
+  max-width: 700px;
+  margin: 0 auto 2rem auto; 
   color: #2C3E30; 
 }
 
@@ -108,12 +124,13 @@ html, body {
 ========================= */
 .hero-button {
   display: inline-block;
-  padding: 1.2rem 3rem;     
+  padding: 0.5rem 1.5rem;     
   background: #8AA686;      
   color: white;             
-  border-radius: 1rem;      
+  border-radius: 0.4rem;      
   text-decoration: none;
-  font-size: 1.3rem;        
+  font-size: 1rem;        
+  font-weight: 550;
   transition: background-color 0.2s ease;
 }
 
@@ -128,22 +145,22 @@ html, body {
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column; 
-    gap: 2rem;              
-    padding: 2.5rem 5%;
+    gap: 1.5rem;              
+    padding: 1.5rem 1.5rem;
   }
 
   .logo {
-    font-size: 2.8rem; 
+    font-size: 1.8rem; 
   }
 
   .nav-links {
     flex-direction: column; 
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
   
   .nav-links a {
-    font-size: 1.3rem;      
+    font-size: 1rem;      
   }
 
   .hero {
@@ -156,7 +173,14 @@ html, body {
   }
 
   .hero h2 {
-    font-size: 2.2rem;        
+    font-size: 1.8rem;        
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.25rem;
   }
 }
 
@@ -164,31 +188,33 @@ html, body {
    6. NEW SLIDING RECTANGLES SECTION
 ========================= */
 .sliding-container {
-  display: block;
+  display: flow-root; 
   width: 100%;
   padding: 5rem 0;
-  background-color: #DDE6DA; 
+  background-color: #FFFFFF; 
   overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin-top: -3rem; 
 }
 
 /* Base Panel Rules */
 .panel {
   display: block;
-  background-color: white;
+  background-color: #8AA686; 
   border: 4px solid #2C3E30;
   width: 75%;
   max-width: 950px;
   margin-bottom: 4rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.02);
   position: relative;
-  /* Handles smooth slide and smooth pop zoom on hover */
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .panel h3 {
   font-family: "cofo-glassier", sans-serif;
   font-size: 2rem;
-  color: #2C3E30;
+  color: #2C3E30; 
   margin-bottom: 0.75rem;
 }
 
@@ -207,11 +233,11 @@ html, body {
   padding: 4rem 4rem 4rem 8rem; 
 }
 
-/* Left Panel Hover State: Slides out and slightly enlarges */
+/* Left Panel Hover State */
 .panel-left:hover {
   left: 0;
   transform: scale(1.02);
-  box-shadow: 5px 15px 35px rgba(0,0,0,0.06);
+  box-shadow: 5px 15px 35px rgba(44, 62, 48, 0.15);
 }
 
 /* --- Right Sided Panels (2) --- */
@@ -225,8 +251,47 @@ html, body {
   padding: 4rem 8rem 4rem 4rem; 
 }
 
-/* Right Panel Hover State: Slides out and slightly enlarges */
+/* Right Panel Hover State */
 .panel-right:hover {
   right: 0;
   transform: scale(1.02);
-  box-shadow: -5px 15px 35px rgba(0,0,0,0.06);
+  box-shadow: -5px 15px 35px rgba(44, 62, 48, 0.15);
+}
+
+/* Clearfix utility */
+.sliding-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .sliding-container {
+    background-color: #FFFFFF;
+    margin-top: -1.5rem; 
+  }
+  .panel {
+    width: 88%;
+    border-width: 3px;             
+  }
+  .panel h3 {
+    font-size: 1.6rem;
+  }
+  .panel-left { 
+    left: -2rem; 
+    padding: 2.5rem 1.5rem 2.5rem 3.5rem; 
+  }
+  .panel-left:hover { 
+    left: 0; 
+    transform: scale(1.01); 
+  }
+  
+  .panel-right { 
+    right: -2rem; 
+    padding: 2.5rem 3.5rem 2.5rem 1.5rem; 
+  }
+  .panel-right:hover { 
+    right: 0; 
+    transform: scale(1.01); 
+  }
+}
