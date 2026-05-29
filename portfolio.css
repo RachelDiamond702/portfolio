@@ -28,12 +28,12 @@ html, body {
   background-color: #8AA686; 
 }
 
-/* "Rachel Diamond" Title (Made a tad larger) */
+/* "Rachel Diamond" Title */
 .logo {
   font-family: "cofo-glassier", sans-serif;
   color: white;             
   
-  font-size: 3.5rem; /* Increased from 3rem to 3.5rem */
+  font-size: 3.5rem; 
   font-weight: 800;
   white-space: nowrap;
 }
@@ -41,10 +41,11 @@ html, body {
 .nav-links {
   display: flex;
   list-style: none;
+  align-items: center; 
   gap: 3rem; 
 }
 
-/* Nav Bar Text */
+/* Standard Nav Bar Links (Includes Contact) */
 .nav-links a {
   text-decoration: none;
   color: white;             
@@ -53,7 +54,7 @@ html, body {
   transition: color 0.2s ease;
 }
 
-/* Nav Bar Hover (Dark Green) */
+/* All Links Hover Alike (Dark Green Text, No Border) */
 .nav-links a:hover {
   color: #2C3E30; 
 }
@@ -104,7 +105,7 @@ html, body {
   transition: background-color 0.2s ease;
 }
 
-/* Button Hover (Dark Green) */
+/* Button Hover (Dark Green Fill) */
 .hero-button:hover {
   background: #2C3E30; 
 }
@@ -120,7 +121,7 @@ html, body {
   }
 
   .logo {
-    font-size: 2.8rem; /* Adjusted for mobile viewports to balance the new size */
+    font-size: 2.8rem; 
   }
 
   .nav-links {
