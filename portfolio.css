@@ -9,7 +9,7 @@
 
 html, body {
   overflow-x: hidden;
-  background-color: white; 
+  background-color: #DDE6DA; /* UPDATED: Changed from white to match your hero background */
   color: #1B261E;           
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
   
@@ -75,6 +75,13 @@ html, body {
 .hero-content {
   width: 100%;
   max-width: 1100px; 
+  
+  /* --- Rectangle Styling --- */
+  background-color: white;                 /* White center */
+  border: 4px solid #2C3E30;              /* Dark green border */
+  border-radius: 1.5rem;                   /* Rounded edges */
+  padding: 5rem 4rem;                      /* Spacing inside the rectangle */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Subtle depth shadow */
 }
 
 /* HERO TITLE */
@@ -82,13 +89,15 @@ html, body {
   font-family: "cofo-glassier", sans-serif;
   font-size: clamp(2.2rem, 4.5vw, 3.8rem); 
   margin-bottom: 1.5rem;
-  line-height: 1.1;        
+  line-height: 1.1;   
+  color: #2C3E30; 
 }
 
 .hero p {
   font-size: clamp(1.1rem, 1.6vw, 1.4rem); 
   max-width: 850px;
   margin: 0 auto 2.5rem auto; 
+  color: #2C3E30; 
 }
 
 /* =========================
@@ -116,7 +125,7 @@ html, body {
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column; 
-    gap: 2rem;               
+    gap: 2rem;              
     padding: 2.5rem 5%;
   }
 
@@ -139,7 +148,111 @@ html, body {
     padding: 4rem 5%;
   }
 
+  /* Adjusted for a tighter fit on small mobile screens */
+  .hero-content {
+    padding: 3rem 1.5rem;
+    border-width: 3px; 
+  }
+
   .hero h2 {
     font-size: 2.2rem;        
   }
+}
+
+/* =========================
+   6. NEW SLIDING RECTANGLES SECTION
+========================= */
+.sliding-container {
+  display: block;
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #DDE6DA; /* UPDATED: Container now blends into the page green background */
+  overflow: hidden;
+}
+
+/* Base Panel Rules (Direct matches to your hero design tokens) */
+.panel {
+  display: block;
+  background-color: white;
+  border: 4px solid #2C3E30;
+  width: 75%;
+  max-width: 950px;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.panel h3 {
+  font-family: "cofo-glassier", sans-serif;
+  font-size: 2rem;
+  color: #2C3E30;
+  margin-bottom: 0.75rem;
+}
+
+.panel p {
+  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
+  color: #2C3E30;
+}
+
+/* --- Left Sided Panels --- */
+.panel-left {
+  float: left;
+  clear: both;
+  border-left: none;               
+  border-radius: 0 1.5rem 1.5rem 0; 
+  left: -4rem;                     
+  /* UPDATED: Added extra padding-left (4rem + 4rem) so content is pushed safe from the screen edge when tucked away */
+  padding: 4rem 4rem 4rem 8rem; 
+}
+
+.panel-left:hover {
+  left: 0;                         
+}
+
+/* --- Right Sided Panels --- */
+.panel-right {
+  float: right;
+  clear: both;
+  border-right: none;              
+  border-radius: 1.5rem 0 0 1.5rem; 
+  right: -4rem;                    
+  text-align: right;               
+  /* UPDATED: Added extra padding-right (4rem + 4rem) so content is pushed safe from the screen edge when tucked away */
+  padding: 4rem 8rem 4rem 4rem; 
+}
+
+.panel-right:hover {
+  right: 0;                        
+}
+
+/* Clearfix utility to safely reset document layout stream */
+.sliding-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .sliding-container {
+    background-color: #DDE6DA;
+  }
+  .panel {
+    width: 88%;
+    border-width: 3px;             
+  }
+  .panel h3 {
+    font-size: 1.6rem;
+  }
+  .panel-left { 
+    left: -2rem; 
+    padding: 2.5rem 1.5rem 2.5rem 3.5rem; /* Balanced mobile safely */
+  }
+  .panel-left:hover { left: 0; }
+  
+  .panel-right { 
+    right: -2rem; 
+    padding: 2.5rem 3.5rem 2.5rem 1.5rem; /* Balanced mobile safely */
+  }
+  .panel-right:hover { right: 0; }
 }
