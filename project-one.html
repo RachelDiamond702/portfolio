@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="portfolio.css?v=3.2">
   
 <style>
+    /* Prevent the base page from stretching horizontally */
     html, body {
       width: 100% !important;
       max-width: 100% !important;
@@ -19,84 +20,89 @@
     }
 
     @media (max-width: 768px) {
-      /* UNIVERSAL FORCE RE-PADDING: Un-squishes everything instantly */
-      html, body, main, .main-content, .project-detail-container, .project-content-body, article, section {
-        width: 100% !important;
+      /* UNIVERSAL ELEMENT OVERRIDE:
+        This targets every single tag type used for layout structures.
+        It strips out absolute left positions, massive desktop padding, 
+        and forced side margins, dropping everything into a single full-width column.
+      */
+      body *, 
+      html *, 
+      main, 
+      div, 
+      article, 
+      section, 
+      header, 
+      footer {
+        position: static !important; /* Disables position: absolute / fixed desktop layouts */
+        margin-left: 0 !important;   /* Strips out sidebar offsets */
+        margin-right: 0 !important;
+        padding-left: 0 !important;  /* Strips out rigid desktop inner paddings */
+        padding-right: 0 !important;
+        width: 100% !important;      /* Forces elements to span the full phone screen */
         max-width: 100% !important;
         min-width: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
         box-sizing: border-box !important;
         float: none !important;
-        position: static !important;
+        transform: none !important;  /* Disables center-alignment translate offsets */
       }
 
-      /* Safely re-inject side margins inside the actual inner frame of the page */
-      .project-detail-container {
-        padding-left: 1.25rem !important;
+      /* Re-inject a clean, uniform padding framework to the main page container */
+      .project-detail-container, 
+      main, 
+      article {
+        display: block !important;
+        padding-left: 1.25rem !important;  /* Creates consistent, beautiful edge gaps */
         padding-right: 1.25rem !important;
-        display: block !important;
       }
 
-      /* Stack your narrative sections vertically with clean responsive margins */
-      .project-content-body, .central-project-media {
+      /* Keep your project layout blocks neatly spaced down the column */
+      .project-content-body, 
+      .central-project-media {
         display: block !important;
-        width: 100% !important;
-        margin-top: 2.5rem !important; /* Lowers desktop vertical gap */
+        margin-top: 2.5rem !important;
       }
 
-      /* Force all media boxes and images to track with the phone screen */
-      .central-image-frame, .central-image-frame img, .central-project-media img, video {
+      /* Fluidly scale all images and video embeds to match the screen */
+      img, video, .central-image-frame img {
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-
-      /* Stack the top-level site identity headers vertically */
-      aside, .sidebar-wrapper, .sidebar-top {
-        position: relative !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        left: 0 !important;
-        top: 0 !important;
-        margin: 0 0 1.5rem 0 !important;
-        padding: 1.5rem 1.25rem !important;
-        box-sizing: border-box !important;
         display: block !important;
       }
 
-      .sidebar-nav ul, .nav-links {
+      /* Un-anchor the sidebar and sit it nicely at the top of the mobile screen */
+      aside, 
+      .sidebar-wrapper, 
+      .sidebar-top {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 1.5rem 0 !important;
+        padding: 1.5rem 0 !important;
+      }
+
+      /* Format the menu links horizontally across the phone header */
+      .sidebar-nav ul, 
+      .nav-links {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
         gap: 1.25rem !important;
-        padding: 0 !important;
-        margin: 1rem 0 0 0 !important;
-        list-style: none !important;
+        margin-top: 1rem !important;
       }
 
-      /* Collapse the side-by-side split row into a perfect single column */
+      /* Stack the 50/50 split images into a single vertical column */
       .inline-flex-row {
         display: flex !important;
         flex-direction: column !important;
         gap: 1.25rem !important;
-        width: 100% !important;
-      }
-      
-      .inline-flex-row > div {
-        width: 100% !important;
-        max-width: 100% !important;
       }
 
-      /* Tone down main case study title typography */
+      /* Scale down case study headers so they fit cleanly without clipping */
       h1, .project-main-title {
         font-size: 1.6rem !important;
         line-height: 1.25 !important;
-        word-wrap: break-word !important;
         margin-top: 1rem !important;
       }
     }
