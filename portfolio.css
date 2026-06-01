@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET & BASE
+   1. RESET, BASE & STABLE FIXED NAV
    ========================================================================== */
 * {
   margin: 0;
@@ -15,9 +15,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   2. FIXED LEFT SIDEBAR (DARK GREEN)
-   ========================================================================== */
 .sidebar-wrapper {
   position: fixed;
   top: 0;
@@ -30,14 +27,6 @@ html, body {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-
-.sidebar-top {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  height: auto;
 }
 
 .logo {
@@ -52,282 +41,71 @@ html, body {
   margin-bottom: 2rem;
 }
 
-.sidebar-nav {
-  width: 100%;
-}
-
-/* --- REFINED SIDEBAR LINKS --- */
 .nav-links {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 1.6rem;
-  padding: 0;
-  margin: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #FFFFFF;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
   font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.12rem;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  position: relative;
-  padding-bottom: 0.4rem;
-  cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.2s ease;
-}
-
-.nav-dot {
-  font-size: 0.9rem;
-  margin-right: 0.7rem;
-  line-height: 1;
-  opacity: 0.4;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #FFFFFF;
-  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-links a:hover {
   opacity: 1;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ==========================================================================
-   3. MAIN CONTENT CANVAS
-   ========================================================================== */
 .main-content {
-  margin-left: 240px !important;
-  width: calc(100% - 240px) !important;
+  margin-left: 240px;
+  width: calc(100% - 240px);
   min-height: 100vh;
-  position: relative;
-  flex-grow: 1;
 }
 
 /* ==========================================================================
-   4. INTERACTIVE OVERLAYS & DRAWERS
+   2. UNIFIED WORK GRID & DETAILS (THE 90% SYSTEM)
    ========================================================================== */
-.about-drawer-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(27, 38, 30, 0.4);
-  z-index: 99;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+.grid-container,
+.header-title-group,
+.central-project-media,
+.section-divider-block {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.about-drawer-overlay.overlay-active {
-  opacity: 1;
-  pointer-events: auto;
+.grid-container {
+  padding: 4.5rem 0 6rem 0;
 }
 
-.hero-container {
-  position: fixed;
-  top: 0;
-  right: -600px;
-  width: 500px;
-  height: 100vh;
-  z-index: 100;
+/* --- TITLE LEFT, ARROWS RIGHT ROW --- */
+.grid-header-wrapper {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  background-color: #2C3E30;
-  padding: 4rem 3rem;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
-  visibility: hidden;
-  transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s ease;
-}
-
-.hero-container.drawer-active {
-  right: 0;
-  visibility: visible;
-}
-
-.close-drawer-btn {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  background: transparent;
-  border: none;
-  color: #FFFFFF;
-  font-size: 2.2rem;
-  line-height: 1;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.close-drawer-btn:hover {
-  opacity: 1;
-}
-
-.profile-frame {
-  width: 180px;
-  padding-top: 115%;
-  position: relative;
-  overflow: hidden;
-  background-color: #8AA686;
-}
-
-.profile-frame img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-text-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
-  width: 100%;
-}
-
-.hero-text-side h2 {
-  font-family: "cofo-glassier", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-}
-
-.hero-text-side p {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-.hero-button {
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  background: #8AA686;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 0;
-  text-decoration: none;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.hero-button:hover {
-  background: transparent;
-  color: #FFFFFF;
-  box-shadow: inset 0 0 0 1px #FFFFFF;
-}
-
-.form-stretch {
-  align-items: stretch;
-  text-align: left;
-}
-
-.form-stretch h2, .form-stretch p {
-  text-align: center;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-  border-radius: 0;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.form-group input::placeholder, .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-  outline: none;
-  border-color: #8AA686;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* ==========================================================================
-   5. WORK GRID LAYOUTS (MAIN HOME PAGE TRACKS)
-   ========================================================================== */
-div.grid-container {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 0 auto !important;
-  padding: 4.5rem 0 6rem 0 !important;
-}
-
-div.grid-header-wrapper {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  border-bottom: 1px solid rgba(138, 166, 134, 0.2) !important;
-  padding-bottom: 1.5rem !important;
-  margin-bottom: 3rem !important;
-  width: 100% !important;
+  border-bottom: 1px solid rgba(138, 166, 134, 0.2);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
   font-family: "cofo-glassier", sans-serif;
   font-size: 2.4rem;
-  font-weight: 800;
   color: #8AA686;
-  line-height: 1;
 }
 
 .pagination-controls {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-}
-
-.page-indicator {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #8AA686;
-  letter-spacing: 0.05rem;
 }
 
 .pag-btn {
@@ -340,42 +118,15 @@ div.grid-header-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.pag-btn:hover {
-  background: #8AA686;
-  color: #FFFFFF;
-}
-
+/* --- THE MAIN HOMEPAGE GRID --- */
 .projects-list-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2.5rem;
   row-gap: 3.5rem;
-}
-
-.bottom-pagination-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 4.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(138, 166, 134, 0.2);
-}
-
-.grid-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card-link {
-  text-decoration: none !important;
-  color: inherit !important;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 }
 
 .image-wrapper {
@@ -396,450 +147,146 @@ div.grid-header-wrapper {
   object-fit: cover;
 }
 
-.grid-caption {
-  padding-top: 1rem;
-  text-align: left;
-}
-
-/* --- PROJECT TITLES WITH ANIMATED HOVER UNDERLINE --- */
-.grid-caption h3, .grid-caption h3 a {
-  text-decoration: none !important;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #8AA686 !important;
-  margin-bottom: 0.15rem;
-  transition: color 0.2s ease;
-  display: inline-block;
-  position: relative;
-  padding-bottom: 0.2rem;
-}
-
-.grid-caption h3::after, .grid-caption h3 a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #2C3E30;
-  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.project-card-link:hover .grid-caption h3, .grid-caption h3 a:hover {
-  color: #2C3E30 !important;
-}
-
-.project-card-link:hover .grid-caption h3::after, .grid-caption h3 a:hover::after {
-  width: 100%;
-}
-
-.grid-caption p {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.85rem;
-  color: #1B261E;
-  opacity: 0.7;
-}
-
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (PROJECT PAGE TRACKS)
+   3. INTERNAL CASE STUDY DETAIL PAGES
    ========================================================================== */
-.structural-underline {
-  border-bottom: 1px solid rgba(44, 62, 48, 0.2);
-  padding-bottom: 1.5rem;
-  margin-bottom: 4rem;
-  width: 100%;
-}
-
-div.header-title-group {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 4rem auto 0 auto !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 1.5rem !important;
-}
-
-.title-meta-stack {
+.header-title-group {
+  margin-top: 4rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
-/* --- BACK BUTTON NATURAL ALIGNMENT STABLE ARCHITECTURE --- */
-a.project-back-btn {
+.project-back-btn {
   text-decoration: none !important;
-  background: transparent !important;
-  border: 1px solid #8AA686 !important;
-  color: #8AA686 !important;
-  font-size: 1.2rem !important;
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-  flex-shrink: 0 !important;
-  margin-top: -0.15rem !important;
-  margin-left: 0 !important; /* Back button sits comfortably inside its normal bounding lane */
-}
-
-a.project-back-btn:hover {
-  background: #8AA686 !important;
-  color: #FFFFFF !important;
+  border: 1px solid #8AA686;
+  color: #8AA686;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: -0.15rem;
 }
 
 .project-main-title {
   font-family: "cofo-glassier", sans-serif !important;
-  font-style: normal;
-  font-weight: 700;
   font-size: 2.2rem;
   color: #8AA686;
   line-height: 1.1;
-  letter-spacing: -0.01rem;
-  margin: 0;
 }
 
-.project-type-label {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif !important;
-  font-size: 0.9rem !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  color: #1B261E !important;
-  opacity: 0.6 !important;
-  line-height: 1.4 !important;
-  text-transform: none !important;
-  width: 100%;
-  margin: 0;
-}
-
-div.central-project-media {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 0 auto 4rem auto !important;
-}
-
-.central-image-frame {
-  width: 100%;
-  background-color: #F4F4F4;
-  overflow: hidden;
+.central-project-media {
+  margin-bottom: 4rem;
 }
 
 .central-image-frame img {
   display: block;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain;
-}
-
-.project-description-text {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  color: #1B261E;
-  opacity: 0.6;
-  line-height: 1.6;
-  margin-top: 2rem;
   width: 100%;
-}
-
-div.section-divider-block {
-  width: 90% !important;
-max-width: 90% !important;
-  margin: 2.5rem auto 0 auto !important;
-}
-
-.process-section-title {
-  font-family: cofo-glassier, sans-serif !important;
-  font-size: 1.5rem;
-  color: #8AA686;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01rem;
+  height: auto;
 }
 
 .project-media-row {
   width: 100%;
-  max-width: 100%;
   padding: 0 5%;
-  box-sizing: border-box;
   margin: 0 auto 2rem auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 }
 
-.row-item {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .row-image-frame {
   width: 100%;
   aspect-ratio: 3 / 2;
-  background-color: #F4F4F4;
   overflow: hidden;
   margin-bottom: 1rem;
 }
 
 .row-image-frame img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.row-caption {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  color: #1B261E;
-  opacity: 0.6;
-  line-height: 1.4;
-  width: 100%;
-}
-
-.project-page-footer {
-  margin-top: 6rem;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(44, 62, 48, 0.2);
-  clear: both;
-  position: relative;
-  z-index: 10;
-}
-
-.back-to-archive {
-  display: inline-block;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  color: #1B261E;
-  text-decoration: none;
-  opacity: 0.6;
-  padding: 1rem 2rem 1rem 0;
-  position: relative;
-  z-index: 15;
-  transition: opacity 0.2s ease;
-}
-
-.back-to-archive:hover {
-  opacity: 1;
-}
-
 /* ==========================================================================
-   7. UNIFIED RESPONSIVE ENGINE (DESKTOP ADAPTATIONS)
+   4. STREAMLINED RESPONSIVE LAYOUT ENGINE (MOBILE VIEWS)
    ========================================================================== */
 @media (max-width: 1024px) {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
-  div.grid-container,
-  div.header-title-group, 
-  div.central-project-media, 
-  div.section-divider-block {
-    width: 95% !important;
-    max-width: 95% !important;
-  }
-  .project-media-row {
-    padding: 0 2.5%;
-    gap: 1.5rem;
-  }
 }
 
-/* ==========================================================================
-   8. MASTER COMPREHENSIVE MOBILE FRAMEWORK (SCREEN WIDTHS <= 768px)
-   ========================================================================== */
 @media (max-width: 768px) {
-  
   html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
-  /* --- SIDEBAR HEADER ROW RESTRUCTURE --- */
-  aside, .sidebar-wrapper, .sidebar-top {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 0 1.5rem 0 !important;
-    padding: 1.5rem 1.25rem 1rem 1.25rem !important;
-    float: none !important;
-    left: 0 !important;
-    top: 0 !important;
-    background-color: #2C3E30 !important;
-    box-sizing: border-box !important;
-  }
-
-  .sidebar-top {
-    gap: 0.5rem !important;
-    text-align: center !important;
+  /* --- STABLE GREEN MOBILE NAVBAR BAR --- */
+  aside, .sidebar-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 1.25rem 1rem 1.25rem;
+    background-color: #2C3E30;
   }
 
   .logo {
-    font-size: 2.2rem !important;
-    margin-bottom: 0 !important;
-    text-align: center !important;
+    text-align: center;
+    margin-bottom: 0;
   }
 
-  /* --- SINGLE LINE NAV FORCE-PACK --- */
-  .sidebar-nav ul, .nav-links {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; 
-    justify-content: space-between !important; 
-    gap: 0.5rem !important; 
-    padding: 0 !important;
-    margin: 1.75rem 0 0 0 !important;
-    list-style: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.75rem;
   }
 
-  .sidebar-nav ul li, .nav-links li {
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  .nav-links a {
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
 
-  .sidebar-nav ul li a, .nav-links li a, .nav-links a {
-    display: inline-block !important;
-    font-size: 0.72rem !important; 
-    letter-spacing: 0.05em !important;
-    white-space: nowrap !important; 
-    padding: 4px 0 !important;
-  }
-
-  /* --- MAIN CANVAS RESET --- */
   .main-content {
-    margin-left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
+    margin-left: 0;
+    width: 100%;
   }
 
-  /* --- CASE STUDY HEADER FIX --- */
-  div.header-title-group {
+  /* --- MOBILE SNAP: PROJECTS LEFT, ARROWS RIGHT --- */
+  .grid-header-wrapper {
     display: flex !important;
     flex-direction: row !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 2rem !important;
-    gap: 1rem !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    box-sizing: border-box !important;
+    padding: 0 1.5rem 1rem 1.5rem;
+    margin-bottom: 2.5rem;
   }
 
-  .title-meta-stack {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
+  /* --- MOBILE SYSTEM UNIFIERS --- */
+  .header-title-group {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
   }
 
-  /* --- HOMEPAGE HEADER ALIGNMENT CORRECTION --- */
-  div.grid-header-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 2.5rem !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
-    padding-bottom: 1rem !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Structural block padding unifiers for mobile text zones */
-  div.section-divider-block,
-  .project-page-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Strict padding layout wrappers for mobile viewports */
-  div.grid-container,
-  div.central-project-media,
+  .grid-container,
+  .central-project-media,
+  .section-divider-block,
   .project-media-row {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
-  /* --- HOMEPAGE INDEX LIST REFINEMENTS --- */
-  .projects-list-inner {
-    grid-template-columns: 1fr !important;
-    row-gap: 3rem !important;
-  }
-
-  .bottom-pagination-wrapper {
-    justify-content: center !important;
-    margin-top: 3.5rem !important;
-  }
-
-  .grid-caption h3, .grid-caption h3 a {
-    font-size: 1.05rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  /* --- CASE STUDY DETAIL PAGES STYLING --- */
-  .project-main-title {
-    font-size: 1.65rem !important;
-    line-height: 1.2 !important;
-  }
-
-  div.central-project-media {
-    margin-bottom: 3rem !important;
-  }
-
-  .central-image-frame img, 
-  .row-image-frame img, 
-  video {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
+  .projects-list-inner,
   .project-media-row {
-    grid-template-columns: 1fr !important;
-    padding: 0 1.5rem !important;
-    gap: 3rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  .row-image-frame {
-    margin-bottom: 0.5rem !important;
-  }
-
-  .project-page-footer {
-    margin-top: 4rem !important;
-    padding-top: 2rem !important;
-  }
-
-  /* --- HERO OVERLAYS & DRAWERS --- */
-  .hero-container {
-    width: 100vw !important;
-    right: -100vw !important;
-    padding: 3rem 1.5rem !important;
-  }
-  .hero-container.drawer-active {
-    right: 0 !important;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
