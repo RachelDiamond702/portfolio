@@ -289,78 +289,32 @@ html, body {
 }
 
 /* ==========================================================================
-   5. UNIFIED HEADER SYSTEM (SHARED BY ALL PAGES)
+   5. WORK GRID LAYOUTS & PAGINATION CONTROLS (SAGE GREEN)
    ========================================================================== */
-.page-header-container {
-  width: 70%;
+.grid-container {
   max-width: 1200px;
-  margin: 4rem auto 3rem auto;
+  margin: 0 auto;
+  padding: 4.5rem 4rem 6rem 4rem;
+}
+
+.grid-header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   border-bottom: 1px solid rgba(138, 166, 134, 0.2);
   padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
-.title-meta-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.page-main-title {
-  font-family: "cofo-glassier", sans-serif !important;
-  font-style: normal;
-  font-weight: 800;
+.section-title {
+  font-family: "cofo-glassier", sans-serif;
   font-size: 2.4rem;
+  font-weight: 800;
   color: #8AA686;
-  line-height: 1.1;
-  margin: 0;
+  line-height: 1;
 }
 
-.project-type-label {
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif !important;
-  font-size: 0.9rem !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  color: #1B261E !important;
-  opacity: 0.6 !important;
-  line-height: 1.4 !important;
-  margin: 0;
-}
-
-.project-back-btn {
-  text-decoration: none !important;
-  background: transparent;
-  border: 1px solid #8AA686;
-  color: #8AA686;
-  font-size: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  position: absolute;
-  left: -4rem;
-  top: -0.15rem;
-}
-
-.project-back-btn:hover {
-  background: #8AA686;
-  color: #FFFFFF;
-}
-
-/* If you are on the homepage, hide the back button gracefully */
-body.home-page .project-back-btn {
-  display: none !important;
-}
-
-/* --- PAGINATION & CONTROLS --- */
-.pagination-controls-wrapper {
+.pagination-controls {
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -384,6 +338,7 @@ body.home-page .project-back-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -391,15 +346,6 @@ body.home-page .project-back-btn {
 .pag-btn:hover {
   background: #8AA686;
   color: #FFFFFF;
-}
-
-/* ==========================================================================
-   6. GRID & MEDIA CONTENT CORES
-   ========================================================================== */
-.grid-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 4rem 6rem 4rem;
 }
 
 .projects-list-inner {
@@ -453,6 +399,7 @@ body.home-page .project-back-btn {
   text-align: left;
 }
 
+/* --- PROJECT TITLES WITH ANIMATED HOVER UNDERLINE --- */
 .grid-caption h3, .grid-caption h3 a {
   text-decoration: none !important;
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
@@ -492,11 +439,77 @@ body.home-page .project-back-btn {
   opacity: 0.7;
 }
 
+/* ==========================================================================
+   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP DEFAULT)
+   ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
   padding-bottom: 1.5rem;
   margin-bottom: 4rem;
   width: 100%;
+}
+
+.header-title-group {
+  width: 70%;
+  margin: 4rem auto 0 auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative; /* Allows button overhang alignment */
+}
+
+.title-meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.project-back-btn {
+  text-decoration: none !important;
+  background: transparent;
+  border: 1px solid #8AA686;
+  color: #8AA686;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: absolute;
+  left: -4rem; /* Overhangs perfectly out into the page margins */
+  top: -0.15rem;
+}
+
+.project-back-btn:hover {
+  background: #8AA686;
+  color: #FFFFFF;
+}
+
+.project-main-title {
+  font-family: "cofo-glassier", sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #8AA686;
+  line-height: 1.1;
+  letter-spacing: -0.01rem;
+  margin: 0;
+}
+
+.project-type-label {
+  font-family: "itc-franklin-gothic-lt-pro", sans-serif !important;
+  font-size: 0.9rem !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #1B261E !important;
+  opacity: 0.6 !important;
+  line-height: 1.4 !important;
+  text-transform: none !important;
+  width: 100%;
+  margin: 0;
 }
 
 .central-project-media {
@@ -614,7 +627,7 @@ body.home-page .project-back-btn {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
-  .page-header-container,
+  .header-title-group, 
   .central-project-media, 
   .section-divider-block,
   .project-media-row,
@@ -622,7 +635,7 @@ body.home-page .project-back-btn {
     width: 85%;
   }
   .project-back-btn {
-    left: -3.5rem;
+    left: -3.5rem; /* Tighter margins adjustment */
   }
 }
 
@@ -631,6 +644,7 @@ body.home-page .project-back-btn {
    ========================================================================== */
 @media (max-width: 768px) {
   
+  /* Prevent screen clipping breakout boundaries */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -664,6 +678,7 @@ body.home-page .project-back-btn {
     text-align: center !important;
   }
 
+  /* --- SINGLE LINE NAV FORCE-PACK --- */
   .sidebar-nav ul, .nav-links {
     display: flex !important;
     flex-direction: row !important;
@@ -691,6 +706,7 @@ body.home-page .project-back-btn {
     padding: 4px 0 !important;
   }
 
+  /* --- MAIN FRAME RESOLUTION & SIDE PADDING --- */
   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
@@ -698,59 +714,36 @@ body.home-page .project-back-btn {
     padding: 0 !important;
   }
 
-  /* Universal structural alignment assignment */
+  /* Structural side safety padding framework injection */
   .grid-container,
-  .page-header-container,
+  .header-title-group,
   .central-project-media,
   .section-divider-block,
   .project-media-row,
   .project-page-footer {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1.5rem !important;  
-    padding-right: 1.5rem !important; 
+    padding-left: 1.5rem !important;  /* Bumps everything evenly out to center */
+    padding-right: 1.5rem !important; /* Bumps everything evenly out to center */
     margin-left: 0 !important;
     margin-right: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* --- UNIFIED SHARED MOBILE HEADER ACTION --- */
-  .page-header-container {
+  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
+  /* CHANGED: Match vertical centering alignments perfectly with the case study inner headers */
+  .grid-header-wrapper {
     display: flex !important;
     flex-direction: row !important;
     margin-top: 2rem !important;
     gap: 1rem !important;
     align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
+    justify-content: space-between !important;
     padding-bottom: 0 !important;
-    border-bottom: none !important;
   }
 
-  .page-main-title {
-    font-size: 1.65rem !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    width: auto !important;
-  }
-
-  .project-type-label {
-    text-align: center !important;
-  }
-
-  .project-back-btn {
-    position: static !important; 
-    margin-top: 0 !important;
-  }
-
-  /* Hide pagination containers on mobile inside header if preferred */
-  .pagination-controls-wrapper {
-    display: none !important;
-  }
-
-  /* --- GRID STACKING CONTROLS --- */
   .projects-list-inner {
-    grid-template-columns: 1fr !important; 
+    grid-template-columns: 1fr !important; /* Converts desktop rows to clean stack */
     row-gap: 3rem !important;
   }
 
@@ -759,16 +752,35 @@ body.home-page .project-back-btn {
     margin-top: 3.5rem !important;
   }
 
+  /* Tame index grid captions so text scales gracefully */
   .grid-caption h3, .grid-caption h3 a {
     font-size: 1.05rem !important;
     line-height: 1.25 !important;
     margin-bottom: 0.25rem !important;
   }
 
+  /* --- CASE STUDY DETAIL INNER PAGES REFINEMENTS --- */
+  .header-title-group {
+    margin-top: 2rem !important;
+    gap: 1rem !important;
+    align-items: center !important;
+  }
+
+  .project-back-btn {
+    position: static !important; /* Standard static flex placement on mobile layout styles */
+    margin-top: 0 !important;
+  }
+
+  .project-main-title {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+  }
+
   .central-project-media {
     margin-bottom: 3rem !important;
   }
 
+  /* Fluid image/asset scaling constraints */
   .central-image-frame img, 
   .row-image-frame img, 
   video {
@@ -777,6 +789,7 @@ body.home-page .project-back-btn {
     height: auto !important;
   }
 
+  /* Flattens "The Process" photo galleries seamlessly into a uniform grid layout */
   .project-media-row {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
@@ -792,6 +805,7 @@ body.home-page .project-back-btn {
     padding-top: 2rem !important;
   }
 
+  /* --- DRAWER MODULE MODIFICATION --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
