@@ -33,74 +33,7 @@
         position: static !important;
       }
 
-      /* ==========================================================================
-         FORCE MATCHING HEADER MACHINE (PIXEL FOR PIXEL PARITY)
-         ========================================================================== */
-      aside, .sidebar-wrapper, .sidebar-top {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important; /* Vertically dead-centers the text bundle */
-        text-align: center !important;
-        position: relative !important;
-        
-        /* Rigidly lock the container size to prevent browser rounding errors */
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 110px !important; 
-        min-height: 110px !important;
-        
-        left: 0 !important;
-        top: 0 !important;
-        margin: 0 0 2.5rem 0 !important;
-        padding: 0 !important;             /* Strips layout-skewing padding variables */
-        box-sizing: border-box !important;
-      }
-
-      /* Reset the brand logo parameters completely */
-      .logo {
-        display: inline-block !important;
-        width: auto !important;
-        text-align: center !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        line-height: 1.2 !important;
-      }
-
-      /* Center frame navigation wrapper */
-      .sidebar-nav {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-      }
-
-      /* Fixed spatial spacing for nav text chain buttons */
-      .sidebar-nav ul, .nav-links {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: center !important;
-        align-items: center !important;
-        
-        gap: 1.25rem !important;
-        padding: 0 !important;
-        margin: 0.5rem auto 0 auto !important; /* Uniform gap separation from brand logo */
-        list-style: none !important;
-        width: auto !important;
-      }
-
-      .sidebar-nav ul li, .nav-links li {
-        margin: 0 !important;
-        padding: 0 !important;
-        display: inline-block !important;
-      }
-
-      /* ==========================================================================
-         GRID SPECIFIC TEXT ISOLATION RULES
-         ========================================================================== */
+      /* AGGRESSIVE TEXT SHRINKER FOR HOME GRID TITLES - ISOLATED SO NOT TO TOUCH THE HEADER */
       .project-grid h3, 
       .project-card h3, 
       .project-meta h3,
