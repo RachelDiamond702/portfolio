@@ -16,7 +16,7 @@ html, body {
 }
 
 /* ==========================================================================
-   2. FIXED LEFT SIDEBAR (DARK GREEN)
+   2. FIXED LEFT SIDEBAR (NOW DARK GREEN)
    ========================================================================== */
 .sidebar-wrapper {
   position: fixed;
@@ -56,7 +56,7 @@ html, body {
   width: 100%;
 }
 
-/* --- SIDEBAR LINKS WITH HOVER TRACKS --- */
+/* --- REFINED SIDEBAR LINKS (BULLET INDEX STYLE + UNDERLINE) --- */
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -113,15 +113,15 @@ html, body {
    3. MAIN CONTENT CANVAS
    ========================================================================== */
 .main-content {
-  margin-left: 240px;
-  width: calc(100% - 240px);
+  margin-left: 280px;
+  width: calc(100% - 280px);
   min-height: 100vh;
   position: relative;
   flex-grow: 1;
 }
 
 /* ==========================================================================
-   4. INTERACTIVE OVERLAYS & CONTACT DRAWERS
+   4. INTERACTIVE OVERLAYS & DRAWERS
    ========================================================================== */
 .about-drawer-overlay {
   position: fixed;
@@ -289,12 +289,12 @@ html, body {
 }
 
 /* ==========================================================================
-   5. WORK GRID LAYOUTS & PAGINATION CONTROLS
+   5. WORK GRID LAYOUTS & PAGINATION CONTROLS (SAGE GREEN)
    ========================================================================== */
 .grid-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4.5rem 2rem 6rem 2rem;
+  padding: 4.5rem 4rem 6rem 4rem;
 }
 
 .grid-header-wrapper {
@@ -399,6 +399,7 @@ html, body {
   text-align: left;
 }
 
+/* --- PROJECT TITLES WITH ANIMATED HOVER UNDERLINE --- */
 .grid-caption h3, .grid-caption h3 a {
   text-decoration: none !important;
   font-family: "itc-franklin-gothic-lt-pro", sans-serif;
@@ -439,7 +440,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES
+   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP DEFAULT)
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -449,9 +450,8 @@ html, body {
 }
 
 .header-title-group {
-  max-width: 1200px;
+  width: 70%;
   margin: 4rem auto 0 auto;
-  padding: 0 2rem;
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
@@ -511,9 +511,8 @@ html, body {
 }
 
 .central-project-media {
-  max-width: 1200px;
+  width: 70%;
   margin: 0 auto 4rem auto;
-  padding: 0 2rem;
 }
 
 .central-image-frame {
@@ -540,9 +539,8 @@ html, body {
 }
 
 .section-divider-block {
-  max-width: 1200px;
+  width: 70%;
   margin: 2.5rem auto 0 auto;
-  padding: 0 2rem;
 }
 
 .process-section-title {
@@ -554,9 +552,7 @@ html, body {
 }
 
 .project-media-row {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
+  width: 70%;
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   display: grid;
@@ -595,8 +591,10 @@ html, body {
 }
 
 .project-page-footer {
-  margin-top: 6rem;
+  width: 70%;
+  margin: 6rem auto 0 auto;
   padding-top: 3rem;
+  padding-bottom: 4rem;
   border-top: 1px solid rgba(44, 62, 48, 0.2);
   clear: both;
   position: relative;
@@ -623,9 +621,16 @@ html, body {
 /* ==========================================================================
    7. UNIFIED RESPONSIVE ENGINE (DESKTOP ADAPTATIONS)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .header-title-group, 
+  .central-project-media, 
+  .section-divider-block,
+  .project-media-row,
+  .project-page-footer {
+    width: 85%;
   }
 }
 
@@ -634,12 +639,14 @@ html, body {
    ========================================================================== */
 @media (max-width: 768px) {
   
+  /* Prevent screen clipping breakout boundaries */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
 
+  /* --- SIDEBAR HEADER ROW RESTRUCTURE --- */
   aside, .sidebar-wrapper, .sidebar-top {
     display: block !important;
     position: relative !important;
@@ -647,7 +654,7 @@ html, body {
     max-width: 100% !important;
     height: auto !important;
     margin: 0 0 1.5rem 0 !important;
-    padding: 1.5rem 1.25rem 1rem 1.25rem !important;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
     float: none !important;
     left: 0 !important;
     top: 0 !important;
@@ -656,16 +663,17 @@ html, body {
   }
 
   .sidebar-top {
-    gap: 0.5rem !important;
+    gap: 1rem !important;
     text-align: center !important;
   }
 
   .logo {
     font-size: 2.2rem !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5rem !important;
     text-align: center !important;
   }
 
+  /* --- SINGLE LINE NAV FORCE-PACK --- */
   .sidebar-nav ul, .nav-links {
     display: flex !important;
     flex-direction: row !important;
@@ -673,7 +681,7 @@ html, body {
     justify-content: space-between !important; 
     gap: 0.5rem !important; 
     padding: 0 !important;
-    margin: 1.75rem 0 0 0 !important;
+    margin: 1rem 0 0 0 !important;
     list-style: none !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -693,6 +701,7 @@ html, body {
     padding: 4px 0 !important;
   }
 
+  /* --- MAIN FRAME RESOLUTION & SIDE PADDING --- */
   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
@@ -700,60 +709,32 @@ html, body {
     padding: 0 !important;
   }
 
-  /* --- FIXED MOBILE ROW SNAP: PROJECTS FAR LEFT, ARROWS FAR RIGHT --- */
-  .grid-header-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 2.5rem !important;
-    padding-bottom: 1rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .header-title-group {
-    display: flex !important;
-    flex-direction: row !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 2rem !important;
-    gap: 1rem !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-  }
-
-  .title-meta-stack {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
-  }
-
-  .section-divider-block,
-  .project-page-footer,
+  /* Structural side safety padding framework injection */
   .grid-container,
+  .header-title-group,
   .central-project-media,
-  .project-media-row {
+  .section-divider-block,
+  .project-media-row,
+  .project-page-footer {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;  /* Bumps everything evenly out to center */
+    padding-right: 1.5rem !important; /* Bumps everything evenly out to center */
     margin-left: 0 !important;
     margin-right: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
+  .grid-header-wrapper {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: flex-start !important;
+    padding-bottom: 1rem !important;
   }
 
   .projects-list-inner {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr !important; /* Converts desktop rows to clean stack */
     row-gap: 3rem !important;
   }
 
@@ -762,10 +743,18 @@ html, body {
     margin-top: 3.5rem !important;
   }
 
+  /* Tame index grid captions so text scales gracefully */
   .grid-caption h3, .grid-caption h3 a {
     font-size: 1.05rem !important;
     line-height: 1.25 !important;
     margin-bottom: 0.25rem !important;
+  }
+
+  /* --- CASE STUDY DETAIL INNER PAGES REFINEMENTS --- */
+  .header-title-group {
+    margin-top: 2rem !important;
+    gap: 1rem !important;
+    align-items: center !important;
   }
 
   .project-main-title {
@@ -777,6 +766,7 @@ html, body {
     margin-bottom: 3rem !important;
   }
 
+  /* Fluid image/asset scaling constraints */
   .central-image-frame img, 
   .row-image-frame img, 
   video {
@@ -785,9 +775,9 @@ html, body {
     height: auto !important;
   }
 
+  /* Flattens "The Process" photo galleries seamlessly into a uniform grid layout */
   .project-media-row {
     grid-template-columns: 1fr !important;
-    padding: 0 1.5rem !important;
     gap: 3rem !important;
     margin-bottom: 1.5rem !important;
   }
@@ -801,6 +791,7 @@ html, body {
     padding-top: 2rem !important;
   }
 
+  /* --- DRAWER MODULE MODIFICATION --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
