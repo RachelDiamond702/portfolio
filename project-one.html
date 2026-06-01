@@ -94,10 +94,10 @@
         
       </div>
 
- <footer class="project-page-footer" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+      <footer class="project-page-footer">
         <a href="#" class="pag-btn project-back-btn" title="Back to Top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">&#8593;</a>
         
-        <span style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.9rem; font-weight: 400; color: #1B261E; opacity: 0.6; line-height: 1.4; letter-spacing: normal; text-transform: none;">To Top</span>
+        <span class="to-top-label">To Top</span>
       </footer>
 
     </article>
@@ -128,7 +128,7 @@
       <h2>New Inquiries</h2>
       <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities. Feel free to connect below.</p>        
       
-      <form class="contact-form" id="portfolio-contact-form" action="https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec" method="POST">
+      <form class="contact-form" id="portfolio-contact-form" method="POST">
         <div class="form-group">
           <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
         </div>
@@ -138,12 +138,20 @@
         <div class="form-group">
           <textarea rows="4" name="message" placeholder="MESSAGE" required></textarea>
         </div>
-        <button type="submit" class="hero-button" id="submit-btn">Send Message</button>
+        <button type="submit" class="hero-button" id="submit-btn">
+          <span id="submit-btn-text">Send Message</span>
+        </button>
       </form>
+
+      <div id="form-success-message" style="display: none; text-align: center; margin-top: 2rem;">
+        <h3 style="font-family: 'cofo-glassier', sans-serif; font-size: 1.8rem; color: #8AA686; margin-bottom: 0.5rem;">Thank You!</h3>
+        <p style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.95rem; color: #FFFFFF; opacity: 0.9; line-height: 1.5;">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+      </div>
     </div>
   </div>
 
   <script>
+    // Drawer Navigation Elements
     const overlay = document.getElementById('drawer-overlay');
     const aboutTrigger = document.getElementById('about-trigger');
     const aboutDrawer = document.getElementById('about-drawer');
@@ -152,6 +160,17 @@
     const closeButtons = document.querySelectorAll('.standard-close');
     const switchToContactBtn = document.getElementById('switch-to-contact');
 
+    // Contact Form Elements
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitBtnText = document.getElementById('submit-btn-text');
+    const successMessage = document.getElementById('form-success-message');
+    const contactInstruction = document.getElementById('contact-instruction');
+
+    // Google Script Action URL
+    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec";
+
+    // Central function applying your exact active classes
     function closeAllDrawers() {
       aboutDrawer.classList.remove('drawer-active');
       contactDrawer.classList.remove('drawer-active');
@@ -159,6 +178,7 @@
       document.body.style.overflow = '';
     }
 
+    // Toggle Listeners for Navigation Bars
     aboutTrigger.addEventListener('click', (e) => {
       e.preventDefault();
       closeAllDrawers();
@@ -175,13 +195,51 @@
       document.body.style.overflow = 'hidden';
     });
 
+    // Toggle: Internal Panel Transition Link Trigger
     switchToContactBtn.addEventListener('click', () => {
       aboutDrawer.classList.remove('drawer-active');
       contactDrawer.classList.add('drawer-active');
     });
 
+    // Close Window Actions
     closeButtons.forEach(btn => btn.addEventListener('click', closeAllDrawers));
     overlay.addEventListener('click', closeAllDrawers);
+
+    // ==========================================================================
+    // BACKEND SEAMLESS AJAX FORM SUBMISSION ENGINE
+    // ==========================================================================
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents layout from reloading or white paging
+
+      // Set interactive submission visual states
+      submitBtn.disabled = true;
+      submitBtnText.innerText = "Sending...";
+      submitBtn.style.opacity = "0.6";
+
+      // Package data fields
+      const formData = new FormData(contactForm);
+
+      // Post background task asynchronously
+      fetch(googleScriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Bypasses cross-origin navigation loops cleanly
+      })
+      .then(() => {
+        // Transition user layout to the beautiful inside thank you block
+        contactForm.style.display = 'none';
+        contactInstruction.style.display = 'none';
+        successMessage.style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Submission Glitch:', error.message);
+        // Clean error handler recovery
+        submitBtn.disabled = false;
+        submitBtnText.innerText = "Try Again";
+        submitBtn.style.opacity = "1";
+        alert("Oops, there was a minor network issue delivering your message. Please give it another shot!");
+      });
+    });
   </script>
 
 </body>
