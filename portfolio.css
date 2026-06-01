@@ -731,7 +731,7 @@ html, body {
   }
 
   /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
-  /* CHANGED: Replaced block layout properties to match the flex alignments of the project detail page header */
+  /* CHANGED: Match vertical centering alignments perfectly with the case study inner headers */
   .grid-header-wrapper {
     display: flex !important;
     flex-direction: row !important;
