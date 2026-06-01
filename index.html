@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
   <link rel="stylesheet" href="portfolio.css?v=2.8">
 
-<style>
+  <style>
     html, body {
       width: 100% !important;
       max-width: 100% !important;
@@ -61,7 +61,7 @@
       .project-meta h3,
       .grid-container h3,
       h3 {
-        font-size: 1.05rem !important; /* Forces it completely out of "huge" territory */
+        font-size: 1.05rem !important; 
         line-height: 1.25 !important;
         font-weight: 600 !important;
         margin-top: 0.5rem !important;
@@ -84,9 +84,21 @@
       
       <nav class="sidebar-nav">
         <ul class="nav-links">
-          <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer"><span class="nav-dot">&bull;</span>RESUME</a></li>
-          <li><a href="#" id="open-contact"><span class="nav-dot">&bull;</span>CONTACT</a></li>
-          <li><a href="#" id="open-about"><span class="nav-dot">&bull;</span>ABOUT ME</a></li>
+          <li>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="nav-dot">&bull;</span>RESUME
+            </a>
+          </li>
+          <li>
+            <a href="#" id="contact-trigger">
+              <span class="nav-dot">&bull;</span>CONTACT
+            </a>
+          </li>
+          <li>
+            <a href="#" id="about-trigger">
+              <span class="nav-dot">&bull;</span>ABOUT ME
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -117,7 +129,7 @@
       
       <div class="hero-text-side form-stretch">
         <h2>New Inquiries</h2>
-      <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities. Feel free to connect below.</p>        
+        <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities. Feel free to connect below.</p>        
         <form class="contact-form" id="portfolio-contact-form" action="https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec" method="POST">
           <div class="form-group">
             <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
@@ -305,9 +317,9 @@
   </main>
 
   <script>
-    /* 1. Drawer Navigation Controls */
-    const openAbout = document.getElementById('open-about');
-    const openContact = document.getElementById('open-contact');
+    /* 1. Drawer Navigation Controls (Fixed script hooks to match project page triggers) */
+    const openAbout = document.getElementById('about-trigger');
+    const openContact = document.getElementById('contact-trigger');
     const switchToContact = document.getElementById('switch-to-contact');
     const closeBtns = document.querySelectorAll('.standard-close');
     const overlay = document.getElementById('drawer-overlay');
@@ -396,7 +408,6 @@
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault(); 
         
-        // Give instant button feedback
         if (submitBtn) {
           submitBtn.textContent = "Sending...";
           submitBtn.disabled = true;
@@ -411,10 +422,8 @@
           mode: 'no-cors' 
         })
         .then(() => {
-          // Native fallback message alert popup confirmation
           alert("Success! Your message has been sent to Rachel.");
 
-          // Hide form assets and reveal inline success block
           if (contactForm) contactForm.style.display = 'none';
           if (instructionText) instructionText.style.display = 'none';
           if (successMsg) successMsg.style.display = 'block';
