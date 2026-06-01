@@ -741,3 +741,58 @@ html, body {
     gap: 3rem;
   }
 }
+
+/* ==========================================================================
+   MOBILE NAVIGATION SINGLE-LINE ENGINE (CRASH RECOVERY FIX)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* Un-anchors the sidebar and drops it at the top of the mobile screen */
+  aside, 
+  .sidebar-wrapper, 
+  .sidebar-top {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 1.5rem 0 !important;
+    padding: 1.5rem 0 !important;
+    float: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Forces all navigation links to stay locked on a single horizontal line */
+  .sidebar-nav ul, 
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* PREVENTS the third item from dropping down */
+    justify-content: space-between !important; /* Evenly distributes them across the width */
+    gap: 0.75rem !important; /* Tightens the spacing so they fit perfectly on a small phone */
+    padding: 0 !important;
+    margin: 1rem 0 0 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Slightly dials down the font size and padding so nothing clips */
+  .sidebar-nav ul li, 
+  .nav-links li {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .sidebar-nav ul li a,
+  .nav-links li a,
+  .nav-links a {
+    display: inline-block !important;
+    font-size: 0.75rem !important; /* Optimizes text size for small mobile viewports */
+    letter-spacing: 0.05em !important;
+    white-space: nowrap !important; /* Keeps "ABOUT ME" together as one solid block */
+    padding: 4px 0 !important;
+  }
+}
