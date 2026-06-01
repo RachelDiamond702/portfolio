@@ -16,7 +16,7 @@ html, body {
 }
 
 /* ==========================================================================
-   2. FIXED LEFT SIDEBAR (NOW DARK GREEN)
+   2. FIXED LEFT SIDEBAR (DARK GREEN)
    ========================================================================== */
 .sidebar-wrapper {
   position: fixed;
@@ -113,8 +113,8 @@ html, body {
    3. MAIN CONTENT CANVAS
    ========================================================================== */
 .main-content {
-  margin-left: 240px;
-  width: calc(100% - 240px);
+  margin-left: 240px !important;
+  width: calc(100% - 240px) !important;
   min-height: 100vh;
   position: relative;
   flex-grow: 1;
@@ -289,21 +289,23 @@ html, body {
 }
 
 /* ==========================================================================
-   5. WORK GRID LAYOUTS & PAGINATION CONTROLS
+   5. WORK GRID LAYOUTS (MAIN HOME PAGE TRACKS)
    ========================================================================== */
-.grid-container {
-  width: 90%; /* Matches the structural track width of the project viewports */
-  margin: 0 auto;
-  padding: 4.5rem 0 6rem 0;
+div.grid-container {
+  width: 90% !important;
+  max-width: 90% !important;
+  margin: 0 auto !important;
+  padding: 4.5rem 0 6rem 0 !important;
 }
 
-.grid-header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(138, 166, 134, 0.2);
-  padding-bottom: 1.5rem;
-  margin-bottom: 3rem;
+div.grid-header-wrapper {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(138, 166, 134, 0.2) !important;
+  padding-bottom: 1.5rem !important;
+  margin-bottom: 3rem !important;
+  width: 100% !important;
 }
 
 .section-title {
@@ -440,7 +442,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (REVERTED BACK TO STABLE NATURAL BASICS)
+   6. PROJECT DETAIL LAYOUT STYLES (PROJECT PAGE TRACKS)
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -449,12 +451,13 @@ html, body {
   width: 100%;
 }
 
-.header-title-group {
-  width: 90%; /* Restored back to standard 90% wide layout framework link */
-  margin: 4rem auto 0 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
+div.header-title-group {
+  width: 90% !important;
+  max-width: 90% !important;
+  margin: 4rem auto 0 auto !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1.5rem !important;
 }
 
 .title-meta-stack {
@@ -463,28 +466,28 @@ html, body {
   gap: 0.35rem;
 }
 
-.project-back-btn {
+/* --- BACK BUTTON NATURAL ALIGNMENT STABLE ARCHITECTURE --- */
+a.project-back-btn {
   text-decoration: none !important;
-  background: transparent;
-  border: 1px solid #8AA686;
-  color: #8AA686;
-  font-size: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  margin-top: -0.15rem;
-  margin-left: 0; /* Arrow back button margins completely reset back to original positions */
+  background: transparent !important;
+  border: 1px solid #8AA686 !important;
+  color: #8AA686 !important;
+  font-size: 1.2rem !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  margin-top: -0.15rem !important;
+  margin-left: 0 !important; /* Back button sits comfortably inside its normal bounding lane */
 }
 
-.project-back-btn:hover {
-  background: #8AA686;
-  color: #FFFFFF;
+a.project-back-btn:hover {
+  background: #8AA686 !important;
+  color: #FFFFFF !important;
 }
 
 .project-main-title {
@@ -511,9 +514,10 @@ html, body {
   margin: 0;
 }
 
-.central-project-media {
-  width: 90%; /* Restored back to 90% so images stay matching the homepage footprint */
-  margin: 0 auto 4rem auto;
+div.central-project-media {
+  width: 90% !important;
+  max-width: 90% !important;
+  margin: 0 auto 4rem auto !important;
 }
 
 .central-image-frame {
@@ -539,9 +543,10 @@ html, body {
   width: 100%;
 }
 
-.section-divider-block {
-  width: 90%;
-  margin: 2.5rem auto 0 auto;
+div.section-divider-block {
+  width: 90% !important;
+max-width: 90% !important;
+  margin: 2.5rem auto 0 auto !important;
 }
 
 .process-section-title {
@@ -626,11 +631,12 @@ html, body {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-container,
-  .header-title-group, 
-  .central-project-media, 
-  .section-divider-block {
-    width: 95%;
+  div.grid-container,
+  div.header-title-group, 
+  div.central-project-media, 
+  div.section-divider-block {
+    width: 95% !important;
+    max-width: 95% !important;
   }
   .project-media-row {
     padding: 0 2.5%;
@@ -713,7 +719,7 @@ html, body {
   }
 
   /* --- CASE STUDY HEADER FIX --- */
-  .header-title-group {
+  div.header-title-group {
     display: flex !important;
     flex-direction: row !important;
     width: 100% !important;
@@ -735,7 +741,7 @@ html, body {
   }
 
   /* --- HOMEPAGE HEADER ALIGNMENT CORRECTION --- */
-  .grid-header-wrapper {
+  div.grid-header-wrapper {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
@@ -752,7 +758,7 @@ html, body {
   }
 
   /* Structural block padding unifiers for mobile text zones */
-  .section-divider-block,
+  div.section-divider-block,
   .project-page-footer {
     width: 100% !important;
     max-width: 100% !important;
@@ -764,8 +770,8 @@ html, body {
   }
 
   /* Strict padding layout wrappers for mobile viewports */
-  .grid-container,
-  .central-project-media,
+  div.grid-container,
+  div.central-project-media,
   .project-media-row {
     width: 100% !important;
     max-width: 100% !important;
@@ -799,7 +805,7 @@ html, body {
     line-height: 1.2 !important;
   }
 
-  .central-project-media {
+  div.central-project-media {
     margin-bottom: 3rem !important;
   }
 
