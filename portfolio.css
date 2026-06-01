@@ -730,14 +730,60 @@ html, body {
     box-sizing: border-box !important;
   }
 
-  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
-  .grid-header-wrapper {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
+  /* --- UNIFIED HOME PAGE & PROJECT DETAIL HEADERS FOR MOBILE --- */
+  .grid-header-wrapper,
+  .header-title-group {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important; 
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2.5rem !important;
     padding-bottom: 1rem !important;
+    border-bottom: none !important; /* Strips unique homepage line to match project layout */
+    gap: 1rem !important;
+    box-sizing: border-box !important;
   }
 
+  .title-meta-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+  }
+
+  .section-title,
+  .project-main-title {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Ensure pagination boxes and back arrow share matching sizing and behaviors */
+  .pagination-controls,
+  .project-back-btn {
+    position: static !important; 
+    margin-top: 0 !important;
+  }
+  
+  /* Forces home pagination box to match exactly the layout structure of project arrow box */
+  .pagination-controls {
+    gap: 0.5rem !important;
+  }
+  
+  .page-indicator {
+    display: none !important; /* Hides floating text so the box width trims neatly to match back arrow */
+  }
+
+  .project-back-btn {
+    order: -1; /* Keeps arrow cleanly positioned to the left */
+  }
+
+  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
   .projects-list-inner {
     grid-template-columns: 1fr !important; /* Converts desktop rows to clean stack */
     row-gap: 3rem !important;
@@ -756,22 +802,6 @@ html, body {
   }
 
   /* --- CASE STUDY DETAIL INNER PAGES REFINEMENTS --- */
-  .header-title-group {
-    margin-top: 2rem !important;
-    gap: 1rem !important;
-    align-items: center !important;
-  }
-
-  .project-back-btn {
-    position: static !important; /* Standard static flex placement on mobile layout styles */
-    margin-top: 0 !important;
-  }
-
-  .project-main-title {
-    font-size: 1.65rem !important;
-    line-height: 1.2 !important;
-  }
-
   .central-project-media {
     margin-bottom: 3rem !important;
   }
