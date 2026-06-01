@@ -16,23 +16,21 @@ html, body {
 }
 
 /* ==========================================================================
-   2. FIXED LEFT SIDEBAR (DARK GREEN - UNIFIED WIDTH)
+   2. FIXED LEFT SIDEBAR (DARK GREEN)
    ========================================================================== */
 .sidebar-wrapper {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 240px !important; /* Forces the exact same navbar footprint on all pages */
-  min-width: 240px !important;
-  max-width: 240px !important;
-  height: 100vh !important;
-  background-color: #2C3E30 !important;
-  color: #FFFFFF !important;
-  padding: 4.5rem 2rem !important;
-  z-index: 10 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #2C3E30;
+  color: #FFFFFF;
+  padding: 4.5rem 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .sidebar-top {
@@ -58,7 +56,7 @@ html, body {
   width: 100%;
 }
 
-/* --- SIDEBAR LINKS --- */
+/* --- REFINED SIDEBAR LINKS --- */
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -115,8 +113,8 @@ html, body {
    3. MAIN CONTENT CANVAS
    ========================================================================== */
 .main-content {
-  margin-left: 240px !important; /* Perfectly offsets the standard navbar width */
-  width: calc(100% - 240px) !important;
+  margin-left: 240px;
+  width: calc(100% - 240px);
   min-height: 100vh;
   position: relative;
   flex-grow: 1;
@@ -291,25 +289,21 @@ html, body {
 }
 
 /* ==========================================================================
-   5. WORK GRID LAYOUTS (MAIN HOME PAGE)
+   5. WORK GRID LAYOUTS & PAGINATION CONTROLS
    ========================================================================== */
-div.grid-container {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 0 auto !important;
-  padding: 4.5rem 0 6rem 0 !important;
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 6rem 2rem;
 }
 
-/* --- TITLE LEFT, ARROWS RIGHT ALIGNMENT ENGINE --- */
-div.grid-header-wrapper {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important; /* Forces Title Left & Arrows Right */
-  align-items: center !important;
-  border-bottom: 1px solid rgba(138, 166, 134, 0.2) !important;
-  padding-bottom: 1.5rem !important;
-  margin-bottom: 3rem !important;
-  width: 100% !important;
+.grid-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(138, 166, 134, 0.2);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
@@ -321,9 +315,9 @@ div.grid-header-wrapper {
 }
 
 .pagination-controls {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.5rem !important;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .page-indicator {
@@ -445,7 +439,7 @@ div.grid-header-wrapper {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (PROJECT PAGES)
+   6. PROJECT DETAIL LAYOUT STYLES
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -454,13 +448,13 @@ div.grid-header-wrapper {
   width: 100%;
 }
 
-div.header-title-group {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 4rem auto 0 auto !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 1.5rem !important;
+.header-title-group {
+  max-width: 1200px;
+  margin: 4rem auto 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .title-meta-stack {
@@ -469,28 +463,27 @@ div.header-title-group {
   gap: 0.35rem;
 }
 
-/* --- BACK BUTTON NATURAL SYSTEM POSITIONING --- */
-a.project-back-btn {
+.project-back-btn {
   text-decoration: none !important;
-  background: transparent !important;
-  border: 1px solid #8AA686 !important;
-  color: #8AA686 !important;
-  font-size: 1.2rem !important;
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-  flex-shrink: 0 !important;
-  margin-top: -0.15rem !important;
-  margin-left: 0 !important;
+  background: transparent;
+  border: 1px solid #8AA686;
+  color: #8AA686;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: -0.15rem;
 }
 
-a.project-back-btn:hover {
-  background: #8AA686 !important;
-  color: #FFFFFF !important;
+.project-back-btn:hover {
+  background: #8AA686;
+  color: #FFFFFF;
 }
 
 .project-main-title {
@@ -517,10 +510,10 @@ a.project-back-btn:hover {
   margin: 0;
 }
 
-div.central-project-media {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 0 auto 4rem auto !important;
+.central-project-media {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
 }
 
 .central-image-frame {
@@ -546,10 +539,10 @@ div.central-project-media {
   width: 100%;
 }
 
-div.section-divider-block {
-  width: 90% !important;
-  max-width: 90% !important;
-  margin: 2.5rem auto 0 auto !important;
+.section-divider-block {
+  max-width: 1200px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 2rem;
 }
 
 .process-section-title {
@@ -562,8 +555,8 @@ div.section-divider-block {
 
 .project-media-row {
   width: 100%;
-  max-width: 100%;
-  padding: 0 5%;
+  max-width: 1200px;
+  padding: 0 2rem;
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   display: grid;
@@ -634,17 +627,6 @@ div.section-divider-block {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
-  div.grid-container,
-  div.header-title-group, 
-  div.central-project-media, 
-  div.section-divider-block {
-    width: 95% !important;
-    max-width: 95% !important;
-  }
-  .project-media-row {
-    padding: 0 2.5%;
-    gap: 1.5rem;
-  }
 }
 
 /* ==========================================================================
@@ -658,6 +640,7 @@ div.section-divider-block {
     overflow-x: hidden !important;
   }
 
+  /* --- RESTORED GREEN MOBILE NAVBAR (NOT SMALLER) --- */
   aside, .sidebar-wrapper, .sidebar-top {
     display: block !important;
     position: relative !important;
@@ -718,7 +701,25 @@ div.section-divider-block {
     padding: 0 !important;
   }
 
-  div.header-title-group {
+  /* --- MOBILE HEADER: PROJECTS LEFT, ARROWS RIGHT --- */
+  .grid-header-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Side by side on mobile */
+    justify-content: space-between !important; /* Title left, arrows right */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 2.5rem !important;
+    padding-bottom: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- CASE STUDY HEADER FIX --- */
+  .header-title-group {
     display: flex !important;
     flex-direction: row !important;
     width: 100% !important;
@@ -739,35 +740,10 @@ div.section-divider-block {
     text-align: left !important;
   }
 
-  div.grid-header-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 2.5rem !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
-    padding-bottom: 1rem !important;
-    box-sizing: border-box !important;
-  }
-
-  div.section-divider-block,
-  .project-page-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  div.grid-container,
-  div.central-project-media,
+  .section-divider-block,
+  .project-page-footer,
+  .grid-container,
+  .central-project-media,
   .project-media-row {
     width: 100% !important;
     max-width: 100% !important;
@@ -799,7 +775,7 @@ div.section-divider-block {
     line-height: 1.2 !important;
   }
 
-  div.central-project-media {
+  .central-project-media {
     margin-bottom: 3rem !important;
   }
 
