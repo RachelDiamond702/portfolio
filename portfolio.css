@@ -819,3 +819,61 @@ html, body {
     right: 0 !important;
   }
 }
+
+/* ==========================================================================
+   EMERGENCY UNIFICATION OVERRIDE (FORCES ACCURATE CENTER ALIGNMENT)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Force the green sidebar container to be an identical layout machine */
+  aside.sidebar-wrapper, 
+  .sidebar-wrapper, 
+  .sidebar-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* Hard centers everything horizontally */
+    justify-content: center !important;  /* Centers everything vertically if needed */
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force the logo text link to drop any floating parameters and center */
+  .logo {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Force the navigation wrapper block to center itself inside the header */
+  .sidebar-nav {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Force the raw horizontal row of links to align identically */
+  .sidebar-nav ul, 
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important; /* Changes 'space-between' to hard centered package */
+    align-items: center !important;
+    gap: 1.25rem !important;            /* Clean, matching spatial gap between items */
+    width: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Individual text nodes reset */
+  .nav-links li, 
+  .nav-links a {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
