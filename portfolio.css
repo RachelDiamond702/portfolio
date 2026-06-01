@@ -798,54 +798,68 @@ html, body {
 }
 
 /* ==========================================================================
-   SURGICAL MOBILE LAYOUT RESCUE (SAFE GRID UN-SQUISH)
+   SURGICAL MOBILE LAYOUT RESCUE (CORRECTED SIDE-SAFETY PADDING)
    ========================================================================== */
 @media (max-width: 768px) {
   
-  /* 1. Reset the core structural containers */
-  main, 
-  .main-content, 
-  .project-detail-container, 
-  .project-content-body {
+  /* 1. Global structural un-squishing with forced edge breathing room */
+  html, body {
     width: 100% !important;
     max-width: 100% !important;
-    margin-left: 0 !important;   /* Strips out the desktop sidebar push */
+    overflow-x: hidden !important;
+  }
+
+  /* Targets the main body elements and forces a clean 20px gap away from the screen glass */
+  main, 
+  article,
+  .main-content, 
+  .project-detail-container, 
+  .project-content-body,
+  [class*="content"], 
+  [class*="container"],
+  [class*="project"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;   /* Destroys the desktop sidebar push space */
     margin-right: 0 !important;
-    padding-left: 1.25rem !important;  /* Gives clean breathing space on phone edges */
-    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important;  /* FORCES the clean vertical alignment gap on the left */
+    padding-right: 1.25rem !important; /* FORCES the clean vertical alignment gap on the right */
     box-sizing: border-box !important;
     float: none !important;
     position: static !important;
     display: block !important;
   }
 
-  /* 2. Scale all case study media fluidly */
-  .central-project-media,
-  .central-image-frame {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 3rem !important; /* Lowers desktop vertical gap for mobile */
+  /* 2. Standardizes case study narrative sections down the column */
+  .central-project-media {
     display: block !important;
+    width: 100% !important;
+    margin-top: 3rem !important; /* Elegant space between mobile paragraphs */
+    padding-left: 0 !important;  /* Inherits padding from master parent safely */
+    padding-right: 0 !important;
   }
 
+  /* 3. Fluidly scales images and videos to perfectly fit inside the padding framework */
+  .central-image-frame,
   .central-image-frame img, 
   .central-project-media img, 
   video {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     display: block !important;
   }
 
-  /* 3. Force the 50/50 dual column images to stack vertically instead of side-by-side */
+  /* 4. Collapses 50/50 flex images into a clean single vertical stack */
   .inline-flex-row,
   .central-project-media > div[style*="display: flex"] {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.25rem !important;
     width: 100% !important;
+    padding: 0 !important;
   }
 
   .inline-flex-row > div,
@@ -853,11 +867,13 @@ html, body {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
+    padding: 0 !important;
   }
 
-  /* 4. Tone down case study headers so they don't clip */
+  /* 5. Tames heading sizing so text scales elegantly without clipping */
   h1.project-main-title, 
-  .project-main-title {
+  .project-main-title,
+  header h1 {
     font-size: 1.6rem !important;
     line-height: 1.25 !important;
     margin-top: 1rem !important;
