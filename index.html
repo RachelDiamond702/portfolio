@@ -8,19 +8,71 @@
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
   <link rel="stylesheet" href="portfolio.css?v=2.8">
 
-  <style>
+<style>
+    /* 1. Global Viewport Shields */
     html, body {
+      width: 100% !important;
       max-width: 100% !important;
       overflow-x: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
-    img, video {
-      max-width: 100% !important;
-      height: auto !important;
-    }
-    /* Forces the main project grid wrapper to respect phone screens */
-    .project-grid, .grid-container, .main-content {
-      max-width: 100% !important;
-      box-sizing: border-box !important;
+
+    /* 2. Target Mobile Viewports Aggressively */
+    @media (max-width: 768px) {
+      
+      /* Force the main structural layout frames to drop the desktop side-margins */
+      main, 
+      .main-content, 
+      .project-detail-container, 
+      .project-grid, 
+      .grid-container,
+      article {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;   /* Strips out the desktop sidebar push */
+        margin-right: 0 !important;
+        padding-left: 1.25rem !important;  /* Gives clean breathing space on phone edges */
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+        float: none !important;
+        position: static !important;
+      }
+
+      /* Take the sidebar and stack it vertically above your content instead of keeping it fixed to the left */
+      aside, 
+      .sidebar-wrapper, 
+      .sidebar-top {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 0 2.5rem 0 !important; /* Pushes the main projects down slightly below it */
+        padding: 1.5rem 1.25rem !important;
+        box-sizing: border-box !important;
+        display: block !important;
+      }
+
+      /* Make sure your navigation links flex neatly across the top row instead of stacking awkwardly */
+      .sidebar-nav ul, 
+      .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 1.25rem !important;
+        padding: 0 !important;
+        margin: 1rem 0 0 0 !important;
+        list-style: none !important;
+      }
+
+      /* Prevent long headers or single project title text from stretching the screen width */
+      h1, h2, h3, .project-main-title {
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        font-size: 1.8rem !important; /* Prevents giant text from clipping */
+      }
     }
   </style>
   
