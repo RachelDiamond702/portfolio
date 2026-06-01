@@ -644,27 +644,15 @@ html, body {
    ========================================================================== */
 @media (max-width: 768px) {
   
-  /* Prevent screen clipping breakout boundaries */
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  /* --- SIDEBAR HEADER ROW RESTRUCTURE --- */
+  /* --- SIDEBAR NAVBAR ROW RESTRUCTURE ONLY --- */
   aside, .sidebar-wrapper, .sidebar-top {
     display: block !important;
     position: relative !important;
     width: 100% !important;
-    max-width: 100% !important;
     height: auto !important;
     margin: 0 0 1.5rem 0 !important;
     padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
-    float: none !important;
-    left: 0 !important;
-    top: 0 !important;
     background-color: #2C3E30 !important;
-    box-sizing: border-box !important;
   }
 
   .sidebar-top {
@@ -678,7 +666,7 @@ html, body {
     text-align: center !important;
   }
 
-  /* --- SINGLE LINE NAV FORCE-PACK --- */
+  /* Force navigation links onto a single row */
   .sidebar-nav ul, .nav-links {
     display: flex !important;
     flex-direction: row !important;
@@ -689,13 +677,10 @@ html, body {
     margin: 1rem 0 0 0 !important;
     list-style: none !important;
     width: 100% !important;
-    box-sizing: border-box !important;
   }
 
   .sidebar-nav ul li, .nav-links li {
     display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
   .sidebar-nav ul li a, .nav-links li a, .nav-links a {
@@ -706,152 +691,10 @@ html, body {
     padding: 4px 0 !important;
   }
 
-  /* --- MAIN FRAME RESOLUTION & SIDE PADDING --- */
-  .main-content {
-    margin-left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  /* Structural side safety padding framework injection */
-  .grid-container,
-  .header-title-group, 
-  .central-project-media,
-  .section-divider-block,
-  .project-media-row,
-  .project-page-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1.5rem !important;  
-    padding-right: 1.5rem !important; 
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* --- UNIFIED MOBILE HEADERS (SNAP PROJECTS TITLE/PAGE TITLE LEFT, ARROWS/BACK BUTTON RIGHT) --- */
+  /* --- HEADER TEXT BASELINE FIX ONLY --- */
+  /* Keeps layout exact while aligning text tops symmetrically across pages */
   .grid-header-wrapper,
   .header-title-group {
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: space-between !important; 
     align-items: flex-start !important; 
-    width: 100% !important;
-    max-width: 100% !important;
-    
-    /* Absolute reset of inner padding to honor layout grid tracking */
-    padding-left: 0 !important; 
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 2rem !important;
-    margin-bottom: 2.5rem !important;
-    padding-bottom: 1rem !important;
-    border-bottom: none !important; 
-    gap: 1rem !important;
-    box-sizing: border-box !important;
-  }
-
-  /* --- SPECIFIC TYPOGRAPHY SYNCING --- */
-  .section-title,
-  .project-main-title {
-    font-size: 1.65rem !important;
-    line-height: 1.1 !important; 
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  
-  .title-meta-stack {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
-    gap: 0.35rem !important;
-  }
-
-  /* --- UNIFIED INTERACTION ELEMENT SYNCING --- */
-  .pagination-controls,
-  .project-back-btn {
-    display: flex !important;
-    align-items: center !important;
-    position: static !important; 
-    margin-top: -0.15rem !important; 
-    margin-left: 0 !important;
-    flex-shrink: 0 !important;
-  }
-  
-  .pagination-controls {
-    gap: 0.65rem !important; /* Slightly open gap to give the restored text some breathing room */
-  }
-  
-  /* FIXED: Restored and cleanly styled for active presentation on mobile viewports */
-  .page-indicator {
-    display: inline-block !important; 
-    font-size: 0.75rem !important;
-    letter-spacing: 0.02rem !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1 !important;
-    order: -1 !important; /* Forces the text counter to always sit cleanly on the left of the actual button arrows */
-  }
-
-  .header-title-group .project-back-btn {
-    order: 1 !important; 
-  }
-
-  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
-  .projects-list-inner {
-    grid-template-columns: 1fr !important; 
-    row-gap: 3rem !important;
-  }
-
-  .bottom-pagination-wrapper {
-    justify-content: center !important;
-    margin-top: 3.5rem !important;
-  }
-
-  .grid-caption h3, .grid-caption h3 a {
-    font-size: 1.05rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  /* --- CASE STUDY DETAIL INNER PAGES REFINEMENTS --- */
-  .central-project-media {
-    margin-bottom: 3rem !important;
-  }
-
-  .central-image-frame img, 
-  .row-image-frame img, 
-  video {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .project-media-row {
-    grid-template-columns: 1fr !important;
-    gap: 3rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  .row-image-frame {
-    margin-bottom: 0.5rem !important;
-  }
-
-  .project-page-footer {
-    margin-top: 4rem !important;
-    padding-top: 2rem !important;
-  }
-
-  /* --- HERO OVERLAY DRAWERS MODIFICATION --- */
-  .hero-container {
-    width: 100vw !important;
-    right: -100vw !important;
-    padding: 3rem 1.5rem !important;
-  }
-  .hero-container.drawer-active {
-    right: 0 !important;
   }
 }
