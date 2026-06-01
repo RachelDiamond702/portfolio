@@ -454,7 +454,7 @@ html, body {
   margin: 4rem auto 0 auto;
   display: flex;
   align-items: flex-start;
-  position: relative;
+  position: relative; /* Allows button overhang alignment */
 }
 
 .title-meta-stack {
@@ -479,7 +479,7 @@ html, body {
   transition: all 0.2s ease;
   flex-shrink: 0;
   position: absolute;
-  left: -4rem; 
+  left: -4rem; /* Overhangs perfectly out into the page margins */
   top: -0.15rem;
 }
 
@@ -635,7 +635,7 @@ html, body {
     width: 85%;
   }
   .project-back-btn {
-    left: -3.5rem; 
+    left: -3.5rem; /* Tighter margins adjustment */
   }
 }
 
@@ -644,6 +644,7 @@ html, body {
    ========================================================================== */
 @media (max-width: 768px) {
   
+  /* Prevent screen clipping breakout boundaries */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -677,6 +678,7 @@ html, body {
     text-align: center !important;
   }
 
+  /* --- SINGLE LINE NAV FORCE-PACK --- */
   .sidebar-nav ul, .nav-links {
     display: flex !important;
     flex-direction: row !important;
@@ -704,6 +706,7 @@ html, body {
     padding: 4px 0 !important;
   }
 
+  /* --- MAIN FRAME RESOLUTION & SIDE PADDING --- */
   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
@@ -711,7 +714,9 @@ html, body {
     padding: 0 !important;
   }
 
+  /* Structural side safety padding framework injection */
   .grid-container,
+  .header-title-group,
   .central-project-media,
   .section-divider-block,
   .project-media-row,
@@ -725,6 +730,41 @@ html, body {
     box-sizing: border-box !important;
   }
 
+  /* --- COPIED PROJECT PAGE ALIGNMENT TRANSFERRED TO BOTH HEADERS --- */
+  /* This exactly mirrors the centered rules of the project case layout */
+  .grid-header-wrapper,
+  .header-title-group {
+    display: flex !important;
+    flex-direction: column !important; /* Force identical column-stack behavior */
+    align-items: center !important;    /* Absolute horizontal center alignment */
+    justify-content: center !important;
+    text-align: center !important;
+    margin-top: 2rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Force identical typographic scale, fonts, and metrics across both pages */
+  .section-title,
+  .project-main-title {
+    font-family: "cofo-glassier", sans-serif !important;
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Keep layout controls behaving normally on mobile stack layout */
+  .pagination-controls {
+    margin-top: 0.5rem !important;
+  }
+
+  .project-back-btn {
+    position: static !important; 
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
   .projects-list-inner {
     grid-template-columns: 1fr !important; 
     row-gap: 3rem !important;
@@ -745,6 +785,7 @@ html, body {
     margin-bottom: 3rem !important;
   }
 
+  /* Fluid image/asset scaling constraints */
   .central-image-frame img, 
   .row-image-frame img, 
   video {
@@ -753,6 +794,7 @@ html, body {
     height: auto !important;
   }
 
+  /* Flattens photo galleries seamlessly into a uniform grid layout */
   .project-media-row {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
@@ -768,6 +810,7 @@ html, body {
     padding-top: 2rem !important;
   }
 
+  /* --- DRAWER MODULE MODIFICATION --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
@@ -775,55 +818,5 @@ html, body {
   }
   .hero-container.drawer-active {
     right: 0 !important;
-  }
-
-  /* ==========================================================================
-     ISOLATED NO-NONSENSE MOBILE HEADER OVERRIDES
-     ========================================================================== */
-  
-  /* 1. Force titles to be identical sizes, fonts, and perfectly centered */
-  .section-title,
-  .project-main-title {
-    font-family: "cofo-glassier", sans-serif !important;
-    font-size: 1.65rem !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    display: block !important;
-    width: 100% !important;
-  }
-
-  /* 2. Force any subtitle labels to center right below the title */
-  .project-type-label {
-    text-align: center !important;
-    margin: 0.35rem auto 0 auto !important;
-    display: block !important;
-    width: 100% !important;
-  }
-
-  /* 3. Center layout wrapper contents without changing parent desktop widths */
-  .grid-header-wrapper,
-  .header-title-group,
-  .title-meta-stack {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 4. Tame any internal pagination block adjustments for mobile */
-  .pagination-controls {
-    margin-top: 0.75rem !important;
-  }
-
-  /* 5. Keep back button inline without snapping alignment rules */
-  .project-back-btn {
-    position: static !important;
-    margin: 0 0 0.75rem 0 !important;
   }
 }
