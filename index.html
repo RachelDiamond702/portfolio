@@ -389,9 +389,6 @@
           mode: 'no-cors' 
         })
         .then(() => {
-          // Native fallback message alert popup confirmation
-          alert("Success! Your message has been sent to Rachel.");
-
           // Hide form assets and reveal inline success block
           if (contactForm) contactForm.style.display = 'none';
           if (instructionText) instructionText.style.display = 'none';
