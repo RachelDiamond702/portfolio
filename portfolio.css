@@ -440,7 +440,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP GLOBAL REPAIR)
+   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP DEFAULT)
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -449,7 +449,6 @@ html, body {
   width: 100%;
 }
 
-/* Change: Dropped from width 90% to width 70% to natively align with your center imagery layout block */
 .header-title-group {
   width: 70%;
   margin: 4rem auto 0 auto;
@@ -464,8 +463,6 @@ html, body {
   gap: 0.35rem;
 }
 
-/* Change: Applied negative margin layout push. Shoves the arrow block completely left 
-   out of the 70% bounds container so the title text hits the image edge grid perfectly. */
 .project-back-btn {
   text-decoration: none !important;
   background: transparent;
@@ -482,7 +479,7 @@ html, body {
   transition: all 0.2s ease;
   flex-shrink: 0;
   margin-top: -0.15rem;
-  margin-left: -4rem; /* Pulls button out cleanly into the desktop layout gutter */
+  margin-left: -4rem;
 }
 
 .project-back-btn:hover {
@@ -542,7 +539,6 @@ html, body {
   width: 100%;
 }
 
-/* Change: Scaled text descriptor block from 90% down to 70% to secure vertical grid axis continuity */
 .section-divider-block {
   width: 70%;
   margin: 2.5rem auto 0 auto;
@@ -636,7 +632,7 @@ html, body {
     width: 95%;
   }
   .project-back-btn {
-    margin-left: 0; /* Reset overhang spacing if viewport limits are cramped on laptops */
+    margin-left: 0;
   }
   .project-media-row {
     padding: 0 2.5%;
@@ -718,7 +714,7 @@ html, body {
     padding: 0 !important;
   }
 
-  /* --- MOBILE HEADER GRID TRACKING SYSTEM --- */
+  /* --- CASE STUDY HEADER FIX --- */
   .header-title-group {
     display: flex !important;
     flex-direction: row !important;
@@ -745,7 +741,26 @@ html, body {
     text-align: left !important;
   }
 
-  /* Full safety framework alignment for mobile text components */
+  /* --- HOMEPAGE HEADER ALIGNMENT CORRECTION --- 
+     Forces the green homepage header wrapper component to discard desktop margins
+     and conform precisely to the strict 1.5rem boundary lane matching the layout grid boxes below. */
+  .grid-header-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 2.5rem !important;
+    gap: 1.5rem !important;
+    align-items: flex-start !important;
+    padding-bottom: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Structural block padding unifiers for mobile text zones */
   .section-divider-block,
   .project-page-footer {
     width: 100% !important;
@@ -757,7 +772,7 @@ html, body {
     box-sizing: border-box !important;
   }
 
-  /* Strict image padding parameters for mobile viewports */
+  /* Strict image padding system mechanics for mobile layout wrappers */
   .grid-container,
   .central-project-media,
   .project-media-row {
@@ -770,14 +785,7 @@ html, body {
     box-sizing: border-box !important;
   }
 
-  /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
-  .grid-header-wrapper {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
-    padding-bottom: 1rem !important;
-  }
-
+  /* --- HOMEPAGE INDEX LIST REFINEMENTS --- */
   .projects-list-inner {
     grid-template-columns: 1fr !important;
     row-gap: 3rem !important;
@@ -794,7 +802,7 @@ html, body {
     margin-bottom: 0.25rem !important;
   }
 
-  /* --- CASE STUDY DETAIL PAGES BODY STYLING --- */
+  /* --- CASE STUDY DETAIL PAGES STYLING --- */
   .project-main-title {
     font-size: 1.65rem !important;
     line-height: 1.2 !important;
@@ -828,7 +836,7 @@ html, body {
     padding-top: 2rem !important;
   }
 
-  /* --- DRAWER OVERLAYS --- */
+  /* --- HERO OVERLAYS & DRAWERS --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
