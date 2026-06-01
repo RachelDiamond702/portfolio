@@ -57,47 +57,56 @@
           <div class="central-image-frame">
             <img src="https://via.placeholder.com/1200x800/2c3e30/ffffff?text=Main+Product+Showcase" alt="Main Project Showcase View">
           </div>
-          
           <p class="project-description-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
 
-        <div class="section-divider-block">
-          <h2 class="process-section-title">The Process</h2>
+        <div class="central-project-media" style="margin-top: 5.5rem;">
+          <div class="central-image-frame">
+            <img src="https://via.placeholder.com/1200x800/2c3e30/ffffff?text=Process+Step+One" alt="Detailed process description">
+          </div>
+          <p class="project-description-text">
+            <strong>Conceptual Design &amp; Scale Prototyping:</strong> Initial phase rendering and digital design setups. By keeping this asset module completely full-width, complex layout drawings, wood grains, or intricate fine lines remain crisp and readable on screens of any size.
+          </p>
         </div>
 
-        <div class="project-media-row">
-          
-          <div class="row-item">
-            <div class="row-image-frame">
-              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Discovery" alt="Supporting detail view one">
+        <div class="central-project-media" style="margin-top: 5.5rem;">
+          <div style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 280px;">
+              <div class="central-image-frame" style="margin: 0 !important;">
+                <img src="https://via.placeholder.com/600x600/2c3e30/ffffff?text=Circuitry+View" alt="Circuitry schematic layout close up" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
             </div>
-            <p class="row-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-
-          <div class="row-item">
-            <div class="row-image-frame">
-              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Prototyping" alt="Supporting detail view two">
+            <div style="flex: 1; min-width: 280px;">
+              <div class="central-image-frame" style="margin: 0 !important;">
+                <img src="https://via.placeholder.com/600x600/4e5e52/ffffff?text=Physical+Hardware" alt="Close up detail of physical component hardware integration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
             </div>
-            <p class="row-caption">Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
           </div>
+          <p class="project-description-text">
+            <strong>Systems Integration &amp; Internal Assets:</strong> The dual split row is ideal for comparing concepts side-by-side. You can present an internal component map, a routing schematic, or close-up joinery details directly parallel to the corresponding structural element.
+          </p>
+        </div>
 
-          <div class="row-item">
-            <div class="row-image-frame">
-              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Refinement" alt="Supporting detail view three">
-            </div>
-            <p class="row-caption">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <div class="central-project-media" style="margin-top: 5.5rem; display: flex; flex-direction: column; align-items: center;">
+          <div class="central-image-frame" style="background: #1B261E; width: 100%; max-width: 800px; margin: 0 auto;">
+            <video controls poster="https://via.placeholder.com/800x450/2c3e30/ffffff?text=Click+to+Play+Project+Video" style="width: 100%; height: auto; display: block; border: none; outline: none;">
+              <source src="your-project-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-
+          <p class="project-description-text" style="width: 100%;">
+            <strong>Functional Demonstration:</strong> For interactive systems, woodwork in motion, or live user flows, embedded video ensures physical operations are documented smoothly without needing to load external third-party streaming links.
+          </p>
         </div>
         
       </div>
 
-      <footer class="project-page-footer">
+      <footer class="project-page-footer" style="padding-bottom: 4rem;">
         <a href="#" class="pag-btn project-back-btn" title="Back to Top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">&#8593;</a>
         
-        <span style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.85rem; font-weight: 400; color: #1B261E; opacity: 0.6; line-height: 1; letter-spacing: normal; text-transform: none; margin-top: 0.4rem; display: block;">To Top</span>
+        <span class="project-type-label" style="font-size: 0.85rem !important;">To Top</span>
       </footer>
 
     </article>
@@ -167,10 +176,10 @@
     const successMessage = document.getElementById('form-success-message');
     const contactInstruction = document.getElementById('contact-instruction');
 
-    // Google Script Action URL
+    // Google Script Execution API URL Endpoint
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec";
 
-    // Central function applying your exact active classes
+    // Navigation Drawer Panel Core Operations
     function closeAllDrawers() {
       aboutDrawer.classList.remove('drawer-active');
       contactDrawer.classList.remove('drawer-active');
@@ -178,7 +187,6 @@
       document.body.style.overflow = '';
     }
 
-    // Toggle Listeners for Navigation Bars
     aboutTrigger.addEventListener('click', (e) => {
       e.preventDefault();
       closeAllDrawers();
@@ -195,47 +203,38 @@
       document.body.style.overflow = 'hidden';
     });
 
-    // Toggle: Internal Panel Transition Link Trigger
     switchToContactBtn.addEventListener('click', () => {
       aboutDrawer.classList.remove('drawer-active');
       contactDrawer.classList.add('drawer-active');
     });
 
-    // Close Window Actions
     closeButtons.forEach(btn => btn.addEventListener('click', closeAllDrawers));
     overlay.addEventListener('click', closeAllDrawers);
 
-    // ==========================================================================
-    // BACKEND SEAMLESS AJAX FORM SUBMISSION ENGINE
-    // ==========================================================================
+    // Backend Intercepted AJAX Transmission Handling Pipeline
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevents layout from reloading or white paging
+      e.preventDefault();
 
-      // Set interactive submission visual states
       submitBtn.disabled = true;
       submitBtnText.innerText = "Sending...";
       submitBtn.style.opacity = "0.6";
 
-      // Package data fields
       const formData = new FormData(contactForm);
 
-      // Post background task asynchronously
       fetch(googleScriptUrl, {
         method: 'POST',
         body: formData,
-        mode: 'no-cors' // Bypasses cross-origin navigation loops cleanly
+        mode: 'no-cors'
       })
       .then(() => {
-        // Transition user layout to the beautiful inside thank you block
         contactForm.style.display = 'none';
         contactInstruction.style.display = 'none';
         successMessage.style.display = 'block';
       })
       .catch(error => {
         console.error('Submission Glitch:', error.message);
-        // Clean error handler recovery
         submitBtn.disabled = false;
-        submitBtnText.innerText = "Try Again";
+        submitBtnText.innerText = "Send Message";
         submitBtn.style.opacity = "1";
         alert("Oops, there was a minor network issue delivering your message. Please give it another shot!");
       });
