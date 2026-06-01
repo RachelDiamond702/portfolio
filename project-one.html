@@ -8,6 +8,28 @@
   <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
   
   <link rel="stylesheet" href="portfolio.css?v=3.2">
+  
+  <style>
+    html, body {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+    img, video {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    .inline-flex-row {
+      display: flex; 
+      gap: 2rem; 
+      width: 100%; 
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .inline-flex-row {
+        gap: 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -72,13 +94,13 @@
         </div>
 
         <div class="central-project-media" style="margin-top: 5.5rem;">
-          <div style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 280px;">
+          <div class="inline-flex-row">
+            <div style="flex: 1; min-width: 280px; box-sizing: border-box;">
               <div class="central-image-frame" style="margin: 0 !important;">
                 <img src="https://via.placeholder.com/600x600/2c3e30/ffffff?text=Circuitry+View" alt="Circuitry schematic layout close up" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             </div>
-            <div style="flex: 1; min-width: 280px;">
+            <div style="flex: 1; min-width: 280px; box-sizing: border-box;">
               <div class="central-image-frame" style="margin: 0 !important;">
                 <img src="https://via.placeholder.com/600x600/4e5e52/ffffff?text=Physical+Hardware" alt="Close up detail of physical component hardware integration" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
@@ -105,7 +127,6 @@
 
       <footer class="project-page-footer" style="padding-bottom: 4rem;">
         <a href="#" class="pag-btn project-back-btn" title="Back to Top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">&#8593;</a>
-        
         <span class="project-type-label" style="font-size: 0.85rem !important;">To Top</span>
       </footer>
 
@@ -116,26 +137,23 @@
 
   <div class="hero-container drawer-module" id="about-drawer">
     <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
-    
     <div class="hero-image-side">
       <div class="profile-frame">
         <img src="https://via.placeholder.com/400x500" alt="Rachel Diamond Portrait">
       </div>
     </div>
-    
     <div class="hero-text-side">
       <h2>About Me</h2>
-      <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems. Welcome to my select project archive collection space.</p>
+      <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems.</p>
       <button class="hero-button" id="switch-to-contact">Contact Me</button>
     </div>
   </div>
 
   <div class="hero-container drawer-module" id="contact-drawer">
     <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
-    
     <div class="hero-text-side form-stretch">
       <h2>New Inquiries</h2>
-      <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities. Feel free to connect below.</p>        
+      <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities.</p>        
       
       <form class="contact-form" id="portfolio-contact-form" method="POST">
         <div class="form-group">
@@ -154,13 +172,12 @@
 
       <div id="form-success-message" style="display: none; text-align: center; margin-top: 2rem;">
         <h3 style="font-family: 'cofo-glassier', sans-serif; font-size: 1.8rem; color: #8AA686; margin-bottom: 0.5rem;">Thank You!</h3>
-        <p style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.95rem; color: #FFFFFF; opacity: 0.9; line-height: 1.5;">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+        <p style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.95rem; color: #FFFFFF; opacity: 0.9; line-height: 1.5;">Your message has been sent successfully.</p>
       </div>
     </div>
   </div>
 
   <script>
-    // Drawer Navigation Elements
     const overlay = document.getElementById('drawer-overlay');
     const aboutTrigger = document.getElementById('about-trigger');
     const aboutDrawer = document.getElementById('about-drawer');
@@ -169,17 +186,14 @@
     const closeButtons = document.querySelectorAll('.standard-close');
     const switchToContactBtn = document.getElementById('switch-to-contact');
 
-    // Contact Form Elements
     const contactForm = document.getElementById('portfolio-contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const submitBtnText = document.getElementById('submit-btn-text');
     const successMessage = document.getElementById('form-success-message');
     const contactInstruction = document.getElementById('contact-instruction');
 
-    // Google Script Execution API URL Endpoint
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec";
 
-    // Navigation Drawer Panel Core Operations
     function closeAllDrawers() {
       aboutDrawer.classList.remove('drawer-active');
       contactDrawer.classList.remove('drawer-active');
@@ -211,10 +225,8 @@
     closeButtons.forEach(btn => btn.addEventListener('click', closeAllDrawers));
     overlay.addEventListener('click', closeAllDrawers);
 
-    // Backend Intercepted AJAX Transmission Handling Pipeline
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-
       submitBtn.disabled = true;
       submitBtnText.innerText = "Sending...";
       submitBtn.style.opacity = "0.6";
@@ -236,7 +248,7 @@
         submitBtn.disabled = false;
         submitBtnText.innerText = "Send Message";
         submitBtn.style.opacity = "1";
-        alert("Oops, there was a minor network issue delivering your message. Please give it another shot!");
+        alert("Oops, there was a minor network issue delivering your message.");
       });
     });
   </script>
