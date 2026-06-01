@@ -23,12 +23,12 @@
             </a>
           </li>
           <li>
-            <a href="index.html#contact">
+            <a href="#" id="contact-trigger">
               <span class="nav-dot">&bull;</span>CONTACT
             </a>
           </li>
           <li>
-            <a href="index.html#about">
+            <a href="#" id="about-trigger">
               <span class="nav-dot">&bull;</span>ABOUT ME
             </a>
           </li>
@@ -41,33 +41,23 @@
     <article class="project-detail-container">
       
       <header class="project-header structural-underline">
-        <h1 class="project-main-title">Project Title Name One</h1>
+        <div class="header-title-group">
+          <a href="index.html" class="pag-btn project-back-btn" title="Back to Projects">&#8592;</a>
+          
+          <div class="title-meta-stack">
+            <h1 class="project-main-title">Project Title Name One</h1>
+            <p class="project-type-label">Laser Cutting &amp; Woodworking</p>
+          </div>
+        </div>
       </header>
 
       <div class="project-content-body">
-        <p class="project-type-label">Laser Cutting &amp; Woodworking</p>
         
-        <div class="project-collage-container">
+        <div class="central-project-media">
+          <div class="central-image-frame">
+            <img src="https://via.placeholder.com/1200x800/2c3e30/ffffff?text=Main+Product+Showcase" alt="Main Project Showcase View">
+          </div>
           
-          <div class="collage-main-hero">
-            <img src="https://via.placeholder.com/1200x1200/2c3e30/ffffff?text=Main+Showcase" alt="Main Project Showcase View">
-          </div>
-
-          <div class="collage-side-stack">
-            <div class="side-img-frame">
-              <img src="https://via.placeholder.com/600x400/8aa686/ffffff?text=Detail+1" alt="Detail view one">
-            </div>
-            <div class="side-img-frame">
-              <img src="https://via.placeholder.com/600x400/1b261e/ffffff?text=Detail+2" alt="Detail view two">
-            </div>
-            <div class="side-img-frame">
-              <img src="https://via.placeholder.com/600x400/2c3e30/ffffff?text=Detail+3" alt="Detail view three">
-            </div>
-          </div>
-
-        </div>
-
-        <div class="project-description-wrapper">
           <p class="project-description-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
@@ -104,12 +94,95 @@
         
       </div>
 
-      <footer class="project-page-footer">
-        <a href="index.html" class="back-to-archive">&larr; Back</a>
+ <footer class="project-page-footer" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+        <a href="#" class="pag-btn project-back-btn" title="Back to Top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">&#8593;</a>
+        
+        <span style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.9rem; font-weight: 400; color: #1B261E; opacity: 0.6; line-height: 1.4; letter-spacing: normal; text-transform: none;">To Top</span>
       </footer>
 
     </article>
   </main>
+
+  <div class="about-drawer-overlay" id="drawer-overlay"></div>
+
+  <div class="hero-container drawer-module" id="about-drawer">
+    <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+    
+    <div class="hero-image-side">
+      <div class="profile-frame">
+        <img src="https://via.placeholder.com/400x500" alt="Rachel Diamond Portrait">
+      </div>
+    </div>
+    
+    <div class="hero-text-side">
+      <h2>About Me</h2>
+      <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems. Welcome to my select project archive collection space.</p>
+      <button class="hero-button" id="switch-to-contact">Contact Me</button>
+    </div>
+  </div>
+
+  <div class="hero-container drawer-module" id="contact-drawer">
+    <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+    
+    <div class="hero-text-side form-stretch">
+      <h2>New Inquiries</h2>
+      <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities. Feel free to connect below.</p>        
+      
+      <form class="contact-form" id="portfolio-contact-form" action="https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <textarea rows="4" name="message" placeholder="MESSAGE" required></textarea>
+        </div>
+        <button type="submit" class="hero-button" id="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('drawer-overlay');
+    const aboutTrigger = document.getElementById('about-trigger');
+    const aboutDrawer = document.getElementById('about-drawer');
+    const contactTrigger = document.getElementById('contact-trigger');
+    const contactDrawer = document.getElementById('contact-drawer');
+    const closeButtons = document.querySelectorAll('.standard-close');
+    const switchToContactBtn = document.getElementById('switch-to-contact');
+
+    function closeAllDrawers() {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.remove('drawer-active');
+      overlay.classList.remove('overlay-active');
+      document.body.style.overflow = '';
+    }
+
+    aboutTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllDrawers();
+      aboutDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    contactTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllDrawers();
+      contactDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    switchToContactBtn.addEventListener('click', () => {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.add('drawer-active');
+    });
+
+    closeButtons.forEach(btn => btn.addEventListener('click', closeAllDrawers));
+    overlay.addEventListener('click', closeAllDrawers);
+  </script>
 
 </body>
 </html>

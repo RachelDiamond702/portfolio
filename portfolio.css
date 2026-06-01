@@ -514,26 +514,66 @@ html, body {
    SECTION 7: PROJECT DETAIL LAYOUT STYLES
    ========================================================================== */
 
+.structural-underline {
+  border-bottom: 1px solid rgba(44, 62, 48, 0.2); 
+  padding-bottom: 1.5rem;                           
+  margin-bottom: 4rem;                              
+  width: 100%;
+}
+
+/* Row wrapper aligning the square button directly to the left of the title stack */
+.header-title-group {
+  width: 90%;
+  margin: 4rem auto 0 auto;
+  display: flex;
+  align-items: flex-start;                          /* Aligns top edge of square button with first line of text */
+  gap: 1.5rem;                                      /* Clean space between box edge and start of title text */
+}
+
+/* Vertical stack container for title and project type caption */
+.title-meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;                                     /* Perfect editorial spacing between title and subtitle */
+}
+
+/* Base style rules lifted straight from your homepage .pag-btn code */
+.project-back-btn {
+  text-decoration: none !important;
+  background: transparent;
+  border: 1px solid #8AA686; 
+  color: #8AA686; 
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;                                   /* Stops browser layout from altering box width */
+  margin-top: -0.15rem;                             /* Tiny optical adjustment to align center with first line of text */
+}
+
+/* Hover rule lifted straight from your homepage .pag-btn:hover code */
+.project-back-btn:hover {
+  background: #8AA686; 
+  color: #FFFFFF;
+}
+
 .project-main-title {
   font-family: "cofo-glassier", sans-serif !important; 
   font-style: normal;
   font-weight: 700;                                 
   font-size: 2.2rem;                                
-  color: #8AA686;                                   
+  color: #8AA686;                                   /* Matches your core Sage Green layout theme color */
   line-height: 1.1;
   letter-spacing: -0.01rem;
-  width: 90%;                                       
-  margin: 4rem auto 0.5rem auto;                    
+  margin: 0;                                        /* Cleared so flexbox alignment works perfectly */
 }
 
-.structural-underline {
-  border-bottom: 1px solid rgba(44, 62, 48, 0.2); 
-  padding-bottom: 0.5rem;                           
-  margin-bottom: 3rem;                              
-  width: 100%;
-}
-
-/* Project Type Label */
+/* Project Type Label — Nested above the line layout */
 .project-type-label {
   font-family: "itc-franklin-gothic-lt-pro", sans-serif !important;
   font-size: 0.9rem !important;
@@ -544,83 +584,27 @@ html, body {
   line-height: 1.4 !important;
   letter-spacing: normal !important;                
   text-transform: none !important;                  
-  width: 90%;
-  margin: 0 auto 3rem auto;                         
+  width: 100%;                                      
+  margin: 0;                                        /* Handled dynamically by flex stack now */
 }
 
-.project-page-footer {
-  margin-top: 6rem;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(44, 62, 48, 0.2);
-  clear: both;                                      
-  position: relative;                               
-  z-index: 10;                                      
+/* --- Hero Showcase Asset Block --- */
+.central-project-media {
+  width: 70%;               
+  margin: 0 auto 4rem auto; 
 }
 
-.back-to-archive {
-  display: inline-block;
-  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
-  font-size: 0.9rem;
-  color: #1B261E;
-  text-decoration: none;
-  opacity: 0.6;
-  padding: 1rem 2rem 1rem 0;                        
-  position: relative;
-  z-index: 15;                                      
-  transition: opacity 0.2s ease;
-}
-
-.back-to-archive:hover {
-  opacity: 1;
-}
-
-/* --- Clean Modern Collage Split Grid --- */
-.project-collage-container {
-  width: 90%;
-  margin: 0 auto 3rem auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;                  /* Left side is wider than the right side */
-  gap: 1.5rem;                                      /* Tight, premium uniform spacing */
-}
-
-.collage-main-hero {
+.central-image-frame {
   width: 100%;
-  height: 100%;
-  background-color: #F4F4F4;
-}
-
-.collage-main-hero img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;                                /* Keeps the main image filled cleanly */
-}
-
-.collage-side-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;                                      /* Matches the master grid layout gap */
-  justify-content: space-between;
-}
-
-.side-img-frame {
-  width: 100%;
-  flex: 1;                                          /* Distributes height evenly among the 3 frames */
   background-color: #F4F4F4;
   overflow: hidden;
 }
 
-.side-img-frame img {
+.central-image-frame img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Project Description --- */
-.project-description-wrapper {
-  width: 90%;
-  margin: 4rem auto;
+  width: 100% !important;   
+  height: auto !important;  
+  object-fit: contain;
 }
 
 .project-description-text {
@@ -629,13 +613,14 @@ html, body {
   color: #1B261E;         
   opacity: 0.6;           
   line-height: 1.6;
-  max-width: 650px;
+  margin-top: 2rem;       
+  width: 100%;
 }
 
 /* --- "The Process" Grid Section --- */
 .section-divider-block {
   width: 90%;                  
-  margin: 6rem auto 0 auto;    
+  margin: 2.5rem auto 0 auto;    
 }
 
 .process-section-title {
@@ -687,14 +672,38 @@ html, body {
   width: 100%;
 }
 
+.project-page-footer {
+  margin-top: 6rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(44, 62, 48, 0.2);
+  clear: both;                                      
+  position: relative;                               
+  z-index: 10;                                      
+}
+
+.back-to-archive {
+  display: inline-block;
+  font-family: "itc-franklin-gothic-lt-pro", sans-serif;
+  font-size: 0.9rem;
+  color: #1B261E;
+  text-decoration: none;
+  opacity: 0.6;
+  padding: 1rem 2rem 1rem 0;                        
+  position: relative;
+  z-index: 15;                                      
+  transition: opacity 0.2s ease;
+}
+
+.back-to-archive:hover {
+  opacity: 1;
+}
+
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
-  .project-type-label,
-  .project-main-title,
-  .project-collage-container,
-  .project-description-wrapper,
+  .header-title-group,
+  .central-project-media,
   .section-divider-block {
     width: 95%;                
   }
@@ -706,36 +715,23 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .project-type-label,
-  .project-main-title,
-  .project-collage-container,
-  .project-description-wrapper {
+  .header-title-group,
+  .central-project-media {
     width: 100%;
+  }
+
+  .header-title-group {
+    margin-top: 3rem;
+    gap: 1rem;                                      
   }
 
   .project-main-title {
     font-size: 1.8rem;                
-    margin-top: 3rem;
-  }
-
-  /* Unrolls the collage cleanly into a uniform vertical image block on mobile screens */
-  .project-collage-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .collage-side-stack {
-    gap: 1rem;
-  }
-
-  .side-img-frame {
-    aspect-ratio: 3 / 2;
   }
 
   .section-divider-block {
     width: 100%;
-    margin: 4rem auto 0 auto;
+    margin: 2.5rem auto 0 auto; 
   }
   
   .project-media-row {
