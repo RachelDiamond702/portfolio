@@ -440,7 +440,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP DEFAULT)
+   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP GLOBAL REPAIR)
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -449,6 +449,7 @@ html, body {
   width: 100%;
 }
 
+/* Change: Dropped from width 90% to width 70% to natively align with your center imagery layout block */
 .header-title-group {
   width: 70%;
   margin: 4rem auto 0 auto;
@@ -463,6 +464,8 @@ html, body {
   gap: 0.35rem;
 }
 
+/* Change: Applied negative margin layout push. Shoves the arrow block completely left 
+   out of the 70% bounds container so the title text hits the image edge grid perfectly. */
 .project-back-btn {
   text-decoration: none !important;
   background: transparent;
@@ -479,6 +482,7 @@ html, body {
   transition: all 0.2s ease;
   flex-shrink: 0;
   margin-top: -0.15rem;
+  margin-left: -4rem; /* Pulls button out cleanly into the desktop layout gutter */
 }
 
 .project-back-btn:hover {
@@ -538,6 +542,7 @@ html, body {
   width: 100%;
 }
 
+/* Change: Scaled text descriptor block from 90% down to 70% to secure vertical grid axis continuity */
 .section-divider-block {
   width: 70%;
   margin: 2.5rem auto 0 auto;
@@ -552,7 +557,9 @@ html, body {
 }
 
 .project-media-row {
-  width: 70%;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 5%;
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   display: grid;
@@ -591,10 +598,8 @@ html, body {
 }
 
 .project-page-footer {
-  width: 70%;
-  margin: 6rem auto 0 auto;
+  margin-top: 6rem;
   padding-top: 3rem;
-  padding-bottom: 4rem;
   border-top: 1px solid rgba(44, 62, 48, 0.2);
   clear: both;
   position: relative;
@@ -621,16 +626,21 @@ html, body {
 /* ==========================================================================
    7. UNIFIED RESPONSIVE ENGINE (DESKTOP ADAPTATIONS)
    ========================================================================== */
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
   .header-title-group, 
   .central-project-media, 
-  .section-divider-block,
-  .project-media-row,
-  .project-page-footer {
-    width: 85%;
+  .section-divider-block {
+    width: 95%;
+  }
+  .project-back-btn {
+    margin-left: 0; /* Reset overhang spacing if viewport limits are cramped on laptops */
+  }
+  .project-media-row {
+    padding: 0 2.5%;
+    gap: 1.5rem;
   }
 }
 
@@ -639,7 +649,6 @@ html, body {
    ========================================================================== */
 @media (max-width: 768px) {
   
-  /* Prevent screen clipping breakout boundaries */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -654,7 +663,7 @@ html, body {
     max-width: 100% !important;
     height: auto !important;
     margin: 0 0 1.5rem 0 !important;
-    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
+    padding: 1.5rem 1.25rem 1rem 1.25rem !important;
     float: none !important;
     left: 0 !important;
     top: 0 !important;
@@ -663,13 +672,13 @@ html, body {
   }
 
   .sidebar-top {
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     text-align: center !important;
   }
 
   .logo {
     font-size: 2.2rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
     text-align: center !important;
   }
 
@@ -681,7 +690,7 @@ html, body {
     justify-content: space-between !important; 
     gap: 0.5rem !important; 
     padding: 0 !important;
-    margin: 1rem 0 0 0 !important;
+    margin: 1.75rem 0 0 0 !important;
     list-style: none !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -701,7 +710,7 @@ html, body {
     padding: 4px 0 !important;
   }
 
-  /* --- MAIN FRAME RESOLUTION & SIDE PADDING --- */
+  /* --- MAIN CANVAS RESET --- */
   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
@@ -709,17 +718,53 @@ html, body {
     padding: 0 !important;
   }
 
-  /* Structural side safety padding framework injection */
-  .grid-container,
-  .header-title-group,
-  .central-project-media,
+  /* --- MOBILE HEADER GRID TRACKING SYSTEM --- */
+  .header-title-group {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important; 
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 2rem !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-back-btn {
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .title-meta-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+  }
+
+  /* Full safety framework alignment for mobile text components */
   .section-divider-block,
-  .project-media-row,
   .project-page-footer {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1.5rem !important;  /* Bumps everything evenly out to center */
-    padding-right: 1.5rem !important; /* Bumps everything evenly out to center */
+    padding-left: 1.5rem !important; 
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Strict image padding parameters for mobile viewports */
+  .grid-container,
+  .central-project-media,
+  .project-media-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important; 
+    padding-right: 1.5rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     box-sizing: border-box !important;
@@ -734,7 +779,7 @@ html, body {
   }
 
   .projects-list-inner {
-    grid-template-columns: 1fr !important; /* Converts desktop rows to clean stack */
+    grid-template-columns: 1fr !important;
     row-gap: 3rem !important;
   }
 
@@ -743,20 +788,13 @@ html, body {
     margin-top: 3.5rem !important;
   }
 
-  /* Tame index grid captions so text scales gracefully */
   .grid-caption h3, .grid-caption h3 a {
     font-size: 1.05rem !important;
     line-height: 1.25 !important;
     margin-bottom: 0.25rem !important;
   }
 
-  /* --- CASE STUDY DETAIL INNER PAGES REFINEMENTS --- */
-  .header-title-group {
-    margin-top: 2rem !important;
-    gap: 1rem !important;
-    align-items: center !important;
-  }
-
+  /* --- CASE STUDY DETAIL PAGES BODY STYLING --- */
   .project-main-title {
     font-size: 1.65rem !important;
     line-height: 1.2 !important;
@@ -766,7 +804,6 @@ html, body {
     margin-bottom: 3rem !important;
   }
 
-  /* Fluid image/asset scaling constraints */
   .central-image-frame img, 
   .row-image-frame img, 
   video {
@@ -775,9 +812,9 @@ html, body {
     height: auto !important;
   }
 
-  /* Flattens "The Process" photo galleries seamlessly into a uniform grid layout */
   .project-media-row {
     grid-template-columns: 1fr !important;
+    padding: 0 1.5rem !important;
     gap: 3rem !important;
     margin-bottom: 1.5rem !important;
   }
@@ -791,7 +828,7 @@ html, body {
     padding-top: 2rem !important;
   }
 
-  /* --- DRAWER MODULE MODIFICATION --- */
+  /* --- DRAWER OVERLAYS --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
