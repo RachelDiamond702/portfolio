@@ -292,9 +292,9 @@ html, body {
    5. WORK GRID LAYOUTS & PAGINATION CONTROLS
    ========================================================================== */
 .grid-container {
-  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
-  padding: 4.5rem 2rem 6rem 2rem;
+  padding: 4.5rem 0 6rem 0;
 }
 
 .grid-header-wrapper {
@@ -449,9 +449,8 @@ html, body {
 }
 
 .header-title-group {
-  max-width: 1200px;
+  width: 90%;
   margin: 4rem auto 0 auto;
-  padding: 0 2rem;
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
@@ -511,9 +510,8 @@ html, body {
 }
 
 .central-project-media {
-  max-width: 1200px;
+  width: 90%;
   margin: 0 auto 4rem auto;
-  padding: 0 2rem;
 }
 
 .central-image-frame {
@@ -540,9 +538,8 @@ html, body {
 }
 
 .section-divider-block {
-  max-width: 1200px;
+  width: 90%;
   margin: 2.5rem auto 0 auto;
-  padding: 0 2rem;
 }
 
 .process-section-title {
@@ -555,8 +552,8 @@ html, body {
 
 .project-media-row {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
+  max-width: 100%;
+  padding: 0 5%;
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   display: grid;
@@ -627,6 +624,16 @@ html, body {
   .projects-list-inner {
     grid-template-columns: repeat(2, 1fr);
   }
+  .grid-container,
+  .header-title-group, 
+  .central-project-media, 
+  .section-divider-block {
+    width: 95%;
+  }
+  .project-media-row {
+    padding: 0 2.5%;
+    gap: 1.5rem;
+  }
 }
 
 /* ==========================================================================
@@ -640,7 +647,6 @@ html, body {
     overflow-x: hidden !important;
   }
 
-  /* --- RESTORED GREEN MOBILE NAVBAR (NOT SMALLER) --- */
   aside, .sidebar-wrapper, .sidebar-top {
     display: block !important;
     position: relative !important;
@@ -701,11 +707,10 @@ html, body {
     padding: 0 !important;
   }
 
-  /* --- MOBILE HEADER: PROJECTS LEFT, ARROWS RIGHT --- */
   .grid-header-wrapper {
     display: flex !important;
-    flex-direction: row !important; /* Side by side on mobile */
-    justify-content: space-between !important; /* Title left, arrows right */
+    flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -718,7 +723,6 @@ html, body {
     box-sizing: border-box !important;
   }
 
-  /* --- CASE STUDY HEADER FIX --- */
   .header-title-group {
     display: flex !important;
     flex-direction: row !important;
