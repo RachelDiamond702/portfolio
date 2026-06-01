@@ -16,7 +16,7 @@ html, body {
 }
 
 /* ==========================================================================
-   2. FIXED LEFT SIDEBAR
+   2. FIXED LEFT SIDEBAR (NOW DARK GREEN)
    ========================================================================== */
 .sidebar-wrapper {
   position: fixed;
@@ -113,7 +113,7 @@ html, body {
    3. MAIN CONTENT CANVAS
    ========================================================================== */
 .main-content {
-  margin-left: 240px; /* Aligns exactly with the sidebar width */
+  margin-left: 240px;
   width: calc(100% - 240px);
   min-height: 100vh;
   position: relative;
@@ -289,14 +289,12 @@ html, body {
 }
 
 /* ==========================================================================
-   5. WORK GRID LAYOUTS & PAGINATION CONTROLS (MAIN HOME PAGE)
+   5. WORK GRID LAYOUTS & PAGINATION CONTROLS
    ========================================================================== */
-/* Change: Updated grid-container to width: 70% and margin: 0 auto to perfectly
-   mirror the structural alignment layout tracking system of your case studies. */
 .grid-container {
-  width: 70%;
+  width: 90%; /* Matches the structural track width of the project viewports */
   margin: 0 auto;
-  padding: 4.5rem 0 6rem 0; /* Stripped side padding since container width dictates margins */
+  padding: 4.5rem 0 6rem 0;
 }
 
 .grid-header-wrapper {
@@ -442,7 +440,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. PROJECT DETAIL LAYOUT STYLES (DESKTOP DEFAULT)
+   6. PROJECT DETAIL LAYOUT STYLES (REVERTED BACK TO STABLE NATURAL BASICS)
    ========================================================================== */
 .structural-underline {
   border-bottom: 1px solid rgba(44, 62, 48, 0.2);
@@ -452,7 +450,7 @@ html, body {
 }
 
 .header-title-group {
-  width: 70%;
+  width: 90%; /* Restored back to standard 90% wide layout framework link */
   margin: 4rem auto 0 auto;
   display: flex;
   align-items: flex-start;
@@ -481,7 +479,7 @@ html, body {
   transition: all 0.2s ease;
   flex-shrink: 0;
   margin-top: -0.15rem;
-  margin-left: -4rem; /* Keeps back button resting inside left gutter consistently */
+  margin-left: 0; /* Arrow back button margins completely reset back to original positions */
 }
 
 .project-back-btn:hover {
@@ -514,7 +512,7 @@ html, body {
 }
 
 .central-project-media {
-  width: 70%;
+  width: 90%; /* Restored back to 90% so images stay matching the homepage footprint */
   margin: 0 auto 4rem auto;
 }
 
@@ -542,7 +540,7 @@ html, body {
 }
 
 .section-divider-block {
-  width: 70%;
+  width: 90%;
   margin: 2.5rem auto 0 auto;
 }
 
@@ -632,10 +630,7 @@ html, body {
   .header-title-group, 
   .central-project-media, 
   .section-divider-block {
-    width: 90%;
-  }
-  .project-back-btn {
-    margin-left: 0;
+    width: 95%;
   }
   .project-media-row {
     padding: 0 2.5%;
@@ -731,11 +726,6 @@ html, body {
     gap: 1rem !important;
     align-items: center !important;
     box-sizing: border-box !important;
-  }
-
-  .project-back-btn {
-    margin-left: 0 !important;
-    flex-shrink: 0 !important;
   }
 
   .title-meta-stack {
