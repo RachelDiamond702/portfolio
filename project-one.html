@@ -19,28 +19,44 @@
     }
 
     @media (max-width: 768px) {
-      /* Force all project layout components to drop desktop margins and span full phone width */
-      main, 
-      .main-content, 
-      .project-detail-container,
-      .project-content-body,
-      .central-project-media,
-      .central-image-frame,
-      article {
+      /* UNIVERSAL FORCE RE-PADDING: Un-squishes everything instantly */
+      html, body, main, .main-content, .project-detail-container, .project-content-body, article, section {
         width: 100% !important;
         max-width: 100% !important;
+        min-width: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-top: 2.5rem !important; /* Reduces the massive 5.5rem desktop spacing for mobile */
-        padding-left: 1.25rem !important;  
-        padding-right: 1.25rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         box-sizing: border-box !important;
         float: none !important;
         position: static !important;
+      }
+
+      /* Safely re-inject side margins inside the actual inner frame of the page */
+      .project-detail-container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
         display: block !important;
       }
 
-      /* Stack the sidebar cleanly at the top */
+      /* Stack your narrative sections vertically with clean responsive margins */
+      .project-content-body, .central-project-media {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 2.5rem !important; /* Lowers desktop vertical gap */
+      }
+
+      /* Force all media boxes and images to track with the phone screen */
+      .central-image-frame, .central-image-frame img, .central-project-media img, video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      /* Stack the top-level site identity headers vertically */
       aside, .sidebar-wrapper, .sidebar-top {
         position: relative !important;
         width: 100% !important;
@@ -63,7 +79,7 @@
         list-style: none !important;
       }
 
-      /* Force the dual 50/50 images to stack vertically instead of squeezing sideways */
+      /* Collapse the side-by-side split row into a perfect single column */
       .inline-flex-row {
         display: flex !important;
         flex-direction: column !important;
@@ -76,11 +92,12 @@
         max-width: 100% !important;
       }
 
-      /* Shrink font size gracefully on mobile so titles don't wrap awkwardly */
+      /* Tone down main case study title typography */
       h1, .project-main-title {
-        font-size: 1.75rem !important;
-        line-height: 1.2 !important;
+        font-size: 1.6rem !important;
+        line-height: 1.25 !important;
         word-wrap: break-word !important;
+        margin-top: 1rem !important;
       }
     }
   </style>

@@ -18,14 +18,17 @@
     }
 
     @media (max-width: 768px) {
+      main, .main-content, .project-grid, .grid-container, article, section, div {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
       main, .main-content, .project-grid, .grid-container, article {
         width: 100% !important;
-        max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
         padding-left: 1.25rem !important;  
         padding-right: 1.25rem !important;
-        box-sizing: border-box !important;
         float: none !important;
         position: static !important;
       }
@@ -52,19 +55,22 @@
         list-style: none !important;
       }
 
-      /* TAME HOMEPAGE PROJECT TITLES HERE */
-      /* Targets standard grid card headings and scales them down nicely for a clean list look */
+      /* AGGRESSIVE TEXT SHRINKER FOR HOME GRID TITLES */
       .project-grid h3, 
       .project-card h3, 
       .project-meta h3,
-      .grid-container h3 {
-        font-size: 1.25rem !important; /* Shrunk down from giant desktop sizing */
-        line-height: 1.3 !important;
-        margin-bottom: 0.25rem !important;
+      .grid-container h3,
+      h3 {
+        font-size: 1.05rem !important; /* Forces it completely out of "huge" territory */
+        line-height: 1.25 !important;
+        font-weight: 600 !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.15rem !important;
       }
       
-      .project-grid p, .project-card p, .project-meta p {
-        font-size: 0.85rem !important; /* Slightly scales meta description subtexts as well */
+      .project-grid p, .project-card p, .project-meta p, .grid-container p {
+        font-size: 0.8rem !important;
+        opacity: 0.7 !important;
       }
     }
   </style>
