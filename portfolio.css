@@ -796,3 +796,70 @@ html, body {
     padding: 4px 0 !important;
   }
 }
+
+/* ==========================================================================
+   SURGICAL MOBILE LAYOUT RESCUE (SAFE GRID UN-SQUISH)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* 1. Reset the core structural containers */
+  main, 
+  .main-content, 
+  .project-detail-container, 
+  .project-content-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;   /* Strips out the desktop sidebar push */
+    margin-right: 0 !important;
+    padding-left: 1.25rem !important;  /* Gives clean breathing space on phone edges */
+    padding-right: 1.25rem !important;
+    box-sizing: border-box !important;
+    float: none !important;
+    position: static !important;
+    display: block !important;
+  }
+
+  /* 2. Scale all case study media fluidly */
+  .central-project-media,
+  .central-image-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 3rem !important; /* Lowers desktop vertical gap for mobile */
+    display: block !important;
+  }
+
+  .central-image-frame img, 
+  .central-project-media img, 
+  video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* 3. Force the 50/50 dual column images to stack vertically instead of side-by-side */
+  .inline-flex-row,
+  .central-project-media > div[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .inline-flex-row > div,
+  .central-project-media > div[style*="display: flex"] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  /* 4. Tone down case study headers so they don't clip */
+  h1.project-main-title, 
+  .project-main-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+    margin-top: 1rem !important;
+  }
+}
