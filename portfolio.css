@@ -731,11 +731,15 @@ html, body {
   }
 
   /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
+  /* CHANGED: Replaced block layout properties to match the flex alignments of the project detail page header */
   .grid-header-wrapper {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
-    padding-bottom: 1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 2rem !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-bottom: 0 !important;
   }
 
   .projects-list-inner {
