@@ -716,76 +716,93 @@ html, body {
 
   /* Structural side safety padding framework injection */
   .grid-container,
-  .header-title-group,
+  .header-title-group, 
   .central-project-media,
   .section-divider-block,
   .project-media-row,
   .project-page-footer {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1.5rem !important;  /* Bumps everything evenly out to center */
-    padding-right: 1.5rem !important; /* Bumps everything evenly out to center */
+    padding-left: 1.5rem !important;  
+    padding-right: 1.5rem !important; 
     margin-left: 0 !important;
     margin-right: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* --- UNIFIED HOME PAGE & PROJECT DETAIL HEADERS FOR MOBILE --- */
+  /* --- UNIFIED MOBILE HEADERS (SNAP PROJECTS TITLE/PAGE TITLE LEFT, ARROWS/BACK BUTTON RIGHT) --- */
   .grid-header-wrapper,
   .header-title-group {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: flex-start !important; 
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1.5rem !important; 
-    padding-right: 1.5rem !important;
+    
+    /* Absolute reset of inner padding to honor layout grid tracking */
+    padding-left: 0 !important; 
+    padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 2rem !important;
     margin-bottom: 2.5rem !important;
     padding-bottom: 1rem !important;
-    border-bottom: none !important; /* Strips unique homepage line to match project layout */
+    border-bottom: none !important; 
     gap: 1rem !important;
     box-sizing: border-box !important;
   }
 
+  /* --- SPECIFIC TYPOGRAPHY SYNCING --- */
+  .section-title,
+  .project-main-title {
+    font-size: 1.65rem !important;
+    line-height: 1.1 !important; 
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
   .title-meta-stack {
     display: flex !important;
     flex-direction: column !important;
     text-align: left !important;
+    gap: 0.35rem !important;
   }
 
-  .section-title,
-  .project-main-title {
-    font-size: 1.65rem !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Ensure pagination boxes and back arrow share matching sizing and behaviors */
+  /* --- UNIFIED INTERACTION ELEMENT SYNCING --- */
   .pagination-controls,
   .project-back-btn {
+    display: flex !important;
+    align-items: center !important;
     position: static !important; 
-    margin-top: 0 !important;
+    margin-top: -0.15rem !important; 
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
   }
   
-  /* Forces home pagination box to match exactly the layout structure of project arrow box */
   .pagination-controls {
-    gap: 0.5rem !important;
+    gap: 0.65rem !important; /* Slightly open gap to give the restored text some breathing room */
   }
   
+  /* FIXED: Restored and cleanly styled for active presentation on mobile viewports */
   .page-indicator {
-    display: none !important; /* Hides floating text so the box width trims neatly to match back arrow */
+    display: inline-block !important; 
+    font-size: 0.75rem !important;
+    letter-spacing: 0.02rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    order: -1 !important; /* Forces the text counter to always sit cleanly on the left of the actual button arrows */
   }
 
-  .project-back-btn {
-    order: -1; /* Keeps arrow cleanly positioned to the left */
+  .header-title-group .project-back-btn {
+    order: 1 !important; 
   }
 
   /* --- INDEX HOMEPAGE LIST REFINEMENTS --- */
   .projects-list-inner {
-    grid-template-columns: 1fr !important; /* Converts desktop rows to clean stack */
+    grid-template-columns: 1fr !important; 
     row-gap: 3rem !important;
   }
 
@@ -794,7 +811,6 @@ html, body {
     margin-top: 3.5rem !important;
   }
 
-  /* Tame index grid captions so text scales gracefully */
   .grid-caption h3, .grid-caption h3 a {
     font-size: 1.05rem !important;
     line-height: 1.25 !important;
@@ -806,7 +822,6 @@ html, body {
     margin-bottom: 3rem !important;
   }
 
-  /* Fluid image/asset scaling constraints */
   .central-image-frame img, 
   .row-image-frame img, 
   video {
@@ -815,7 +830,6 @@ html, body {
     height: auto !important;
   }
 
-  /* Flattens "The Process" photo galleries seamlessly into a uniform grid layout */
   .project-media-row {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
@@ -831,7 +845,7 @@ html, body {
     padding-top: 2rem !important;
   }
 
-  /* --- DRAWER MODULE MODIFICATION --- */
+  /* --- HERO OVERLAY DRAWERS MODIFICATION --- */
   .hero-container {
     width: 100vw !important;
     right: -100vw !important;
