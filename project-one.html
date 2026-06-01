@@ -9,8 +9,7 @@
   
   <link rel="stylesheet" href="portfolio.css?v=3.2">
   
-  <style>
-    /* 1. Global Viewport Shields */
+<style>
     html, body {
       width: 100% !important;
       max-width: 100% !important;
@@ -19,45 +18,42 @@
       padding: 0 !important;
     }
 
-    /* 2. Target Mobile Viewports Aggressively */
     @media (max-width: 768px) {
-      
-      /* Force the main structural layout frames to drop the desktop side-margins */
+      /* Force all project layout components to drop desktop margins and span full phone width */
       main, 
       .main-content, 
-      .project-detail-container, 
-      .project-grid, 
-      .grid-container,
+      .project-detail-container,
+      .project-content-body,
+      .central-project-media,
+      .central-image-frame,
       article {
         width: 100% !important;
         max-width: 100% !important;
-        margin-left: 0 !important;   /* Strips out the desktop sidebar push */
+        margin-left: 0 !important;
         margin-right: 0 !important;
-        padding-left: 1.25rem !important;  /* Gives clean breathing space on phone edges */
+        margin-top: 2.5rem !important; /* Reduces the massive 5.5rem desktop spacing for mobile */
+        padding-left: 1.25rem !important;  
         padding-right: 1.25rem !important;
         box-sizing: border-box !important;
         float: none !important;
         position: static !important;
+        display: block !important;
       }
 
-      /* Take the sidebar and stack it vertically above your content instead of keeping it fixed to the left */
-      aside, 
-      .sidebar-wrapper, 
-      .sidebar-top {
+      /* Stack the sidebar cleanly at the top */
+      aside, .sidebar-wrapper, .sidebar-top {
         position: relative !important;
         width: 100% !important;
         max-width: 100% !important;
         left: 0 !important;
         top: 0 !important;
-        margin: 0 0 2.5rem 0 !important; /* Pushes the main projects down slightly below it */
+        margin: 0 0 1.5rem 0 !important;
         padding: 1.5rem 1.25rem !important;
         box-sizing: border-box !important;
         display: block !important;
       }
 
-      /* Make sure your navigation links flex neatly across the top row instead of stacking awkwardly */
-      .sidebar-nav ul, 
-      .nav-links {
+      .sidebar-nav ul, .nav-links {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
@@ -67,12 +63,24 @@
         list-style: none !important;
       }
 
-      /* Prevent long headers or single project title text from stretching the screen width */
-      h1, h2, h3, .project-main-title {
+      /* Force the dual 50/50 images to stack vertically instead of squeezing sideways */
+      .inline-flex-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
+      }
+      
+      .inline-flex-row > div {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Shrink font size gracefully on mobile so titles don't wrap awkwardly */
+      h1, .project-main-title {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
         word-wrap: break-word !important;
-        word-break: break-word !important;
-        white-space: normal !important;
-        font-size: 1.8rem !important; /* Prevents giant text from clipping */
       }
     }
   </style>
