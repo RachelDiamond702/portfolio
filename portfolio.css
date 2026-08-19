@@ -820,21 +820,3 @@ html, body {
   }
 }
 
-/* TO TOP BUTTON */
-.project-page-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.project-page-footer .project-back-btn {
-  position: static;
-  left: auto;
-  top: auto;
-}
-
-.project-page-footer .project-type-label {
-  width: auto;
-  text-align: center;
-}
