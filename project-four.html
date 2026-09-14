@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Rachel Diamond</title>
+  
+  <link rel="stylesheet" href="https://use.typekit.net/hcx7xjq.css">
+  <link rel="stylesheet" href="portfolio.css?v=3.2">
+</head>
+<body>
+
+  <aside class="sidebar-wrapper">
+    <div class="sidebar-top">
+      <a href="index.html" class="logo">Rachel Diamond</a>
+      
+      <nav class="sidebar-nav">
+        <ul class="nav-links">
+          <li>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="nav-dot">&bull;</span>RESUME
+            </a>
+          </li>
+          <li>
+            <a href="#" id="contact-trigger">
+              <span class="nav-dot">&bull;</span>CONTACT
+            </a>
+          </li>
+          <li>
+            <a href="#" id="about-trigger">
+              <span class="nav-dot">&bull;</span>ABOUT ME
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <article class="project-detail-container">
+      
+      <header class="project-header structural-underline">
+        <div class="header-title-group">
+          <a href="index.html" class="pag-btn project-back-btn" title="Back to Projects">&#8592;</a>
+          
+          <div class="title-meta-stack">
+            <h1 class="project-main-title">Orbitra Font</h1>
+            <p class="project-type-label">Experimental Typography</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="project-content-body">
+      
+        <div class="central-project-media">
+          <div class="central-image-frame">
+            <img src="Img\Orbitra.png" alt="Main Project Showcase View">
+          </div>
+          <p class="project-description-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <div class="central-project-media" style="margin-top: 5.5rem;">
+          <div class="central-image-frame">
+            <img src="https://via.placeholder.com/1200x800/2c3e30/ffffff?text=Process+Step+One" alt="Detailed process description">
+          </div>
+          <p class="project-description-text">
+            <strong>Conceptual Design &amp; Scale Prototyping:</strong> Initial phase rendering and digital design setups. By keeping this asset module completely full-width, complex layout drawings, wood grains, or intricate fine lines remain crisp and readable on screens of any size.
+          </p>
+        </div>
+
+        <div class="central-project-media" style="margin-top: 5.5rem;">
+          <div class="inline-flex-row">
+            <div style="flex: 1; min-width: 280px; box-sizing: border-box;">
+              <div class="central-image-frame" style="margin: 0 !important;">
+                <img src="https://via.placeholder.com/600x600/2c3e30/ffffff?text=Circuitry+View" alt="Circuitry schematic layout close up" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div style="flex: 1; min-width: 280px; box-sizing: border-box;">
+              <div class="central-image-frame" style="margin: 0 !important;">
+                <img src="https://via.placeholder.com/600x600/4e5e52/ffffff?text=Physical+Hardware" alt="Close up detail of physical component hardware integration" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+          <p class="project-description-text">
+            <strong>Systems Integration &amp; Internal Assets:</strong> The dual split row is ideal for comparing concepts side-by-side. You can present an internal component map, a routing schematic, or close-up joinery details directly parallel to the corresponding structural element.
+          </p>
+        </div>
+        
+      </div>
+
+      <footer class="project-page-footer" style="padding-bottom: 4rem;">
+        <a href="#" class="pag-btn project-back-btn" title="Back to Top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">&#8593;</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <div class="about-drawer-overlay" id="drawer-overlay"></div>
+
+  <div class="hero-container drawer-module" id="about-drawer">
+    <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+    <div class="hero-image-side">
+      <div class="profile-frame">
+        <img src="https://via.placeholder.com/400x500" alt="Rachel Diamond Portrait">
+      </div>
+    </div>
+    <div class="hero-text-side">
+      <h2>About Me</h2>
+      <p>I am a designer specializing in brand identity, structural digital interfaces, and modern artistic systems.</p>
+      <button class="hero-button" id="switch-to-contact">Contact Me</button>
+    </div>
+  </div>
+
+  <div class="hero-container drawer-module" id="contact-drawer">
+    <button class="close-drawer-btn standard-close" aria-label="Close Section">&times;</button>
+    <div class="hero-text-side form-stretch">
+      <h2>New Inquiries</h2>
+      <p id="contact-instruction">Open to creative collaborations, design projects, and professional opportunities.</p>        
+      
+      <form class="contact-form" id="portfolio-contact-form" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="YOUR NAME" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="EMAIL ADDRESS" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <textarea rows="4" name="message" placeholder="MESSAGE" required></textarea>
+        </div>
+        <button type="submit" class="hero-button" id="submit-btn">
+          <span id="submit-btn-text">Send Message</span>
+        </button>
+      </form>
+
+      <div id="form-success-message" style="display: none; text-align: center; margin-top: 2rem;">
+        <h3 style="font-family: 'cofo-glassier', sans-serif; font-size: 1.8rem; color: #8AA686; margin-bottom: 0.5rem;">Thank You!</h3>
+        <p style="font-family: 'itc-franklin-gothic-lt-pro', sans-serif; font-size: 0.95rem; color: #FFFFFF; opacity: 0.9; line-height: 1.5;">Your message has been sent successfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('drawer-overlay');
+    const aboutTrigger = document.getElementById('about-trigger');
+    const aboutDrawer = document.getElementById('about-drawer');
+    const contactTrigger = document.getElementById('contact-trigger');
+    const contactDrawer = document.getElementById('contact-drawer');
+    const closeButtons = document.querySelectorAll('.standard-close');
+    const switchToContactBtn = document.getElementById('switch-to-contact');
+
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitBtnText = document.getElementById('submit-btn-text');
+    const successMessage = document.getElementById('form-success-message');
+    const contactInstruction = document.getElementById('contact-instruction');
+
+    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbz3g1fliFRMYFEFoa8e0s21q6w9c3Ar0sRUPLZnlFwe2pdoHGZME7QdDqES8wu9KXiVaA/exec";
+
+    function closeAllDrawers() {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.remove('drawer-active');
+      overlay.classList.remove('overlay-active');
+      document.body.style.overflow = '';
+    }
+
+    aboutTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllDrawers();
+      aboutDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    contactTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllDrawers();
+      contactDrawer.classList.add('drawer-active');
+      overlay.classList.add('overlay-active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    switchToContactBtn.addEventListener('click', () => {
+      aboutDrawer.classList.remove('drawer-active');
+      contactDrawer.classList.add('drawer-active');
+    });
+
+    closeButtons.forEach(btn => btn.addEventListener('click', closeAllDrawers));
+    overlay.addEventListener('click', closeAllDrawers);
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtnText.innerText = "Sending...";
+      submitBtn.style.opacity = "0.6";
+
+      const formData = new FormData(contactForm);
+
+      fetch(googleScriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(() => {
+        contactForm.style.display = 'none';
+        contactInstruction.style.display = 'none';
+        successMessage.style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Submission Glitch:', error.message);
+        submitBtn.disabled = false;
+        submitBtnText.innerText = "Send Message";
+        submitBtn.style.opacity = "1";
+        alert("Oops, there was a minor network issue delivering your message.");
+      });
+    });
+  </script>
+
+</body>
+</html>
